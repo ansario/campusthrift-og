@@ -1,0 +1,157 @@
+
+
+{% extends "campusthrift/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+    <style>
+        body {
+            background-image: url(../../../static/images/background.png);
+            background-repeat: repeat;
+        }
+    </style>
+
+
+
+    <div id="profile-modal" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Profile<h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="well">
+                            <div>
+                                <h1 class="pull-left">Hi {{ user.first_name }}!</h1>
+                                <img class="pull-right img-responsive	 profile-pic"
+                                     src=/media/{{ profile.picture }}>
+                            </div>
+
+                            <br>
+                            <table class="table">
+                                <tr>
+                                    <td><strong>First Name</strong></td>
+                                    <td>{{ user.first_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Last Name</strong></td>
+                                    <td>{{ user.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Email</strong></td>
+                                    <td>{{ user.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>School</strong></td>
+                                    <td>{{ profile.school }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Graduation Year</strong></td>
+                                    <td>{{ profile.graduation_year }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="/profile/edit" class="btn btn-success">Edit Profile</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="selling-modal" class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Selling<h4>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-pills">
+                    <li class="active"><a  data-toggle="pill" href="#home">Orders <span class="badge">{{ orders|length }}</span></a></li>
+                    <li><a data-toggle="pill" href="#menu1">Pending Sold Items <span class="badge">{{ pending_sold_items|length }}</span></a></li>
+                    <li><a data-toggle="pill" href="#menu2">Pending Purchased Items <span class="badge">{{ pending_purchased_items|length }}</span></a></li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>HOME </h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        ID
+                                    </td>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Total
+                                    </td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr>
+                                        <td>
+                                            {{ order.primary_key }}
+                                        </td>
+                                        <td>
+                                            {{ order.date }}
+                                        </td>
+                                        <td>
+                                            {{ order.final_total }}
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>Menu 1</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            {% for sale in current_sales %}
+                                <tr>
+                                    <td><strong>{{ sale.title }}</strong></td>
+                                    <td>
+                                        {{ sale.description | truncatechars:20 }}
+                                        <br>
+                                        ${{ sale.price }}
+                                        <i class="fa fa-chevron-right pull-right" aria-hidden="true"></i>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+
+                        <a href="/profile/edit" class="btn btn-success">Edit Profile</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+{% endblock content %}

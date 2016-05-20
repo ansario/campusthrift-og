@@ -1,0 +1,122 @@
+{% extends "campusthrift/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+    <style>
+        body {
+            background-image: url(/../../static/images/background.png);
+            background-repeat: repeat;
+        }
+    </style>
+
+
+
+    <div id="order-overlay" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Order Detail</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <h4 class="pull-right">Order Number: {{ order.primary_key }}</h4>
+                        <div class='clearfix'></div>
+                        <h4 class="pull-right">Transaction Date: {{ order.date }}</h4>
+                        <div class='clearfix'></div>
+                        <hr>
+
+                        {% for order_item in order_items %}
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object"
+                                                     src=" {{ order_item.item.images.all.0.image.url }}"
+                                                     alt="product-image" height="100px" width="100px">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">{{ order_item.item.title }}</h4>
+                                            {{ order_item.item.description|truncatewords:20 }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+
+                                    {% if order_item.shipping_method == 1 %}
+                                        On Campus Pickup @ {{ order_item.item.meeting_place }} -
+                                        {{ order_item.item.user.user.school }}
+                                    {% elif order_item.shipping_method == 2 %}
+
+                                        <select class="form-control" name="{{ item.pk }}_ship_method">
+                                            <option value="2">Off Campus Shipping -
+                                                ${{ order_item.shipping_price }}</option>
+                                        </select>
+
+                                    {% endif %}
+
+                                </div>
+                                <div class="col-md-2">
+                                     <i class="icon-ok-sign" rel="tooltip" title="Key active" id="blah"></i>
+
+
+                                    {% if order_item.buyer_confirmed %}
+                                        <span class="label label-success">Buyer Confirmed</span>
+                                    {% else %}
+                                        <span class="label label-danger">Buyer Unconfirmed</span>
+                                    {% endif %}
+
+                                    {% if order_item.seller_confirmed %}
+                                        <span class="label label-success">Seller Confirmed</span>
+                                    {% else %}
+                                        <span class="label label-danger">Seller Unconfirmed</span>
+                                    {% endif %}
+
+
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                    <h4>Sold By:</h4>
+                                    <p>{{ order_item.item.user.first_name }} {{ order_item.item.user.last_name }}</p>
+                                    <p>{{ order_item.item.user.email }}</p>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <h4>Item Price:</h4>
+                                    <p>${{ order_item.price }}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4>Shipping Price:</h4>
+                                    {% if order_item.shipping_method == 1 %}
+                                        Free! (On Campus Pickup)
+                                    {% elif order_item.shipping_method == 2 %}
+                                        <p>${{ order_item.shipping_price }}</p>
+                                    {% endif %}
+
+                                </div>
+                                <div class="col-md-3">
+                                    <h4>Total Item Price:</h4>
+                                    <p>{{ order_item.order_item_total_price }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock content %}

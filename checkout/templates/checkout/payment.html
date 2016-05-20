@@ -1,0 +1,184 @@
+{% extends "campusthrift/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+    <style>
+        body {
+            background-image: url(../../../static/images/background.png);
+            background-repeat: repeat;
+        }
+    </style>
+    <script src="https://js.braintreegateway.com/js/braintree-2.24.0.min.js"></script>
+    <script src="{% static "js/card.js" %}"></script>
+
+
+    <div id="login-overlay" class="modal-dialog modal-lg" style="width: 80%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Cart</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="stepwizard">
+                    <div class="stepwizard-row">
+                        <div class="stepwizard-step">
+                            <li class="btn btn-primary btn-circle"><i class="fa fa-check"></i></li>
+                            <p>Shop</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <li class="btn btn-primary btn-circle"><i class="fa fa-check" aria-hidden="true"></i></li>
+                            <p>Shipping</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <li class="btn btn-info btn-circle"><i class="fa fa-minus" aria-hidden="true"></i></li>
+                            <p>Payment</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <li class="btn btn-info btn-circle"><i class="fa fa-minus" aria-hidden="true"></i></li>
+                            <p>Done</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><img class="pull-right"
+                                                             src="http://i76.imgup.net/accepted_c22e0.png">Payment
+                                    Details</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" id="checkout">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cardNumber">NAME</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="name"
+                                                           placeholder="First Last" required autofocus
+                                                           />
+                                                    <span class="input-group-addon"><i class="fa fa-user"
+                                                                                       aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cardNumber">CARD NUMBER</label>
+                                                <div class="input-group">
+                                                    <input data-braintree-name="number" type="text" class="form-control"
+                                                           name="number"
+                                                           placeholder="Valid Card Number" required autofocus
+                                                           />
+                                                    <span class="input-group-addon"><i
+                                                            class="fa fa-credit-card"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-7 col-md-7">
+                                            <div class="form-group">
+                                                <label for="expMonth">EXPIRATION DATE</label>
+                                                <div class="col-xs-12 col-lg-12 pl-ziro">
+                                                    <input data-braintree-name="expiration_date"
+                                                           class="form-control"
+                                                          placeholder="MM/YY" type="text" name="expiry"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="form-group">
+                                                <label for="cvCode">CVC</label>
+                                                <input type="password" class="form-control" name="cvc"
+                                                       placeholder="CVC" data-braintree-name="cvv" required
+                                                       data-stripe="cvc"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button class="btn btn-success btn-lg btn-block" type="submit">Submit
+                                                Payment
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="display:none;">
+                                        <div class="col-xs-12">
+                                            <p class="payment-errors"></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                        <div class="card-wrapper"></div>
+                    </div>
+                </div>
+
+
+{#                <div class="demo-container">#}
+{##}
+{##}
+{#                    <div class="form-container active">#}
+{#                        <form id="checkout" method="POST">#}
+{#                            {% csrf_token %}#}
+{#                            <input placeholder="Card number" type="text" name="number" data-braintree-name="number">#}
+{#                            <input placeholder="Full name" type="text" name="name">#}
+{#                            <input placeholder="MM/YY" type="text" name="expiry" data-braintree-name="expiration_date">#}
+{#                            <input placeholder="CVC" type="text" name="cvc" data-braintree-name="cvv">#}
+{#                            <button class="btn btn-info">Next</button>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                </div>#}
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var card = new Card({
+            form: document.querySelector('form'),
+            container: '.card-wrapper'
+        })
+    </script>
+
+
+
+
+    <script>
+        braintree.setup("{{ request.session.braintree_client_token }}", "custom", {
+            id: "checkout"
+        });
+    </script>
+    {#braintree.setup(#}
+    {#    "{{ request.session.braintree_client_token }}",#}
+    {#    "custom",#}
+    {#    {#}
+    {#        id: "creditcard_form",#}
+    {#        hostedFields: {#}
+    {#            number: {#}
+    {#                selector: "#cc_number"#}
+    {#            },#}
+    {#            expirationDate: {#}
+    {#                selector: "#cc_expiration_date"#}
+    {#            },#}
+    {#            cvv: {#}
+    {#                selector: "#cc_verification_code"#}
+    {#            },#}
+    {#        },#}
+    {#    }#}
+    {#);#}
+    </script>
+
+{% endblock content %}

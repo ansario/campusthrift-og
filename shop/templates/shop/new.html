@@ -1,0 +1,186 @@
+{% extends "campusthrift/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+    <style>
+        body {
+            background-image: url(../../../static/images/background.png);
+            background-repeat: repeat;
+        }
+    </style>
+
+    <div id="login-overlay" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Post a new item!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="well">
+                        {% if error %}
+                        {% for errors in error %}
+                            <div class="alert alert-danger" role="alert">{{ errors }}</div>
+
+                        {% endfor %}
+                        {% endif %}
+{#                                    {% for error in field.errors %}#}
+{#                                        <p> {{ errors }} </p>#}
+{#                                    {% endfor %}#}
+
+{#                        {{ form.non_field_errors }}#}
+{#                            {% if form.errors %}#}
+{#                                {% for field in form %}#}
+{#                                    {% for error in field.errors %}#}
+{#                                        <p> {{ errors }} </p>#}
+{#                                    {% endfor %}#}
+{#                                {% endfor %}#}
+{#                            {% endif %}#}
+                            <form id="loginForm" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form | crispy }}
+
+                                <div class="form-group">
+                                    <label for="selectcategories">Category:</label>
+
+                                    <select class="form-control" name="selectcategories" id="selectcategories">
+                                        {% for item in categories %}
+                                            <option val="{{ item.name }}"> {{ item.name }} </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="selectsubcategories">Subcategory:</label>
+                                    <select class="form-control" name="selectsubcategories" id="selectsubcategories">
+
+
+                                    </select>
+                                    {% csrf_token %}
+                                    {% for hidden in postForm.hidden_fields %}
+                                        {{ hidden }}
+                                    {% endfor %}
+
+                                    {% for field in postForm %}
+                                        {{ field }} <br/>
+                                    {% endfor %}
+
+                                    {{ formset.management_form }}
+                                    {% for form in formset %}
+                                        {{ form }}
+                                    {% endfor %}
+
+                                </div>
+                                   <button type="submit" class="save btn btn-default black-button">Post</button>
+                            </form>
+                                <script>
+
+                                    var rotateLeft = function(e) {
+                                        var classList = e.className.split(/\s+/);
+                                        console.log(classList);
+                                        for (var i = 0; i < classList.length; i++) {
+
+                                            if (classList[i] !== 'btn') {
+
+                                               rotation_string = classList[i].replace("image", "rotation");
+                                               rotation_string = rotation_string.replace("img_previd_form", "id_form");
+                                               original_image_string =  classList[i];
+
+
+{#                                                $("#"+rotation_string).val($("#"+rotation_string).val() - 90);#}
+                                                $(document).ready(function () {
+                                                    $("#"+rotation_string).val($("#"+rotation_string).val() - 90);
+
+                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'
+                                                    console.log("."+original_image_string);
+                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#"+rotation_string).val()+"deg)");
+                                                });
+                                            }
+                                        }
+                                    };
+                                     var rotateRight = function(e) {
+                                         var classList = e.className.split(/\s+/);
+                                        console.log(classList);
+                                        for (var i = 0; i < classList.length; i++) {
+
+                                            if (classList[i] !== 'btn') {
+
+                                               rotation_string = classList[i].replace("image", "rotation");
+                                               rotation_string = rotation_string.replace("img_previd_form", "id_form");
+                                               original_image_string =  classList[i];
+
+
+{#                                                $("#"+rotation_string).val($("#"+rotation_string).val() - 90);#}
+                                                $(document).ready(function () {
+                                                    $("#"+rotation_string).val(parseInt($("#"+rotation_string).val()) + 90);
+                                                      console.log($("#"+rotation_string).val());
+{#                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'#}
+{#                                                    console.log("."+original_image_string);#}
+                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#"+rotation_string).val()+"deg)");
+                                                });
+                                            }
+                                        }
+                                    };
+
+                                    $("document").ready(function () {
+
+                                        $('[id ^=id_form-][id $=image]').change(function () {
+                                            var groupNumber = $(this).attr('id').split('-')[1];
+                                            var id = $(this).attr('id');
+                                            $('.img_prev' + id).remove();
+                                            $("#" + id).after('<img class=img_prev' + id + ' height=\'100px\' width=\'100px\' src=\'\'><br class=img_prev' + id+ '>');
+                                            $(".img_prev" + id).filter('img').after('<br><button onclick="rotateLeft(this); return false;"" class="btn img_prev' +id+ '" style="margin-right: 5px""><i class="fa fa-rotate-left" aria-hidden="true"></i></button><button class="btn img_prev' +id+ '" onclick="rotateRight(this); return false;"" style="margin-left: 5px"><i class="fa fa-rotate-right" aria-hidden="true"></i></button');
+                                            if (this.files && this.files[0]) {
+                                                var reader = new FileReader();
+                                                current_file = this.files[0];
+                                                reader.onload = (function(f) {
+                                                    return function(e) {
+
+                                                        $('.img_prev' + id).filter( "img" ).attr('src', e.target.result);
+                                                    };
+                                                })(current_file);
+                                                reader.readAsDataURL(current_file);
+                                            } else {
+                                                $('.img_prev' + id).remove();
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#selectcategories").prop("selectedIndex", -1);
+
+                                        $('select#selectcategories').change(function () {
+                                            var optionSelected = $(this).find("option:selected");
+                                            var valueSelected = optionSelected.val();
+                                            var category_name = optionSelected.text();
+
+
+                                            data = {'cnt': category_name};
+                                            ajax('/getdetails', data, function (result) {
+
+                                                console.log(result);
+                                                $("#selectsubcategories option").remove();
+                                                for (var i = result.length - 1; i >= 0; i--) {
+                                                    $("#selectsubcategories").append('<option>' + result[i].name + '</option>');
+                                                }
+                                                ;
+
+
+                                            });
+                                        });
+                                    });
+                                </script>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock content %}
