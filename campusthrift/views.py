@@ -253,7 +253,7 @@ def webhook(request):
 			)
 		# print notification.kind
         log.info(notification.kind)
-        return HttpResponse("ok")
+        return HttpResponse('')
 
 		# if(notification.kind == braintree.WebhookNotification.
          #               Kind.SubMerchantAccountApproved):
