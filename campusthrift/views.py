@@ -252,7 +252,7 @@ def webhook(request):
 			bt_payload
 			)
 		# print notification.kind
-        log.info(notification.kind)
+        print(notification.kind)
         return HttpResponse('')
 
 		# if(notification.kind == braintree.WebhookNotification.

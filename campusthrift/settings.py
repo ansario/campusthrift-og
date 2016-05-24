@@ -72,7 +72,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
 
 ROOT_URLCONF = 'campusthrift.urls'
@@ -125,78 +124,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s',
-            'datefmt': "%d/%b/%Y %H:%M:%S",
-        },
-    },
-    'handlers': {
-        # Log to a text file
-        'logfile': {
-            'class': 'logging.handlers.WatchedFileHandler',
-            'filename': 'path/to/log/file',
-            'formatter': 'verbose',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['logfile'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-    },
-}
-
-
-# This is logging configuration 'RotatingFileHandler'
-# The setting mentioned above and below are totally seprate.
-
-# Logger configuration
-
-# Create a seprate folder within your project.
-# For storing logs.
-# Change `myproject` with your project name.
-LOGFILE_NAME = os.path.join(BASE_DIR,  'logs/myproject.log')
-# Max size allowed for one file
-# This setting will be used by 'RotatingFileHandler'
-# I have kept maxBytes to low value.
-# Just for demonstration purpose.
-LOGFILE_SIZE = 1 * 1024
-# Log file count
-LOGFILE_COUNT = 2
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s',
-            'datefmt': "%d/%b/%Y %H:%M:%S",
-        },
-    },
-    'handlers': {
-        # Log to a text file that can be rotated by logrotate
-        'logfile': {
-            'level': 'DEBUG',
-            'formatter': 'verbose',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGFILE_NAME,
-            'maxBytes': LOGFILE_SIZE,
-            'backupCount': LOGFILE_COUNT,
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['logfile'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}`
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
