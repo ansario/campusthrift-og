@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 from users.models import UserProfile
 import braintree
 from shop.models import Item
@@ -235,6 +236,7 @@ def buyer_confirm(request, id):
     # print updated_transaction.escrow_status
     return redirect('profile')
 
+@csrf_exempt
 def webhook(request):
 	if request.method == "GET":
 		return HttpResponse(braintree.WebhookNotification.verify(request.GET['bt_challenge']))
