@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from users.models import UserProfile
 import braintree
+import logging
+log = logging.getLogger(__name__)
 from shop.models import Item
 from checkout.models import Order, OrderItem
 from forms import UserForm, UserProfileForm, UserLoginForm, UserEditForm
@@ -249,7 +251,10 @@ def webhook(request):
 			bt_signature,
 			bt_payload
 			)
-		print notification.kind
+		# print notification.kind
+        log.info(notification.kind)
+        return HttpResponse("ok")
+
 		# if(notification.kind == braintree.WebhookNotification.
          #               Kind.SubMerchantAccountApproved):
 		# 	print notification.merchant_account.status
