@@ -38,5 +38,6 @@ urlpatterns = [
     url(r'^getdetails/', shop.views.getdetails),
     url(r'^buyer_confirm/(?P<id>\w+)/$', views.buyer_confirm, name="buyer_confirm"),
     url(r'^seller_confirm/(?P<id>\w+)/$', views.seller_confirm, name="seller_confirm"),
+    url(r'^webhook$',views.webhook,name='webhook'),
     # url('^u/', include('upload.urls')),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

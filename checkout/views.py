@@ -153,7 +153,7 @@ def confirm(request):
         order_items = order.orders.all()
         return render(request, 'checkout/confirm.html', {'order': order, 'order_items': order_items})
     else:
-        order.confirmed = True
+        order.confirmed = False
         order.save()
 
 
@@ -172,20 +172,15 @@ def confirm(request):
                 "service_fee_amount": str(Decimal(order_item.order_item_total_price * Decimal(0.2)).quantize(TWOPLACES)),
                 "options": {
                   "submit_for_settlement": True,
+                  "hold_in_escrow": True
                 },
 
             })
 
-           escrow_result = braintree.Transaction.hold_in_escrow(result.transaction.id)
-           print escrow_result.transaction.escrow_status
-           testing_gateway = braintree.TestingGateway(braintree.Configuration.gateway())
-           testing_gateway.settle_transaction(result.transaction.id)
-           testing_gateway.settlement_confirm_transaction(result.transaction.id)
 
-           updated_transaction = braintree.Transaction.find(result.transaction.id)
-           print updated_transaction.escrow_status
            order_item.braintree_id_transaction = result.transaction.id
            order_item.save()
+
         del request.session['cart']
         return redirect('thanks')
 
