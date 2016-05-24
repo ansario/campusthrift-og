@@ -240,17 +240,16 @@ def buyer_confirm(request, id):
 
 @csrf_exempt
 def webhook(request):
-    if 'bt_challenge' in request.GET:
-        challenge = request.GET['bt_challenge']
-        return HttpResponse(WebhookNotification.verify(challenge))
-    elif 'bt_signature' in request.POST and 'bt_payload' in request.POST:
-        bt_signature = str(request.POST['bt_signature'])
-        bt_payload = str(request.POST['bt_payload'])
-        notification = WebhookNotification.parse(bt_signature, bt_payload)
-        return handle_webhook_notficiation(notification)
-    else:
-        return HttpResponse("I don't understand you")
-
+	if request.method == "GET":
+		return HttpResponse(braintree.WebhookNotification.verify(request.GET['bt_challenge']))
+	elif request.method == "POST":
+		bt_signature = request.POST['bt_signature']
+		bt_payload = request.POST['bt_payload']
+		notification = braintree.WebhookNotification.parse(
+			bt_signature,
+			bt_payload
+			)
+		print notification.kind
 		# if(notification.kind == braintree.WebhookNotification.
          #               Kind.SubMerchantAccountApproved):
 		# 	print notification.merchant_account.status
