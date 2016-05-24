@@ -232,12 +232,11 @@ def buyer_confirm(request, id):
 
     result = braintree.Transaction.release_from_escrow(order_item.braintree_id_transaction)
     # print result.transaction.escrow_status
-    # testing_gateway = braintree.TestingGateway(braintree.Configuration.gateway())
-    # testing_gateway.settle_transaction(result.transaction.id)
-    # testing_gateway.settlement_confirm_transaction(order_item.braintree_id_transaction)
-
-    # updated_transaction = braintree.Transaction.find(order_item.braintree_id_transaction)
-    # print updated_transaction.escrow_status
+    testing_gateway = braintree.TestingGateway(braintree.Configuration.gateway())
+    testing_gateway.settle_transaction(result.transaction.id)
+    testing_gateway.settlement_confirm_transaction(order_item.braintree_id_transaction)
+    updated_transaction = braintree.Transaction.find(order_item.braintree_id_transaction)
+    print updated_transaction.escrow_status
     return redirect('profile')
 
 @csrf_exempt
