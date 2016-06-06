@@ -1,8 +1,14 @@
 from django.shortcuts import render, redirect
 import braintree
+import stripe
 from shop.models import Item
 from checkout.models import Order, OrderItem
 from campusthrift import settings
+from django.contrib.auth.decorators import login_required
+import sendgrid
+import os
+from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY
+sg = sendgrid.SendGridClient(SG_KEY)
 
 from decimal import Decimal
 
@@ -11,12 +17,14 @@ braintree.Configuration.configure(braintree.Environment.Sandbox,
     public_key=settings.BRAINTREE_PUBLIC_KEY,
     private_key=settings.BRAINTREE_PRIVATE_KEY)
 
+@login_required(login_url='/login')
 def checkout(request):
 
 
     if request.method == 'GET':
-        request.session['braintree_client_token'] = braintree.ClientToken.generate()
-
+        # request.session['braintree_client_token'] = braintree.ClientToken.generate()
+        stripe_customer = stripe.Customer.retrieve(request.user.user.stripe_customer_id)
+        payment_info = stripe_customer.sources.retrieve(stripe_customer.default_source)
         cart = request.session.get('cart', {})
         new_cart = cart.copy()
         item_list = []
@@ -40,10 +48,10 @@ def checkout(request):
         final_total = total_shipping + total_price
         if sold_item_list:
             request.session['cart'] = new_cart
-        return render(request, 'checkout/checkout.html', {'sold_item_list': sold_item_list, 'items': item_list, 'total':final_total, 'sub_total': total_price, 'total_shipping': total_shipping})
+        return render(request, 'checkout/checkout.html', {'sold_item_list': sold_item_list, 'items': item_list, 'total':final_total, 'sub_total': total_price, 'total_shipping': total_shipping, 'payment_information': payment_info})
 
     else:
-        nonce = request.POST["payment_method_nonce"]
+
         print request.POST
         cart = request.session.get('cart', {})
         new_cart = cart.copy()
@@ -61,6 +69,11 @@ def checkout(request):
                 item = Item.objects.get(pk=id)
                 if item.sold == True:
                     sold_item_list.append(item)
+
+                    base_sold_email_template = open(os.path.join(PROJECT_ROOT, 'emails/reminder_email.html')).read()
+                    message = sendgrid.Mail(to=item.seller.email, subject='CampusThrift Buyer Reminder', html=base_sold_email_template, text='Body', from_email='noreply@campusthrift.com')
+                    sg.send(message)
+
                     del new_cart[id]
 
                 else:
@@ -80,20 +93,8 @@ def checkout(request):
             return render(request, 'checkout/checkout.html',  {'sold_item_list': sold_item_list, 'items': item_list, 'total':final_total, 'sub_total': total_price, 'total_shipping': total_shipping})
         else:
 
-            # try:
-            #     True = False
-                # return render(request, 'checkout/checkout.html',  {'errors':result.errors.deep_errors, 'items': item_list, 'total':final_total, 'sub_total': total_price, 'total_shipping': total_shipping})
-            # except AttributeError:
-                # del request.session['cart']
-            result = braintree.PaymentMethod.create({
-                "customer_id": request.user.user.braintree_customer_id,
-                "payment_method_nonce": nonce
-            })
-
-
 
             new_order = Order()
-            new_order.payment = result.payment_method.token
             new_order.buyer = request.user
 
             sub_total = 0
@@ -109,27 +110,26 @@ def checkout(request):
                 new_order_item.shipping_method = request.POST[str(item.pk) + '_ship_method']
                 new_order_item.price = item.price
 
-                if new_order_item.shipping_method == 1:
+                if int(request.POST[str(item.pk) + '_ship_method']) == 1:
                     new_order_item.shipping_price = 0.00
                     new_order_item.order_item_total_price = new_order_item.price
                 else:
+
                     new_order_item.shipping_price = item.shipping_price
                     shipping_total = shipping_total + item.shipping_price
                     new_order_item.order_item_total_price = new_order_item.price + new_order_item.shipping_price
 
 
                 sub_total = sub_total + item.price
+
+
+
                 new_order_item.save()
 
-
-
-
-
-
-
-
-
-
+            new_order.shipping_address = request.POST['address']
+            new_order.city = request.POST['city']
+            new_order.state = request.POST['state']
+            new_order.zip = request.POST['zip']
 
             new_order.final_total = sub_total + shipping_total
             new_order.shipping_total = shipping_total
@@ -143,7 +143,7 @@ def checkout(request):
 
             return redirect('confirm')
 
-
+@login_required(login_url='/login')
 def confirm(request):
     order_key = request.session['order']
     order = Order.objects.get(primary_key=order_key)
@@ -163,31 +163,29 @@ def confirm(request):
            order_item.item.sold = True
            order_item.item.save()
 
-           TWOPLACES = Decimal(10) ** -2
 
-           result = braintree.Transaction.sale({
-                "merchant_account_id": order_item.item.user.user.braintree_merchant_id,
-                "amount": order_item.order_item_total_price,
-                "customer_id": request.user.user.braintree_customer_id,
-                "service_fee_amount": str(Decimal(order_item.order_item_total_price * Decimal(0.2)).quantize(TWOPLACES)),
-                "options": {
-                  "submit_for_settlement": True,
-                  "hold_in_escrow": True
-                },
-
-            })
+           result = stripe.Charge.create(
+               amount = int(order_item.order_item_total_price * 100),
+               currency = "usd",
+               customer = request.user.user.stripe_customer_id,
+               description = "charge for " + request.user.email
+           )
 
 
-           order_item.braintree_id_transaction = result.transaction.id
+           order_item.stripe_charge_id = result.id
            order_item.save()
+
+           order.payment_confirmed = True
+
 
         del request.session['cart']
         return redirect('thanks')
 
+@login_required(login_url='/login')
 def thanks(request):
     return render(request, 'checkout/thanks.html')
 
-
+@login_required(login_url='/login')
 def payment(request):
     if request.method == 'GET':
         request.session['braintree_client_token'] = braintree.ClientToken.generate()

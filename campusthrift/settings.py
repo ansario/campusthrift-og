@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
     # 'upload',
+    'kronos',
+    'watson',
     'localflavor',
     'crispy_forms',
     'campusthrift',
@@ -148,8 +150,11 @@ ALLOWED_HOSTS = ['*']
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = (BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+# STATIC_ROOT="/Users/ansario/CurrentProjects/campusthrift/static/"
+# STATICFILES_DIRS = (BASE_DIR, 'static')
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
@@ -163,3 +168,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 BRAINTREE_MERCHANT_ID = 'svphctvpmh3kx2jy'
 BRAINTREE_PUBLIC_KEY = 'vswpdt5j8dky88gj'
 BRAINTREE_PRIVATE_KEY = 'c39332d36893a20f0e20ee7afc39a860'
+
+SG_KEY = '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'
+
+HOSTED_URL = "http://campusthrift.ansario.com"
+

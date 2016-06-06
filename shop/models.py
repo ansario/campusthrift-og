@@ -17,7 +17,7 @@ SHIPPING_CHOICES = (
 
 class Subcategory(models.Model):
     name = models.CharField(max_length=50)
-    category = models.ForeignKey("Category")
+    category = models.ForeignKey("Category", related_name="subcategories")
     def __unicode__(self):
         return u'%s' % (self.name)
 
@@ -44,7 +44,8 @@ class Item(models.Model):
     shipping_price = models.DecimalField(max_digits=5,decimal_places=2,validators=[
 									MinValueValidator(0)
     ])
-    meeting_place = models.CharField(max_length=200, null=True)
-    # category = models.IntegerField(choices=CATEGORY_CHOICES)
-    # sub_category = models.IntegerField(choices=SUBCATEGORY_CHOICES)
+    meeting_place = models.CharField(max_length=200, null=True, blank=True)
+    category = models.CharField(max_length=200)
+    sub_category = models.CharField(max_length=200)
     shipping = models.IntegerField(choices=SHIPPING_CHOICES)
+    stripe_listing_fee_id = models.CharField(max_length=200)

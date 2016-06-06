@@ -1,63 +1,210 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <script src="{% static "js/jquery-1.12.3.min.js" %}"></script>
-  <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "css/custom_styles.css" %}">
     <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="http://yourjavascript.com/7174319415/script.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static "css/magnifier.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery.imageLens.js" %}"></script>
 
 
 </head>
 
+<style>
+    * {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 50px; /* .push must be the same height as .footer */
+}
+.column {
+  width:30.5%;
+    margin-top: 3.6em;
+{#  background-color:#333;#}
+  float:left;
+
+}
+
+    .footer a {
+{#        text-decoration: none;#}
+        color: black;
+    }
+
+</style>
+
+
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="http://campusthrift.com"><img src="{% static "images/campusthrift logo.png" %}" alt="Logo">
-        </a>
-      </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img
+                    src="{% static "images/campusthrift logo.png" %}" alt="Logo">
+            </a>
+        </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Shop</a></li>
-            {% if request.user.is_authenticated %}
-               <li><a href="/profile">Profile</a></li>
-                <li><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
-            {% else %}
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-            {% endif %}
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="col-sm-3 col-md-3 search pull-right">
+                <form class="navbar-form" action='/shop' role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="/shop">Shop</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
+                    <li><a href="/shop/new">Sell New Item</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/about">About Us</a></li>
+                {% endif %}
 
 
 
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
-  </nav>
+</nav>
 
-  <body>
+<body>
 
 
-      <div class="">
 
-          {% block content %}
-          {% endblock %}
 
+<div class="wrapper">
+  {% block content %}
+    {% endblock %}
+  <div class="push"></div>
+ </div>
+ <div class="footer text-center">
+
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Ad 1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-3885680219930506"
+     data-ad-slot="7055861675"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+     <div class="clearfix"></div>
+
+     <div class="column">
+         <a  data-toggle="modal" data-target="#myModal">
+                  <h2>Pricing Policy</h2>
+                </a>
+     </div>
+        <div class="column">
+            <a  data-toggle="modal" data-target="#refundModal">
+                  <h2>Refund Policy</h2>
+                </a>
+        </div>
+        <div class="column">
+            <a   data-toggle="modal" data-target="#tosModal">
+                  <h2>Terms of Service</h2>
+                </a>
+        </div>
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Pricing Information</h4>
       </div>
-  </body>
+      <div class="modal-body">
+        <p>The seller sets the price and shipping price that they see fit for their item.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="refundModal" tabindex="-1" role="dialog" aria-labelledby="refundModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="refundModalLabel">Refund Information</h4>
+      </div>
+      <div class="modal-body">
+        <p>There are no refunds currently. We are in our beta form right now, but we hope to soon set up a
+                    better policy.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tosModal" tabindex="-1" role="dialog" aria-labelledby="tosModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="tosModalLabel">Terms of Service</h4>
+      </div>
+      <div class="modal-body">
+        <p>Payment processing services for CampusThrift are provided by Stripe and are subject to the Stripe Connected Account Agreement, which includes the Stripe Terms of Service (collectively, the “Stripe Services Agreement”). By agreeing to this agreement  or continuing to operate as on CampusThrift, you agree to be bound by the Stripe Services Agreement, as the same may be modified by Stripe from time to time. As a condition of CampusThrift enabling payment processing services through Stripe, you agree to provide CampusThrift accurate and complete information about you and your business, and you authorize CampusThrift to share it and transaction information related to your use of the payment processing services provided by Stripe.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
 
 </html>

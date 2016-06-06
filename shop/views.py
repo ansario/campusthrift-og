@@ -1,17 +1,74 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.forms import modelformset_factory, BaseFormSet
 from django import forms
+import stripe
 from users.models import UserProfile
 from campusthrift.forms import ItemForm, ImageForm
 from models import Category, Subcategory, Item, ItemImage
 import simplejson
 from PIL import Image
+from django.contrib.auth.decorators import login_required
+
+from watson import search as watson
 # Create your views here.
 def shop(request):
 
+    if 'q' in request.GET:
 
-    return render(request, 'shop/shop.html')
+        items = watson.filter(Item, request.GET['q'])
+        categories = Category.objects.all()
 
+    else:
+        items = Item.objects.all().filter(user__user__graduated=False)
+        categories = Category.objects.all()
+
+    return render(request, 'shop/shop.html', {'items':items, 'categories':categories})
+
+def shop_category(request, category):
+
+    items = Item.objects.all().filter(category=category, user__user__graduated=False)
+    categories = Category.objects.all()
+    return render(request, 'shop/shop.html', {'items':items, 'categories':categories})
+
+def shop_subcategory(request, category, subcategory):
+
+    category = category.replace("%20", ' ')
+    subcategory = subcategory.replace("%20", ' ')
+
+    items = Item.objects.all().filter(category=category, sub_category=subcategory, user__user__graduated=False)
+    categories = Category.objects.all()
+
+    return render(request, 'shop/shop.html', {'items': items, 'categories': categories})
+
+
+def cart_delete(request, pk):
+
+    cart = request.session.get('cart', {})
+    try:
+        del cart[pk]
+        request.session['cart'] = cart
+        return redirect('view_cart')
+    except:
+        return redirect('view_cart')
+
+
+def delete_item(request, pk):
+
+    errors = []
+
+
+
+    if Item.objects.filter(pk=pk).exists():
+        if Item.objects.get(pk=pk).user == request.user:
+            Item.objects.filter(pk=pk).delete()
+
+    return redirect('profile')
+
+
+
+
+
+@login_required(login_url='/login')
 def new(request):
 
     errors = []
@@ -27,10 +84,12 @@ def new(request):
             item = form.save(commit=False)
             item.user = request.user
             item.save()
+            item.category = request.POST['selectcategories']
+            item.sub_category = request.POST['selectsubcategories']
             saved_item = item
 
 
-        imageForm = ImageForm(request.POST, request.POST)
+        imageForm = ImageForm(request.POST, request.FILES)
         print imageForm
         if len(request.FILES) != 0 and saved_item:
 
@@ -40,13 +99,30 @@ def new(request):
 
                 new_image = ItemImage()
                 new_image.image = request.FILES[image]
-                new_image.rotation = request.POST[str(image).replace("image", "rotation")]
+                new_image.rotation = request.POST[str(image).replace("picture", "rotation")]
                 new_image.item = saved_item
                 new_image.save()
 
                 im = Image.open(new_image.image)
                 rotated_image = im.rotate(-1 * float(new_image.rotation))
                 rotated_image.save(new_image.image.file.name, overwrite=True)
+
+
+            if request.user.user.listed_first_item:
+
+                result = stripe.Charge.create(
+                       amount = int(50),
+                       currency = "usd",
+                       customer = request.user.user.stripe_customer_id,
+                       description = "Listing fee for " + saved_item.title
+                )
+                saved_item.stripe_listing_fee_id = result.id
+                saved_item.save()
+            else:
+                request.user.user.listed_first_item = True
+                request.user.user.save()
+                saved_item.stripe_listing_fee_id = "FIRSTTIME"
+                saved_item.save()
 
             redirect('shop')
             # print request.FILES[image]
@@ -67,6 +143,7 @@ def new(request):
     return render(request, 'shop/new.html', {'form':form, 'categories': items, 'imageForm': imageForm, 'formset': formset, 'error':errors})
 
 
+@login_required(login_url='/login')
 
 def view_cart(request):
 
@@ -118,15 +195,18 @@ def view_item(request, pk):
 
 def getdetails(request):
     #country_name = request.POST['country_name']
+    print(request.body)
     category_name = request.GET['cnt']
+    print category_name
 
+    # print(request.data)
 
     result_set = []
     all_subcategories = []
     answer = str(category_name[1:-1])
     selected_category = Category.objects.get(name=answer)
 
-    all_subcategories = selected_category.subcategory_set.all()
+    all_subcategories = selected_category.subcategories.all()
     for subcategory in all_subcategories:
 
         result_set.append({'name': subcategory.name})

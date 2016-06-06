@@ -9,6 +9,9 @@
             background-image: url(../../../static/images/background.png);
             background-repeat: repeat;
         }
+        a.btn.btn-success {
+    margin-bottom: 10px;
+}
     </style>
 
 
@@ -16,43 +19,84 @@
     <div id="profile-modal" class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Profile<h4>
+                <h4 class="modal-title" id="myModalLabel">Profile</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="well">
-                            <div>
-                                <h1 class="pull-left">Hi {{ user.first_name }}!</h1>
-                                <img class="pull-right img-responsive	 profile-pic"
-                                     src=/media/{{ profile.picture }}>
+                        <div>
+                            <h1 class="pull-left">Hi {{ user.first_name }}!</h1>
+                            <img class="pull-right img-responsive	 profile-pic"
+                                 src=/media/{{ profile.picture }}>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Profile Information</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="">
+                                    <br>
+                                    <table class="table">
+                                        <tr>
+                                            <td><strong>First Name</strong></td>
+                                            <td>{{ user.first_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Last Name</strong></td>
+                                            <td>{{ user.last_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Email</strong></td>
+                                            <td>{{ user.email }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>School</strong></td>
+                                            <td>{{ profile.school }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Graduation Year</strong></td>
+                                            <td>{{ profile.graduation_year }}</td>
+                                            {#                                    {{ payment_information }}#}
+                                        </tr>
+                                    </table>
+                                </div>
+
                             </div>
 
-                            <br>
-                            <table class="table">
-                                <tr>
-                                    <td><strong>First Name</strong></td>
-                                    <td>{{ user.first_name }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Last Name</strong></td>
-                                    <td>{{ user.last_name }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Email</strong></td>
-                                    <td>{{ user.email }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>School</strong></td>
-                                    <td>{{ profile.school }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Graduation Year</strong></td>
-                                    <td>{{ profile.graduation_year }}</td>
-                                </tr>
-                            </table>
                         </div>
                         <a href="/profile/edit" class="btn btn-success">Edit Profile</a>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Payment Information</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <table class="table">
+                                    <tr>
+                                        <td><strong>Card Type</strong></td>
+                                        <td>{{ payment_information.brand }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Last 4</strong></td>
+                                        <td>{{ payment_information.last4 }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Expiration</strong></td>
+                                        <td>{{ payment_information.exp_month }}/{{ payment_information.exp_year }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <a href="/profile/payment/edit" class="btn btn-success">Edit Payment Information</a>
+
+
                     </div>
 
                 </div>
@@ -60,16 +104,102 @@
         </div>
     </div>
 
+
     <div id="selling-modal" class="modal-dialog modal-lg ">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Selling<h4>
+                <h4 class="modal-title" id="myModalLabel">Selling</h4>
+            </div>
+            <div class="modal-body">
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>
+                            ID
+                        </td>
+                        <td>
+                           Title
+                        </td>
+                        <td>
+                            Price
+                        </td>
+                        <td>
+                            Shipping Method
+                        </td>
+                        <td>
+                            Shipping Price
+                        </td>
+                        <td>
+                            Action
+                        </td>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for sale in current_sales %}
+                        <tr>
+                            <td>
+                                {{ sale.pk }}
+                            </td>
+                            <td>
+                                {{ sale.title }}
+                            </td>
+                            <td>
+                                ${{ sale.price }}
+                            </td>
+                            <td>
+                                {% if sale.shipping == 1 %}
+                                    On Campus
+                                {% elif sale.shipping == 2 %}
+                                    Off Campus
+                                {% else %}
+                                    On or Off Campus
+                                {% endif %}
+                            </td>
+                            <td>
+                               {% if sale.shipping == 1 %}
+                                   Free!
+                                {% elif sale.shipping == 2 %}
+                                    ${{ sale.shipping_price }}
+                                {% else %}
+                                    Free or ${{ sale.shipping_price }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="/shop/view/{{ sale.pk }}"
+                                               class="btn btn-primary" role="button">View Item in Shop</a>
+                                <a href="/shop/item/{{ sale.pk }}/delete"
+                                               class="btn btn-danger" role="button">Delete</a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="selling-modal" class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Order Dashboard</h4>
             </div>
             <div class="modal-body">
                 <ul class="nav nav-pills">
-                    <li class="active"><a  data-toggle="pill" href="#home">Orders <span class="badge">{{ orders|length }}</span></a></li>
-                    <li><a data-toggle="pill" href="#menu1">Pending Sold Items <span class="badge">{{ pending_sold_items|length }}</span></a></li>
-                    <li><a data-toggle="pill" href="#menu2">Pending Purchased Items <span class="badge">{{ pending_purchased_items|length }}</span></a></li>
+                    <li class="active"><a data-toggle="pill" href="#home">Orders <span
+                            class="badge">{{ orders|length }}</span></a></li>
+                    <li><a data-toggle="pill" href="#menu1">Pending Sold Items <span
+                            class="badge">{{ pending_sold_items|length }}</span></a></li>
+                    <li><a data-toggle="pill" href="#menu2">Pending Purchased Items <span
+                            class="badge">{{ pending_purchased_items|length }}</span></a></li>
 
                 </ul>
 
@@ -79,73 +209,198 @@
 
                         <table class="table">
                             <thead>
+                            <tr>
+                                <td>
+                                    ID
+                                </td>
+                                <td>
+                                    Date
+                                </td>
+                                <td>
+                                    Total
+                                </td>
+                                <td>
+                                    Status
+                                </td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for order in orders %}
                                 <tr>
                                     <td>
-                                        ID
+                                        {{ order.primary_key }}
+                                    </td>
+                                    <td>
+                                        {{ order.date }}
+                                    </td>
+                                    <td>
+                                        {{ order.final_total }}
+                                    </td>
+                                    <td>
+                                        {% if order.payment_confirmed %}
+                                            <span class="label label-success">Payment Processed</span>
+                                        {% else %}
+                                            <span class="label label-warning">Payment Processing</span>
+                                        {% endif %}
+                                        {% if order.complete %}
+                                            <span class="label label-success">Order Complete</span>
+                                        {% else %}
+                                            <span class="label label-warning">Order Incomplete</span>
+                                        {% endif %}
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>Pending Sold Item Confirmation</h3>
+                        <p class="small">For your protection, we require confirmation when you send your items to your
+                            buyer. Once you confirm that you have sent the item, the buyer
+                            has 3 days to confirm the receipt of the item. As soon as they do, you will receive the
+                            money deposited to your debit card on file. If they do not confirm after 3 days,
+                            the order will automatically be confirmed.</p>
+
+                        {% if pending_sold_items|length != 0 %}
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td>
+                                        Item ID
+                                    </td>
+                                    <td>
+                                        Ship To
                                     </td>
                                     <td>
                                         Date
                                     </td>
                                     <td>
-                                        Total
+                                        Status
+                                    </td>
+                                    <td>
+                                        Action
                                     </td>
 
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {% for order in orders %}
+                                </thead>
+                                <tbody>
+                                {% for pending_item in pending_sold_items %}
                                     <tr>
                                         <td>
-                                            {{ order.primary_key }}
+                                            {{ pending_item.pk }}
                                         </td>
                                         <td>
-                                            {{ order.date }}
+                                            {% if pending_item.shipping_method == 1 %}
+                                                On Campus Pickup - Contact <a href="mailto:{{ pending_item.order.buyer.email }}?Subject=CampustThrift%20Order%20{{ pending_item.order.primary_key }}" target="_top">{{ pending_item.order.buyer.email }}</a>
+                                            {% else %}
+                                                {{ pending_item.order.shipping_address }}
+                                                {{ pending_item.order.city }},
+                                                {{ pending_item.order.state }}
+                                                {{ pending_item.order.zip }}
+                                            {% endif %}
+
                                         </td>
                                         <td>
-                                            {{ order.final_total }}
+                                            {{ pending_item.order.date }}
+                                        </td>
+                                        <td>
+                                            {% if not pending_item.seller_confirmed %}
+                                                <span class="label label-danger">Confirmation Required</span>
+                                            {% else %}
+                                                <span class="label label-success">Confirmation Received</span>
+                                            {% endif %}
+
+                                        </td>
+                                        <td>
+
+                                            <a href="/seller_confirm/{{ pending_item.order.primary_key }}{{ pending_item.pk }}"
+                                               class="btn btn-primary" role="button">Confirm Sale</a>
+
                                         </td>
 
                                     </tr>
                                 {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="menu1" class="tab-pane fade">
-                        <h3>Menu 1</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.</p>
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <hr>
+                            <h4>It looks like you don't have any confirmations required right now! Happy thrifting!</h4>
+                        {% endif %}
                     </div>
                     <div id="menu2" class="tab-pane fade">
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam.</p>
-                    </div>
+                        <h3>Pending Purchased Item Confirmation</h3>
+                        <p class="small">For your protection, we require confirmation when you receive your purchased
+                            item from your seller. If there are any problems with your order, please feel free to
+                            contact our support
+                            team. If you do not confirm your order within three days, the order will automatically be
+                            confirmed.</p>
 
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <table class="table">
-                            {% for sale in current_sales %}
+                        {% if pending_purchased_items|length != 0 %}
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td><strong>{{ sale.title }}</strong></td>
                                     <td>
-                                        {{ sale.description | truncatechars:20 }}
-                                        <br>
-                                        ${{ sale.price }}
-                                        <i class="fa fa-chevron-right pull-right" aria-hidden="true"></i>
+                                        Item ID
                                     </td>
+                                    <td>
+                                        Parent Order
+                                    </td>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Status
+                                    </td>
+                                    <td>
+                                        Action
+                                    </td>
+
                                 </tr>
-                            {% endfor %}
+                                </thead>
+                                <tbody>
+                                {% for pending_item in pending_purchased_items %}
+                                    <tr>
+                                        <td>
+                                            {{ pending_item.pk }}
+                                        </td>
+                                        <td>
+                                            {{ pending_item.order.primary_key }}
+                                        </td>
+                                        <td>
+                                            {{ pending_item.order.date }}
+                                        </td>
+                                        <td>
+                                            {% if not pending_item.buyer_confirmed %}
+                                                <span class="label label-danger">Confirmation Required</span>
+                                            {% else %}
+                                                <span class="label label-success">Confirmation Received</span>
+                                            {% endif %}
 
-                        </table>
+                                        </td>
+                                        <td>
+                                            <a href="/profile/order/view/{{ pending_item.order.pk }}"
+                                               class="btn btn-primary" role="button">View Order</a>
+                                            <a href="/buyer_confirm/{{ pending_item.order.primary_key }}{{ pending_item.pk }}"
+                                               class="btn btn-primary" role="button">Confirm Item Receipt</a>
 
-                        <a href="/profile/edit" class="btn btn-success">Edit Profile</a>
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <hr>
+                            <h4>It looks like you don't have any confirmations required right now! Happy thrifting!</h4>
+                        {% endif %}
+
                     </div>
 
                 </div>
             </div>
         </div>
-    </div>
 
 
 

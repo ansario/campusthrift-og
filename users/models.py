@@ -30,22 +30,24 @@ def pkgen():
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User, related_name='user')
-
+    graduated = models.BooleanField(default=False)
     # The additional attributes we wish to include.
     primary_key = models.CharField(max_length=10, primary_key=True, default=pkgen)
     activation_key = models.CharField(max_length=40, default="0")
     key_expires = models.DateTimeField(default=datetime.now())
     # first_name = models.CharField(max_length=200)
     # last_name = models.CharField(max_length=200)
-    braintree_merchant_id = models.CharField(max_length=200)
-    braintree_customer_id = models.CharField(max_length=200)
+    stripe_customer_id = models.CharField(max_length=200)
+    stripe_account_id = models.CharField(max_length=200)
     picture = models.FileField(upload_to='uploads/')
     school = models.CharField(max_length=200)
     date_of_birth = models.DateField()
     graduation_year = models.IntegerField()
+    address = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
     state = USStateField(choices=STATE_CHOICES)
     zip = models.IntegerField(max_length=200)
+    listed_first_item = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
 

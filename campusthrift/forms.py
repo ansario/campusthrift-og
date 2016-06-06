@@ -11,7 +11,7 @@ from shop.models import Item, ItemImage
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['picture', 'school', 'graduation_year', 'date_of_birth', 'city', 'state', 'zip']
+        fields = ['picture', 'school', 'graduation_year', 'date_of_birth', 'address', 'city', 'state', 'zip']
 
 class UserForm(ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -26,6 +26,7 @@ class UserEditForm(ModelForm):
         fields = ('username', 'first_name', 'last_name', 'email')
 
 class UserLoginForm(ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
         model = User
         fields = ('email', 'password')
@@ -33,7 +34,8 @@ class UserLoginForm(ModelForm):
 class ItemForm(ModelForm):
     class Meta:
         model = Item
-        exclude = ('user', 'sold')
+        fields = ('title', 'description', 'price', 'shipping_price', 'shipping','meeting_place')
+        # exclude = ('user', 'sold', 'stripe_listing_fee_id', 'category', 'sub_category')
 
 class ImageForm(ModelForm):
     class Meta:

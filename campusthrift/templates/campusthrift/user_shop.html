@@ -1,0 +1,82 @@
+{% extends "campusthrift/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+    <style>
+        body {
+            background-image: url(../../../static/images/background.png);
+            background-repeat: repeat;
+        }
+    </style>
+
+    <div id="login-overlay" class="modal-dialog modal-lg" style="width: 80%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">{{ item.title }}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div id="products" class="row list-group">
+                            {% if items %}
+                                {% for item in items %}
+
+
+                                    <div class="item  col-xs-4 col-lg-4">
+                                        <div class="thumbnail">
+                                            <img class="group list-group-image" src=" {{ item.images.all.0.image.url }}"
+                                                 alt=""/>
+                                            <div class="caption">
+                                                <h4 class="">
+                                                    {{ item.title|truncatechars:20 }}</h4>
+                                                <p class="group inner list-group-item-text">
+                                                    {{ item.description|truncatechars:25 }}</p>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <p class="lead">
+                                                            ${{ item.price }}</p>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <a class="btn btn-success" href="/shop/view/{{ item.pk }}">View
+                                                            Item</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                {% endfor %}
+
+                            {% else %}
+                                <h4>Oops! It looks like there are not items matching this category right now! Please try
+                                    again later.
+                                    Happy Thrifting!</h4>
+                            {% endif %}
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="seller-info">
+                            <h4>About the seller:</h4>
+                            <h5>Name</h5>
+                            {{ user.first_name }}
+                            <h5>School</h5>
+                            {{ user.user.school }}
+                            <h5>Graduation Year</h5>
+                            {{ user.user.graduation_year }}
+                            <h5>Profile</h5>
+                            <a href="http://www.campusthrift.com/user/{{ user.username }}">campusthrift.com/user/{{ user.username }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+{% endblock content %}

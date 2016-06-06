@@ -1,165 +1,175 @@
 {% extends "campusthrift/base.html" %}
 {% load staticfiles %}
 {% block content %}
+    <style>
+        html {
+            overflow-x: hidden;
+        }
 
+        .hovereffect {
+            width: 100%;
+            height: 100%;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            cursor: default;
+        }
 
-<!-- Header -->
+        .hovereffect .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            top: -200px;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: all 0.1s ease-out 0.5s;
+            transition: all 0.1s ease-out 0.5s;
+        }
+
+        .hovereffect:hover .overlay {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            top: 0px;
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        .hovereffect img {
+            display: block;
+            position: relative;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .hovereffect h2 {
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            font-size: 17px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            -webkit-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+            transform: translateY(-200px);
+            -webkit-transition: all ease-in-out 0.1s;
+            transition: all ease-in-out 0.1s;
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+
+        .hovereffect:hover h2 {
+            -webkit-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            transform: translateY(0px);
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+
+        .hovereffect a.info {
+            display: inline-block;
+            text-decoration: none;
+            padding: 7px 14px;
+            text-transform: uppercase;
+            margin: 50px 0 0 0;
+            background-color: transparent;
+            -webkit-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+            transform: translateY(-200px);
+            color: #000;
+            border: 1px solid #000;
+            -webkit-transition: all ease-in-out 0.3s;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .hovereffect a.info:hover {
+            box-shadow: 0 0 5px #fff;
+        }
+
+        .hovereffect:hover a.info {
+            -webkit-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            transform: translateY(0px);
+            box-shadow: 0 0 5px #000;
+            color: #000;
+            border: 1px solid #000;
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+
+        .images {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .image-display {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+    <script src="{% static "js/mason.js" %}"></script>
+
+    <!-- Header -->
     <div class="full parent">
         <div class="child text-center white">
             <h1 class="large text-shadow">Campus Thrift</h1>
-            <p class="med text-shadow">The first online thrift store exclusively for college students. Sign in with your school
-            administered .edu email, and start buying and selling between students nationwide.</p>
+            <h5 class="med text-shadow">The first online thrift store exclusively for college students. Sign in with your
+                school
+                administered .edu email, and start buying and selling between students nationwide.</h5>
         </div>
     </div>
 
-    <div class="home-products">
+    <div class="row">
 
-        <h1 class="padding">Clothing</h1>
+        {% for item in items %}
 
-        <!-- Clothing -->
-        <div class="row text-center padding">
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="padding">
-              <a class="padding">Shop Clothing!
-                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-              </a>
-          </div>
-        </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 images">
+                <a href="/shop/view/{{ item.pk }}">
+                    <div class="hovereffect">
+                        <img class="image-display" src="{{ item.images.all.0.image.url }}" alt="">
+                        <div class="overlay">
+                            <h2>{{ item.title }}</h2>
+                            <br>
+                            <br>
+                            <h4>${{ item.price }}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        <hr class="black">
-
-        <!-- Shoes -->
-        <h1 class="padding">Shoes</h1>
-        <div class="row text-center padding">
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="padding">
-              <a class="padding">Shop Shoes!
-                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-              </a>
-          </div>
-        </div>
-
-        <hr class="black">
-
-        <!-- Accessories -->
-        <h1 class="padding">Accessories</h1>
-        <div class="row text-center padding">
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="padding">
-              <a class="padding">Shop Accessories!
-                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-              </a>
-          </div>
-        </div>
-
-        <hr class="black">
-        <!-- Apartment -->
-        <h1 class="padding">Apartment</h1>
-        <div class="row text-center padding">
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="padding">
-              <a class="padding">Shop Apartment!
-                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-              </a>
-          </div>
-        </div>
-
-        <hr class="black">
-        <!-- School -->
-        <h1 class="padding">School</h1>
-        <div class="row text-center padding">
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="col-md-4">
-              <img src="http://placehold.it/200x200">
-              <a><h4>Test</h4></a>
-          </div>
-          <div class="padding">
-              <a class="padding">Shop School!
-                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-              </a>
-          </div>
-        </div>
-
-
+        {% endfor %}
     </div>
 
 
-    <footer class="footer">
-        <div class="row text-center padding">
-            <div class="col-md-4">
-                <h1>Pricing:</h1>
-                <p>The seller sets the price and shipping price that they see fit for their item.</p>
-            </div>
-            <div class="col-md-4">
-                <h1>Refund Policy:</h1>
-                <p>There are no refunds currently. We are in our beta form right now, but we hope to soon set up a better policy.</p>
-            </div>
-            <div class="col-md-4">
-                <h1>Terms of Service:</h1>
-                <p>Campusthrift uses Braintree, a division of PayPal, Inc. (Braintree) for payment processing services. By using the Braintree payment processing services you agree to the Braintree Payment Services Agreement available at https://www.braintreepayments.com/legal/gateway-agreement, and the applicable bank agreement available at https://www.braintreepayments.com/legal/cea-wells .</p>
-            </div>
 
-        </div>
-    </footer>
 
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-  <div class="scroll-top page-scroll visible-xs visible-sm">
-    <a class="btn btn-primary" href="#page-top">
-      <i class="fa fa-chevron-up"></i>
-    </a>
-  </div>
 
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            function getRandomSize(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
+            }
+
+            for (var i = 0; i < 25; i++) {
+                var width = getRandomSize(200, 400);
+                var height = getRandomSize(200, 400);
+                $('#photos').append('<img src="http://www.unsplash.it/' + width + '/' + height + '/" alt="pretty kitty">');
+            }
+        });
+    </script>
 
 
 

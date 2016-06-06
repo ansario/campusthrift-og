@@ -18,7 +18,7 @@
         <div id="profile-modal" class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Profile</h4>
+                    <h4 class="modal-title" id="myModalLabel">Checkout</h4>
                 </div>
                 <div class="modal-body">
 
@@ -128,38 +128,46 @@
                             <h3 class="panel-title">Shipping Information</h3>
                         </div>
                         <div class="panel-body">
-
+                            <p class="small">Even if you plan on picking all of your items up on campus, we still require your shipping
+                            address just in case!</p>
 
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="first_name" id="first_name"
+                                    <div class="form-group required">
+                                        <label for="first_name" class='control-label'>First Name</label>
+                                        <input type="text" required="required" name="first_name" id="first_name"
                                                class="form-control input-lg"
                                                placeholder="First Name" tabindex="1">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="last_name" id="last_name" class="form-control input-lg"
+
+                                    <div class="form-group required">
+                                        <label for="last_name" class='control-label'>Last Name</label>
+                                        <input type="text" name="last_name" required="required" id="last_name" class="form-control input-lg"
                                                placeholder="Last Name" tabindex="2">
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="address" id="address" class="form-control input-lg"
+                            <div class="form-group required">
+                                <label for="address" class='control-label'>Address</label>
+                                <input type="text" name="address"  required="required" id="address" class="form-control input-lg"
                                        placeholder="Address"
                                        tabindex="3">
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="city" id="city" class="form-control input-lg"
+                            <div class="form-group required">
+                                <label for="city" class='control-label'>City</label>
+                                <input type="text" name="city" id="city" required="required" class="form-control input-lg"
                                        placeholder="City"
                                        tabindex="4">
+
                             </div>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group required">
+                                        <label for="state" class='control-label'>State</label>
                                         {#                            <label for="state">State</label>#}
-                                        <select class="form-control input-lg" name="state" id="state">
+                                        <select class="form-control input-lg" name="state"  required="required" id="state">
                                             <option value="AL">Alabama</option>
                                             <option value="AK">Alaska</option>
                                             <option value="AZ">Arizona</option>
@@ -216,8 +224,9 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="zip" id="zip"
+                                    <div class="form-group required">
+                                        <label for="zip" class='control-label'>Zip</label>
+                                        <input type="text" name="zip" id="zip" required="required"
                                                class="form-control input-lg" placeholder="Zip Code" tabindex="6">
                                     </div>
                                 </div>
@@ -225,8 +234,31 @@
 
                         </div>
                     </div>
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Payment Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                    <tr>
+                                        <td><strong>Card Type</strong></td>
+                                        <td>{{ payment_information.brand }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Last 4</strong></td>
+                                        <td>{{ payment_information.last4 }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Expiration</strong></td>
+                                        <td>{{ payment_information.exp_month }}/{{ payment_information.exp_year }}</td>
+                                    </tr>
+                                </table>
+                                <p class="small">If you would like to edit your payment information, please visit the profile page.</p>
+                        </div>
+                     </div>
 
-
+                    <button class="btn btn-success pull-right" type="submit">Confirm</button>
+                    <div class="clearfix"></div>
                     {% if errors %}
                         <div class="alert alert-danger alert-dismissible" role="alert">
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -241,138 +273,10 @@
                         </div>
                     {% endif %}
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Payment Information</h3>
-                        </div>
-                        <div class="panel-body">
 
-
-                            <div class="row">
-
-                                <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" data-braintree-name="cardholder_name"
-                                               class="form-control input-lg" name="name"
-                                               placeholder="First Last" required autofocus tabindex="2"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" data-braintree-name="number" type="text"
-                                       class="form-control input-lg"
-                                       name="number"
-                                       placeholder="Valid Card Number" required autofocus
-                                       placeholder="Card Number"
-                                       tabindex="3">
-                            </div>
-                            <div class="row">
-
-                                <div class="col-xs-4 col-sm-4 col-md-4">
-                                    <div class="form-group">
-                                        <input name="expiry_month" data-braintree-name="expiration_month"
-                                               class="form-control input-lg"
-                                               placeholder="MM" type="text"/>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4 col-sm-4 col-md-4">
-                                    <div class="form-group">
-                                        <input name="expiry_year" data-braintree-name="expiration_year"
-                                               class="form-control input-lg"
-                                               placeholder="YYYY" type="text"/>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4 col-sm-4 col-md-4">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control input-lg" name="cvc"
-                                               placeholder="CVC" data-braintree-name="cvv" required
-                                               data-stripe="cvc"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row" style="display:none;">
-                                <div class="col-xs-12">
-                                    <p class="payment-errors"></p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="button-checkout">
-                            <button class="btn btn-success pull-left">Confirmation</button>
-                            <button class="btn btn-success pull-right">Confirmation</button>
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
         </div>
-{##}
-{#        <div id="selling-modal" class="modal-dialog modal-sm ">#}
-{#            <div class="modal-content">#}
-{#                <div class="modal-header">#}
-{#                    <h4 class="modal-title" id="myModalLabel">Review</h4>#}
-{#                </div>#}
-{#                <div class="modal-body">#}
-{#                    {% for item in items %}#}
-{#                        <div class="row">#}
-{#                         <div class="col-xs-6 col-sm-6 col-md-6">#}
-{#                                    {{ item.title }}#}
-{#                                </div>#}
-{#                         <div class="col-xs-6 col-sm-6 col-md-6">#}
-{#                                    <p class="pull-right">{{ item.price }}</p>#}
-{#                                </div>#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-{##}
-{#                    <hr>#}
-{##}
-{#                <p class="pull-left">Sub Total</p>#}
-{#                <p class="pull-right">${{ sub_total }}</p>#}
-{##}
-{#               <br>#}
-{#                <hr>#}
-{##}
-{#                <p class="pull-left">Shipping</p>#}
-{#                <p class="pull-right">${{ total_shipping }}</p>#}
-{#                <br>#}
-{#                <hr>#}
-{#                <strong class="pull-left">Total</strong>#}
-{#                <strong class="pull-right">${{ total }}</strong>#}
-{#                <br>#}
-{#                    <button class="btn btn-block btn-success" type="submit" >Complete Purchase</button>#}
-{##}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-        <div class="card-preview">
-            <div class="card-wrapper"></div>
-        </div>
+    </div>
     </form>
-
-
-
-    <script>
-        var card = new Card({
-            form: document.querySelector('form'),
-            container: '.card-wrapper'
-        })
-    </script>
-
-
-
-
-    <script>
-        braintree.setup("{{ request.session.braintree_client_token }}", "custom", {
-            id: "checkout"
-        });
-
-        $('.checkout').on('submit', function(e) {
-            e.preventDefault();
-        });
-    </script>
-
-
 
 {% endblock content %}

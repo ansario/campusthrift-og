@@ -36,14 +36,20 @@ class Order(models.Model):
     buyer = models.ForeignKey(User, related_name='item_buyer')
     date = models.DateTimeField(default=datetime.now())
     primary_key = models.CharField(max_length=10, primary_key=True, default=pkgen)
-    payment = models.CharField(max_length=200)
     confirmed = models.BooleanField(default=False)
+    payment_confirmed = models.BooleanField(default=False)
+    complete = models.BooleanField(default=False)
+
     sub_total = models.DecimalField(max_digits=5,decimal_places=2,validators=[
 									MinValueValidator(0)])
     shipping_total = models.DecimalField(max_digits=5,decimal_places=2,validators=[
 									MinValueValidator(0)])
     final_total = models.DecimalField(max_digits=5,decimal_places=2,validators=[
 									MinValueValidator(0)])
+    shipping_address = models.CharField(max_length=500)
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=200)
+    zip = models.CharField(max_length=200)
 
 class OrderItem(models.Model):
 
@@ -60,4 +66,4 @@ class OrderItem(models.Model):
 									MinValueValidator(0)])
     seller_confirmed = models.BooleanField(default=False)
     buyer_confirmed = models.BooleanField(default=False)
-    braintree_id_transaction = models.CharField(max_length=200)
+    stripe_charge_id = models.CharField(max_length=200)

@@ -24,18 +24,7 @@
 
                         {% endfor %}
                         {% endif %}
-{#                                    {% for error in field.errors %}#}
-{#                                        <p> {{ errors }} </p>#}
-{#                                    {% endfor %}#}
 
-{#                        {{ form.non_field_errors }}#}
-{#                            {% if form.errors %}#}
-{#                                {% for field in form %}#}
-{#                                    {% for error in field.errors %}#}
-{#                                        <p> {{ errors }} </p>#}
-{#                                    {% endfor %}#}
-{#                                {% endfor %}#}
-{#                            {% endif %}#}
                             <form id="loginForm" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 {{ form | crispy }}
@@ -64,15 +53,58 @@
                                         {{ field }} <br/>
                                     {% endfor %}
 
-                                    {{ formset.management_form }}
-                                    {% for form in formset %}
-                                        {{ form }}
-                                    {% endfor %}
+                                    <br>
+                                    <label for="picture-0">Images:</label>
+                                    <input id="picture-0" type="file" name="picture-0" accept="image/*" onchange="displayImage(this); readURL(this)">
+                                    <input id="rotation-0" type="hidden" name="rotation-0" value="0">
+                                    <br>
+                                    <a class="add">Add additional images</a>
 
                                 </div>
+                                    <p class="small"> Note, there is a $.50 listing fee after your first item. The debit card we have on file for you will be charged.</p>
                                    <button type="submit" class="save btn btn-default black-button">Post</button>
                             </form>
+
                                 <script>
+
+                                      $(document).ready(function() {
+                                                $('#id_meeting_place').hide();
+                                                $('label[for="id_meeting_place"]').hide();
+
+                                                $('#id_shipping').change(function() {
+
+                                                    if ($(this).val() != 2 ) {
+                                                        $('#id_meeting_place').show();
+                                                        $('label[for="id_meeting_place"]').show();
+                                                    } else {
+                                                        $('#id_meeting_place').hide();
+                                                        $('label[for="id_meeting_place"]').hide();
+                                                    }
+                                            });
+                                        });
+
+
+
+                                    $(".add").click(function (){
+
+{#                                        var uploads = $('[id ^=rotation-]').find('*');#}
+                                        var divs  = $('[id ^=rotation-]');
+
+                                        var last = divs.length - 1;
+
+                                        var last_id = divs[last].id;
+
+                                        var next = last + 1;
+                                        if (last < 4){
+                                            $('#'+last_id).after('<input onchange="displayImage(this); readURL(this)" id="picture-' + next + '" type="file" name="picture-'+ next + '" accept="image/*"> ' +
+                                                '<input id="rotation-'+ next + '" type="hidden" name="rotation-'+ next +'" value="0"><br>')
+                                        }
+                                        else {
+                                            alert("You may only upload a maximum of 5 images.")
+                                        }
+
+
+                                    });
 
                                     var rotateLeft = function(e) {
                                         var classList = e.className.split(/\s+/);
@@ -81,92 +113,114 @@
 
                                             if (classList[i] !== 'btn') {
 
-                                               rotation_string = classList[i].replace("image", "rotation");
-                                               rotation_string = rotation_string.replace("img_previd_form", "id_form");
-                                               original_image_string =  classList[i];
+                                               rotation_string = classList[i].replace("img", "rotation");
+                                                original_image_string =  classList[i];
 
 
-{#                                                $("#"+rotation_string).val($("#"+rotation_string).val() - 90);#}
+{#                                                $("#rotation-1").val($("#rotation-1").val() - 90);#}
+
                                                 $(document).ready(function () {
-                                                    $("#"+rotation_string).val($("#"+rotation_string).val() - 90);
-
-                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'
-                                                    console.log("."+original_image_string);
-                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#"+rotation_string).val()+"deg)");
+                                                    $("#rotation-0").val(parseInt($("#rotation-0").val()) - 90);
+                                                      console.log($("#rotation-0").val());
+                                                      console.log("."+original_image_string);
+{#                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'#}
+{#                                                    console.log("."+original_image_string);#}
+                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#rotation-0").val()+"deg)");
                                                 });
                                             }
                                         }
                                     };
                                      var rotateRight = function(e) {
-                                         var classList = e.className.split(/\s+/);
+                                        var classList = e.className.split(/\s+/);
                                         console.log(classList);
                                         for (var i = 0; i < classList.length; i++) {
 
                                             if (classList[i] !== 'btn') {
 
-                                               rotation_string = classList[i].replace("image", "rotation");
-                                               rotation_string = rotation_string.replace("img_previd_form", "id_form");
-                                               original_image_string =  classList[i];
+                                               rotation_string = classList[i].replace("img", "rotation");
+                                                original_image_string =  classList[i];
 
 
-{#                                                $("#"+rotation_string).val($("#"+rotation_string).val() - 90);#}
+{#                                                $("#rotation-1").val($("#rotation-1").val() - 90);#}
+
                                                 $(document).ready(function () {
-                                                    $("#"+rotation_string).val(parseInt($("#"+rotation_string).val()) + 90);
-                                                      console.log($("#"+rotation_string).val());
+                                                    $("#rotation-0").val(parseInt($("#rotation-0").val()) + 90);
+                                                      console.log($("#rotation-0").val());
+                                                      console.log("."+original_image_string);
 {#                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'#}
 {#                                                    console.log("."+original_image_string);#}
-                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#"+rotation_string).val()+"deg)");
+                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#rotation-0").val()+"deg)");
                                                 });
                                             }
                                         }
                                     };
+                                    function readURL(input) {
+                                        if (input.files && input.files[0]) {
+                                            var reader = new FileReader();
 
-                                    $("document").ready(function () {
 
-                                        $('[id ^=id_form-][id $=image]').change(function () {
-                                            var groupNumber = $(this).attr('id').split('-')[1];
-                                            var id = $(this).attr('id');
-                                            $('.img_prev' + id).remove();
-                                            $("#" + id).after('<img class=img_prev' + id + ' height=\'100px\' width=\'100px\' src=\'\'><br class=img_prev' + id+ '>');
-                                            $(".img_prev" + id).filter('img').after('<br><button onclick="rotateLeft(this); return false;"" class="btn img_prev' +id+ '" style="margin-right: 5px""><i class="fa fa-rotate-left" aria-hidden="true"></i></button><button class="btn img_prev' +id+ '" onclick="rotateRight(this); return false;"" style="margin-left: 5px"><i class="fa fa-rotate-right" aria-hidden="true"></i></button');
-                                            if (this.files && this.files[0]) {
-                                                var reader = new FileReader();
-                                                current_file = this.files[0];
-                                                reader.onload = (function(f) {
-                                                    return function(e) {
+                                            reader.onload =  function (e) {
 
-                                                        $('.img_prev' + id).filter( "img" ).attr('src', e.target.result);
-                                                    };
-                                                })(current_file);
-                                                reader.readAsDataURL(current_file);
-                                            } else {
-                                                $('.img_prev' + id).remove();
+                                                var class_string = ".img_prev"+input.getAttribute('id')
+
+                                                var preview_image = $(class_string);
+
+                                                $(class_string).attr('src', e.target.result);
+
                                             }
-                                        });
-                                    });
+
+                                            reader.readAsDataURL(input.files[0]);
+                                        }
+                                    };
+
+{#                                    $("document").ready(function () {#}
+                                    var displayImage = function (element) {
+
+
+
+                                            var groupNumber = element.getAttribute('id').split('-')[1];
+                                            var id = element.getAttribute('id');
+
+                                            $('.img_prev' + id).remove();
+
+                                            class_string = "img_prev" + id;
+
+                                            $("#" + id).after('<img class=img_prev' + id + ' height=\'100px\' width=\'100px\' src=\'\'>');
+{#                                            var image_string = '<img src="" height="100px" width="100px" class="' + class_string + '" >'#}
+
+
+                                            $(".img_prev" + id).after('<br><button type="button" onclick="rotateLeft(this); return false;"" class="btn img_prev' + id + '" style="margin-right: 5px""><i class="fa fa-rotate-left" aria-hidden="true"></i></button><button type="button" class="btn img_prev' + id + '" onclick="rotateRight(this); return false;"" style="margin-left: 5px"><i class="fa fa-rotate-right" aria-hidden="true"></i></button><br>');
+
+                                            readURL(this);
+
+
+                                    };
+{#                                    });#}
                                 </script>
                                 <script>
                                     $(document).ready(function () {
                                         $("#selectcategories").prop("selectedIndex", -1);
-
                                         $('select#selectcategories').change(function () {
                                             var optionSelected = $(this).find("option:selected");
                                             var valueSelected = optionSelected.val();
                                             var category_name = optionSelected.text();
+{#                                            data = {'cnt': category_name};#}
+                                             $.ajax({url: '/getdetails', data: {'cnt': category_name}, success: function(result){
+                                                    $("#selectsubcategories option").remove();
+                                                    for (var i = result.length - 1; i >= 0; i--) {
+                                                        $("#selectsubcategories").append('<option>' + result[i].name + '</option>');
+                                                    }
+                                             }});
 
 
-                                            data = {'cnt': category_name};
-                                            ajax('/getdetails', data, function (result) {
-
-                                                console.log(result);
-                                                $("#selectsubcategories option").remove();
-                                                for (var i = result.length - 1; i >= 0; i--) {
-                                                    $("#selectsubcategories").append('<option>' + result[i].name + '</option>');
-                                                }
-                                                ;
-
-
-                                            });
+{#                                            ajax('/getdetails', data, function (result) {#}
+{#                                                console.log(result);#}
+{#                                                $("#selectsubcategories option").remove();#}
+{#                                                for (var i = result.length - 1; i >= 0; i--) {#}
+{#                                                    $("#selectsubcategories").append('<option>' + result[i].name + '</option>');#}
+{#                                                }#}
+{#                                                ;#}
+{#                                            });#}
                                         });
                                     });
                                 </script>

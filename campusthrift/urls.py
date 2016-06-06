@@ -33,11 +33,16 @@ urlpatterns = [
     url(r'^login$', views.user_login, name='user_login'),
     url(r'^profile$', views.profile, name='profile'),
     url(r'^profile/edit$', views.profile_edit, name="profile_edit"),
+    url(r'profile/payment/edit$', views.payment_edit, name="payment_edit"),
     url(r'^profile/order/view/(?P<order_number>\w+)/$', views.order_view, name="order_view"),
     url(r'^$', views.home, name='home'),
     url(r'^getdetails/', shop.views.getdetails),
+    url(r'^activate/(?P<activation_key>\w+)$', views.activate, name="activate"),
+    url(r'^user/(?P<user>\w+)$', views.user_store, name="user_store"),
+    url(r'^about$', views.about, name='about'),
     url(r'^buyer_confirm/(?P<id>\w+)/$', views.buyer_confirm, name="buyer_confirm"),
     url(r'^seller_confirm/(?P<id>\w+)/$', views.seller_confirm, name="seller_confirm"),
-    url(r'^webhook$',views.webhook,name='webhook'),
     # url('^u/', include('upload.urls')),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'campusthrift.views.handler404'
