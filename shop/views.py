@@ -124,7 +124,7 @@ def new(request):
                 saved_item.stripe_listing_fee_id = "FIRSTTIME"
                 saved_item.save()
 
-            redirect('shop')
+            return redirect('shop')
             # print request.FILES[image]
         else:
             errors.append("You must upload at least one image!")

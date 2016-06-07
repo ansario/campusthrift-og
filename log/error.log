@@ -1,0 +1,339 @@
+[Mon Jun 06 19:57:11.525697 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Attach interpreter ''.
+[Mon Jun 06 19:57:11.525967 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 19:57:11.526307 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 19:57:18.867981 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 19:57:18.869903 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 19:57:18.870183 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 19:57:18.870678 2016] [:info] [pid 5275] [remote 70.197.136.241:50087] mod_wsgi (pid=5275, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Mon Jun 06 23:59:50.401168 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Shutdown requested 'campusthrift.ansario.com'.
+[Mon Jun 06 23:59:50.401490 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Stopping process 'campusthrift.ansario.com'.
+[Mon Jun 06 23:59:50.401534 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Destroying interpreters.
+[Mon Jun 06 23:59:50.401641 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Destroy interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 23:59:50.624495 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Cleanup interpreter ''.
+[Mon Jun 06 23:59:50.632762 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Terminating Python.
+[Mon Jun 06 23:59:50.718113 2016] [:info] [pid 5275] mod_wsgi (pid=5275): Python has shutdown.
+[Mon Jun 06 19:59:51.675883 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Attach interpreter ''.
+[Mon Jun 06 19:59:51.676333 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 19:59:51.676888 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 19:59:54.843790 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 19:59:54.845843 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 19:59:54.846157 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 19:59:54.846762 2016] [:info] [pid 5445] [remote 70.197.136.241:44894] mod_wsgi (pid=5445, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Tue Jun 07 00:01:41.083814 2016] [:error] [pid 5445] <QueryDict: {u'username': [u'ansario'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JXf5EWHMaQm4YFEHqqMUDH'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JXf5EWHMaQm4YFpbKAKFBs'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1994-08-12'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'FmXCImQ0yhCkIWHFwFfJI4XrJVKyJwPF'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'ansario@email.sc.edu']}>
+[Tue Jun 07 00:01:41.084080 2016] [:error] [pid 5445] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: barecactus (1).png (image/png)>]}>
+[Tue Jun 07 00:01:41.308284 2016] [:error] [pid 5445] 2016
+[Tue Jun 07 00:01:41.308362 2016] [:error] [pid 5445] 2026
+[Tue Jun 07 00:01:43.516424 2016] [:error] [pid 5445] tok_18JXf5EWHMaQm4YFEHqqMUDH
+[Tue Jun 07 00:01:46.456637 2016] [:error] [pid 5445] attempt to write a readonly database
+[Tue Jun 07 00:03:23.866258 2016] [:error] [pid 5445] <QueryDict: {u'username': [u'ansario'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JXglEWHMaQm4YFRjLJQVeU'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JXglEWHMaQm4YFu42ktQP3'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1994-08-12'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'FmXCImQ0yhCkIWHFwFfJI4XrJVKyJwPF'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'ansario@email.sc.edu']}>
+[Tue Jun 07 00:03:23.866500 2016] [:error] [pid 5445] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: barecactus (1).png (image/png)>]}>
+[Tue Jun 07 00:03:24.040203 2016] [:error] [pid 5445] 2016
+[Tue Jun 07 00:03:24.040266 2016] [:error] [pid 5445] 2026
+[Tue Jun 07 00:03:25.942784 2016] [:error] [pid 5445] tok_18JXglEWHMaQm4YFRjLJQVeU
+[Tue Jun 07 00:14:21.492354 2016] [:error] [pid 5445] 
+[Tue Jun 07 00:14:21.492857 2016] [:error] [pid 5445]  Apartment 
+[Tue Jun 07 00:14:38.207710 2016] [:error] [pid 5445] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:14:38.207797 2016] [:error] [pid 5445] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 00:15:36.007383 2016] [:error] [pid 5445] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:15:36.007460 2016] [:error] [pid 5445] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 00:15:50.709182 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 00:15:50.709558 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 00:15:50.709581 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Destroying interpreters.
+[Tue Jun 07 00:15:50.709627 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 00:15:50.917675 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Cleanup interpreter ''.
+[Tue Jun 07 00:15:50.920894 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Terminating Python.
+[Tue Jun 07 00:15:50.957035 2016] [:info] [pid 5445] mod_wsgi (pid=5445): Python has shutdown.
+[Mon Jun 06 20:15:51.985515 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Attach interpreter ''.
+[Mon Jun 06 20:15:51.985748 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 20:15:51.986011 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 20:15:56.725993 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 20:15:56.728008 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 20:15:56.728282 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 20:15:56.728819 2016] [:info] [pid 5893] [remote 70.197.136.241:57182] mod_wsgi (pid=5893, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Tue Jun 07 00:15:57.842488 2016] [:error] [pid 5893] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:15:57.842571 2016] [:error] [pid 5893] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Mon Jun 06 20:16:27.910222 2016] [core:info] [pid 5897] [client 70.197.136.241:6212] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Mon Jun 06 20:16:30.369071 2016] [core:info] [pid 5897] [client 70.197.136.241:6212] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Mon Jun 06 20:16:32.328488 2016] [core:info] [pid 5897] [client 70.197.136.241:6212] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Mon Jun 06 20:16:38.113936 2016] [core:info] [pid 5957] [client 70.197.136.241:6223] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Mon Jun 06 20:16:39.229016 2016] [core:info] [pid 5956] [client 70.197.136.241:3839] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Mon Jun 06 20:16:43.288696 2016] [core:info] [pid 5956] [client 70.197.136.241:3839] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Mon Jun 06 20:16:47.135652 2016] [core:info] [pid 5956] [client 70.197.136.241:3839] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Tue Jun 07 00:17:30.212315 2016] [:error] [pid 5893] 
+[Tue Jun 07 00:17:30.212567 2016] [:error] [pid 5893]  Apartment 
+[Mon Jun 06 20:17:41.010284 2016] [core:info] [pid 5942] [client 70.197.136.241:10348] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Tue Jun 07 00:18:01.532767 2016] [:error] [pid 5893] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:18:01.532881 2016] [:error] [pid 5893] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 00:18:46.737144 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 00:18:46.737513 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 00:18:46.737546 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Destroying interpreters.
+[Tue Jun 07 00:18:46.737630 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 00:18:46.960473 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Cleanup interpreter ''.
+[Tue Jun 07 00:18:46.963078 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Terminating Python.
+[Tue Jun 07 00:18:46.993564 2016] [:info] [pid 5893] mod_wsgi (pid=5893): Python has shutdown.
+[Mon Jun 06 20:18:47.971557 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Attach interpreter ''.
+[Mon Jun 06 20:18:47.971808 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 20:18:47.972056 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 20:18:50.184252 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 20:18:50.185845 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 20:18:50.186106 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 20:18:50.186614 2016] [:info] [pid 6023] [remote 70.197.136.241:7133] mod_wsgi (pid=6023, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Mon Jun 06 20:18:50.742815 2016] [:error] [pid 6023] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Mon Jun 06 20:18:50.742858 2016] [:error] [pid 6023] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Mon Jun 06 20:18:50.776064 2016] [:error] [pid 6023] Internal Server Error: /shop/new
+[Mon Jun 06 20:18:50.776101 2016] [:error] [pid 6023] Traceback (most recent call last):
+[Mon Jun 06 20:18:50.776107 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 06 20:18:50.776112 2016] [:error] [pid 6023]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 06 20:18:50.776116 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 06 20:18:50.776121 2016] [:error] [pid 6023]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 06 20:18:50.776126 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 06 20:18:50.776130 2016] [:error] [pid 6023]     return view_func(request, *args, **kwargs)
+[Mon Jun 06 20:18:50.776135 2016] [:error] [pid 6023]   File "/var/www/campusthrift.ansario.com/shop/views.py", line 111, in new
+[Mon Jun 06 20:18:50.776139 2016] [:error] [pid 6023]     if request.user.user.listed_first_item:
+[Mon Jun 06 20:18:50.776143 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 205, in inner
+[Mon Jun 06 20:18:50.776148 2016] [:error] [pid 6023]     return func(self._wrapped, *args)
+[Mon Jun 06 20:18:50.776152 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/fields/related_descriptors.py", line 355, in __get__
+[Mon Jun 06 20:18:50.776156 2016] [:error] [pid 6023]     self.related.get_accessor_name()
+[Mon Jun 06 20:18:50.776161 2016] [:error] [pid 6023] RelatedObjectDoesNotExist: User has no user.
+[Tue Jun 07 00:18:53.203402 2016] [:error] [pid 6023] Not Found: /project-tweet-able-christmas-tree/
+[Tue Jun 07 00:18:53.627652 2016] [:error] [pid 6023] Internal Server Error: /shop/view/5/
+[Tue Jun 07 00:18:53.627691 2016] [:error] [pid 6023] Traceback (most recent call last):
+[Tue Jun 07 00:18:53.627697 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Tue Jun 07 00:18:53.627702 2016] [:error] [pid 6023]     response = self.process_exception_by_middleware(e, request)
+[Tue Jun 07 00:18:53.627707 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Tue Jun 07 00:18:53.627712 2016] [:error] [pid 6023]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Tue Jun 07 00:18:53.627716 2016] [:error] [pid 6023]   File "/var/www/campusthrift.ansario.com/shop/views.py", line 192, in view_item
+[Tue Jun 07 00:18:53.627721 2016] [:error] [pid 6023]     return render(request, 'shop/view.html', {'item':item, 'seller':item.user.user, 'pictures':pictures})
+[Tue Jun 07 00:18:53.627726 2016] [:error] [pid 6023]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/fields/related_descriptors.py", line 355, in __get__
+[Tue Jun 07 00:18:53.627730 2016] [:error] [pid 6023]     self.related.get_accessor_name()
+[Tue Jun 07 00:18:53.627734 2016] [:error] [pid 6023] RelatedObjectDoesNotExist: User has no user.
+[Tue Jun 07 00:19:46.669200 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 00:19:46.669521 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 00:19:46.669567 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Destroying interpreters.
+[Tue Jun 07 00:19:46.669675 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 00:19:46.815586 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Cleanup interpreter ''.
+[Tue Jun 07 00:19:46.818614 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Terminating Python.
+[Tue Jun 07 00:19:46.851930 2016] [:info] [pid 6023] mod_wsgi (pid=6023): Python has shutdown.
+[Mon Jun 06 20:19:47.916124 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Attach interpreter ''.
+[Mon Jun 06 20:19:47.916381 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 20:19:47.916652 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 20:19:50.182338 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 20:19:50.183874 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 20:19:50.184131 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 20:19:50.184705 2016] [:info] [pid 6133] [remote 70.197.136.241:2355] mod_wsgi (pid=6133, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Mon Jun 06 20:19:51.349846 2016] [core:info] [pid 6135] [client 70.197.136.241:10351] AH00128: File does not exist: /var/www/campusthrift.ansario.com/static/css/bootstrap.min.css.map
+[Tue Jun 07 00:20:24.260402 2016] [:error] [pid 6133] <QueryDict: {u'username': [u'ansario'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JXxDEWHMaQm4YFKdjDee8U'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JXxDEWHMaQm4YFF55HvE68'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1994-02-12'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'Il6VMhNzVht2LxkbYQo05ARHrdcNIcv3'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'ansario@email.sc.edu']}>
+[Tue Jun 07 00:20:24.260586 2016] [:error] [pid 6133] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: barecactus (1).png (image/png)>]}>
+[Tue Jun 07 00:20:24.439192 2016] [:error] [pid 6133] 2016
+[Tue Jun 07 00:20:24.439251 2016] [:error] [pid 6133] 2026
+[Tue Jun 07 00:20:28.066564 2016] [:error] [pid 6133] tok_18JXxDEWHMaQm4YFKdjDee8U
+[Tue Jun 07 00:53:07.536053 2016] [:error] [pid 6133] 
+[Tue Jun 07 00:53:07.536472 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 00:53:19.703357 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:53:19.703412 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 00:56:13.444920 2016] [:error] [pid 6133] 
+[Tue Jun 07 00:56:13.445494 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 00:56:25.786615 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:56:25.786739 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 00:57:43.607662 2016] [:error] [pid 6133] 
+[Tue Jun 07 00:57:43.608149 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 00:57:54.480703 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 00:57:54.480786 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 01:00:48.478519 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:00:48.478866 2016] [:error] [pid 6133]  Clothing 
+[Tue Jun 07 01:00:54.935662 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:00:54.935823 2016] [:error] [pid 6133]  Shoes 
+[Tue Jun 07 01:00:56.440377 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:00:56.440602 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 01:01:15.745801 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 01:01:15.745852 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 01:01:52.161660 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:01:52.161916 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 01:02:04.284250 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 01:02:04.284400 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 01:03:14.921541 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:03:14.921756 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 01:03:32.218159 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 01:03:32.218294 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 01:09:44.970712 2016] [:error] [pid 6133] <QueryDict: {u'username': [u'Socawck'], u'picture': [u''], u'first_name': [u'SocalzkII'], u'last_name': [u'SocabffII'], u'name': [u'Socawck'], u'zip': [u'123456'], u'city': [u'Paphos'], u'cvc': [u'110110jp'], u'address': [u'http://cliftoncondohallandale.com/wp-content/60526/windows10_1/index.html\\r\\n'], u'school': [u'Dickinson College'], u'submit': [u''], u'number': [u''], u'state': [u'MO'], u'date_of_birth': [u''], u'expiry_year': [u'1998'], u'ssn': [u'110110jp'], u'graduation_year': [u''], u'csrfmiddlewaretoken': [u'ttyN6A9lEKczB8i9E7wVseNakcNIsn8X'], u'password': [u'110110jp'], u'expiry_month': [u'Cultural Expert'], u'email': [u'goodbyeyi1@outlook.com']}>
+[Tue Jun 07 01:09:44.970831 2016] [:error] [pid 6133] <MultiValueDict: {}>
+[Tue Jun 07 01:11:13.321084 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:11:13.321482 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 01:11:17.757268 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 01:11:17.757367 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 01:13:32.640080 2016] [:error] [pid 6133] 
+[Tue Jun 07 01:13:32.640510 2016] [:error] [pid 6133]  Apartment 
+[Tue Jun 07 01:13:43.320189 2016] [:error] [pid 6133] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Tue Jun 07 01:13:43.320245 2016] [:error] [pid 6133] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Tue Jun 07 01:15:42.013155 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 01:15:42.013494 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 01:15:42.013567 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Destroying interpreters.
+[Tue Jun 07 01:15:42.013665 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 01:15:42.219040 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Cleanup interpreter ''.
+[Tue Jun 07 01:15:42.222197 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Terminating Python.
+[Tue Jun 07 01:15:42.257875 2016] [:info] [pid 6133] mod_wsgi (pid=6133): Python has shutdown.
+[Mon Jun 06 21:15:43.236425 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Attach interpreter ''.
+[Mon Jun 06 21:15:43.236742 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 21:15:43.254458 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 21:15:46.975898 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 21:15:46.977813 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 21:15:46.978264 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 21:15:46.978847 2016] [:info] [pid 6866] [remote 70.197.136.241:32005] mod_wsgi (pid=6866, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Tue Jun 07 01:31:10.025761 2016] [:error] [pid 6866] <QueryDict: {u'username': [u'ebsuncoast14@gmail.com'], u'city': [u'Wellington'], u'first_name': [u'Emily'], u'last_name': [u'B'], u'name': [u'Emily Bocchino'], u'zip': [u'33414'], u'stripeTokenCustomer': [u'tok_18JZ3gEWHMaQm4YFIXc4kUCo'], u'cvc': [u'666'], u'stripeTokenSeller': [u'tok_18JZ3gEWHMaQm4YFD6h923si'], u'address': [u'13422 Georgian Court'], u'school': [u'FSU'], u'number': [u'4000 0566 5566 5556'], u'state': [u'FL'], u'date_of_birth': [u'1960-09-26'], u'expiry_year': [u'2019'], u'ssn': [u'8593'], u'graduation_year': [u'2018'], u'csrfmiddlewaretoken': [u'1m5S1jPPbuFIwAiDT0pntg5R4q8oJ29N'], u'password': [u'dlfdl;sfkd;kds'], u'expiry_month': [u'09'], u'email': [u'ebsuncoast14@gmail.com']}>
+[Tue Jun 07 01:31:10.026022 2016] [:error] [pid 6866] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: 11072523_10205124491049111_6150399815844911906_n.jpg (image/jpeg)>]}>
+[Tue Jun 07 01:31:10.191165 2016] [:error] [pid 6866] 2016
+[Tue Jun 07 01:31:10.191235 2016] [:error] [pid 6866] 2026
+[Tue Jun 07 01:31:58.300571 2016] [:error] [pid 6866] <QueryDict: {u'username': [u'ebsuncoast14@gmail.com'], u'city': [u'Wellington'], u'first_name': [u'Emily'], u'last_name': [u'B'], u'name': [u'Emily Bocchino'], u'zip': [u'33414'], u'stripeTokenCustomer': [u'tok_18JZ4TEWHMaQm4YFSFRbnmTB'], u'cvc': [u'999'], u'stripeTokenSeller': [u'tok_18JZ4TEWHMaQm4YFx2imFZfW'], u'address': [u'13422 Georgian Court'], u'school': [u'FSU'], u'number': [u'4000 0566 5566 5556'], u'state': [u'FL'], u'date_of_birth': [u'1960-09-26'], u'expiry_year': [u'2019'], u'ssn': [u'1111'], u'graduation_year': [u'2018'], u'csrfmiddlewaretoken': [u'1m5S1jPPbuFIwAiDT0pntg5R4q8oJ29N'], u'password': [u'jhhjhjhj'], u'expiry_month': [u'09'], u'email': [u'ebsuncoast14@gmail.com']}>
+[Tue Jun 07 01:31:58.300734 2016] [:error] [pid 6866] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: 11072523_10205124491049111_6150399815844911906_n.jpg (image/jpeg)>]}>
+[Tue Jun 07 01:31:58.464634 2016] [:error] [pid 6866] 2016
+[Tue Jun 07 01:31:58.464694 2016] [:error] [pid 6866] 2026
+[Tue Jun 07 01:32:34.780508 2016] [:error] [pid 6866] <QueryDict: {u'username': [u'epbpanda'], u'city': [u'Wellington'], u'first_name': [u'Emily'], u'last_name': [u'B'], u'name': [u'Emily Bocchino'], u'zip': [u'33414'], u'stripeTokenCustomer': [u'tok_18JZ53EWHMaQm4YFfdti0KNH'], u'cvc': [u'666'], u'stripeTokenSeller': [u'tok_18JZ54EWHMaQm4YFsmXVa0tQ'], u'address': [u'13422 Georgian Court'], u'school': [u'FSU'], u'number': [u'4000 0566 5566 5556'], u'state': [u'FL'], u'date_of_birth': [u'1960-09-26'], u'expiry_year': [u'2019'], u'ssn': [u'1111'], u'graduation_year': [u'2018'], u'csrfmiddlewaretoken': [u'1m5S1jPPbuFIwAiDT0pntg5R4q8oJ29N'], u'password': [u'jsfdsdjkfdkfj'], u'expiry_month': [u'09'], u'email': [u'eb14c@my.fsu.edu']}>
+[Tue Jun 07 01:32:34.780723 2016] [:error] [pid 6866] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: 11072523_10205124491049111_6150399815844911906_n.jpg (image/jpeg)>]}>
+[Tue Jun 07 01:32:34.939688 2016] [:error] [pid 6866] 2016
+[Tue Jun 07 01:32:34.939749 2016] [:error] [pid 6866] 2026
+[Tue Jun 07 01:32:37.544133 2016] [:error] [pid 6866] tok_18JZ53EWHMaQm4YFfdti0KNH
+[Tue Jun 07 01:37:49.336631 2016] [:error] [pid 6866] <QueryDict: {u'username': [u'eb14c'], u'city': [u'Wellington'], u'first_name': [u'Emily P'], u'last_name': [u'Bocchino'], u'name': [u'Emily P Bocchino'], u'zip': [u'33414'], u'stripeTokenCustomer': [u'tok_18JZA8EWHMaQm4YF6uJG1xso'], u'cvc': [u'675'], u'stripeTokenSeller': [u'tok_18JZA8EWHMaQm4YFMSXCnBGy'], u'address': [u'13422 Georgian Court'], u'school': [u'FSU'], u'number': [u'4000 0566 5566 5556'], u'state': [u'FL'], u'date_of_birth': [u'1995-09-26'], u'expiry_year': [u'2019'], u'ssn': [u'1111'], u'graduation_year': [u'2018'], u'csrfmiddlewaretoken': [u'1m5S1jPPbuFIwAiDT0pntg5R4q8oJ29N'], u'password': [u'teddyboy'], u'expiry_month': [u'02'], u'email': [u'eb14c@fsu.edu']}>
+[Tue Jun 07 01:37:49.336827 2016] [:error] [pid 6866] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: 11072523_10205124491049111_6150399815844911906_n.jpg (image/jpeg)>]}>
+[Tue Jun 07 01:37:49.514738 2016] [:error] [pid 6866] 2016
+[Tue Jun 07 01:37:49.514812 2016] [:error] [pid 6866] 2026
+[Tue Jun 07 01:37:50.996731 2016] [:error] [pid 6866] tok_18JZA8EWHMaQm4YF6uJG1xso
+[Tue Jun 07 01:40:49.090487 2016] [:error] [pid 6866] <QueryDict: {u'2_ship_method': [u'1'], u'city': [u'Wellington'], u'first_name': [u'Emily'], u'last_name': [u'B'], u'zip': [u'33414'], u'state': [u'FL'], u'8_ship_method': [u'2'], u'address': [u'134'], u'csrfmiddlewaretoken': [u'KD0MLPYs7JsvZsZS3j48n2Ll7raI65mx']}>
+[Tue Jun 07 01:40:49.090635 2016] [:error] [pid 6866] {u'8': 1, u'2': 1}
+[Tue Jun 07 01:40:49.090668 2016] [:error] [pid 6866] {u'8': 1, u'2': 1}
+[Tue Jun 07 02:10:25.306689 2016] [:error] [pid 6866] <QueryDict: {u'username': [u'ansario1'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JZfgEWHMaQm4YFdt3bJTJO'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JZfgEWHMaQm4YFe4pr8f7F'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1992-03-31'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'hGywnAVb4IER2RpFhTVkrhaM6OIYPYqy'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'test@sc.com']}>
+[Tue Jun 07 02:10:25.306874 2016] [:error] [pid 6866] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: walkers.jpg (image/jpeg)>]}>
+[Tue Jun 07 02:10:25.482989 2016] [:error] [pid 6866] 2016
+[Tue Jun 07 02:10:25.483051 2016] [:error] [pid 6866] 2026
+[Tue Jun 07 02:10:40.761184 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 02:10:40.761492 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 02:10:40.761522 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Destroying interpreters.
+[Tue Jun 07 02:10:40.761607 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 02:10:40.993632 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Cleanup interpreter ''.
+[Tue Jun 07 02:10:40.996489 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Terminating Python.
+[Tue Jun 07 02:10:41.031309 2016] [:info] [pid 6866] mod_wsgi (pid=6866): Python has shutdown.
+[Mon Jun 06 22:10:42.036182 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Attach interpreter ''.
+[Mon Jun 06 22:10:42.036545 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 22:10:42.036970 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 22:10:44.521933 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 22:10:44.523911 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 22:10:44.524234 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 22:10:44.524906 2016] [:info] [pid 7698] [remote 70.197.136.241:7691] mod_wsgi (pid=7698, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Tue Jun 07 02:10:45.088763 2016] [:error] [pid 7698] <QueryDict: {u'username': [u'ansario1'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JZfgEWHMaQm4YFdt3bJTJO'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JZfgEWHMaQm4YFe4pr8f7F'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1992-03-31'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'hGywnAVb4IER2RpFhTVkrhaM6OIYPYqy'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'test@sc.com']}>
+[Tue Jun 07 02:10:45.088931 2016] [:error] [pid 7698] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: walkers.jpg (image/jpeg)>]}>
+[Tue Jun 07 02:10:45.258862 2016] [:error] [pid 7698] 2016
+[Tue Jun 07 02:10:45.258919 2016] [:error] [pid 7698] 2026
+[Tue Jun 07 02:10:46.067867 2016] [:error] [pid 7698] Internal Server Error: /register
+[Tue Jun 07 02:10:46.067913 2016] [:error] [pid 7698] Traceback (most recent call last):
+[Tue Jun 07 02:10:46.067919 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Tue Jun 07 02:10:46.067923 2016] [:error] [pid 7698]     response = self.process_exception_by_middleware(e, request)
+[Tue Jun 07 02:10:46.067928 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Tue Jun 07 02:10:46.067933 2016] [:error] [pid 7698]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Tue Jun 07 02:10:46.067937 2016] [:error] [pid 7698]   File "/var/www/campusthrift.ansario.com/campusthrift/views.py", line 296, in register
+[Tue Jun 07 02:10:46.067941 2016] [:error] [pid 7698]     default_currency="usd"
+[Tue Jun 07 02:10:46.067945 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Tue Jun 07 02:10:46.067950 2016] [:error] [pid 7698]     response, api_key = requestor.request('post', url, params, headers)
+[Tue Jun 07 02:10:46.067954 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Tue Jun 07 02:10:46.067958 2016] [:error] [pid 7698]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Tue Jun 07 02:10:46.067962 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Tue Jun 07 02:10:46.067967 2016] [:error] [pid 7698]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:10:46.067971 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Tue Jun 07 02:10:46.067975 2016] [:error] [pid 7698]     rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:10:46.067979 2016] [:error] [pid 7698] InvalidRequestError: Request req_8alCjyqPAkdAAG: Invalid email address: 
+[Tue Jun 07 02:11:37.077136 2016] [:error] [pid 7698] <QueryDict: {u'username': [u'ansario1'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JZfgEWHMaQm4YFdt3bJTJO'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JZfgEWHMaQm4YFe4pr8f7F'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1992-03-31'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'hGywnAVb4IER2RpFhTVkrhaM6OIYPYqy'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'test@sc.com']}>
+[Tue Jun 07 02:11:37.077372 2016] [:error] [pid 7698] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: walkers.jpg (image/jpeg)>]}>
+[Tue Jun 07 02:11:37.291927 2016] [:error] [pid 7698] 2016
+[Tue Jun 07 02:11:37.291985 2016] [:error] [pid 7698] 2026
+[Tue Jun 07 02:11:38.778350 2016] [:error] [pid 7698] Internal Server Error: /register
+[Tue Jun 07 02:11:38.778399 2016] [:error] [pid 7698] Traceback (most recent call last):
+[Tue Jun 07 02:11:38.778405 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Tue Jun 07 02:11:38.778410 2016] [:error] [pid 7698]     response = self.process_exception_by_middleware(e, request)
+[Tue Jun 07 02:11:38.778414 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Tue Jun 07 02:11:38.778419 2016] [:error] [pid 7698]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Tue Jun 07 02:11:38.778424 2016] [:error] [pid 7698]   File "/var/www/campusthrift.ansario.com/campusthrift/views.py", line 296, in register
+[Tue Jun 07 02:11:38.778428 2016] [:error] [pid 7698]     default_currency="usd"
+[Tue Jun 07 02:11:38.778433 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Tue Jun 07 02:11:38.778437 2016] [:error] [pid 7698]     response, api_key = requestor.request('post', url, params, headers)
+[Tue Jun 07 02:11:38.778441 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Tue Jun 07 02:11:38.778446 2016] [:error] [pid 7698]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Tue Jun 07 02:11:38.778450 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Tue Jun 07 02:11:38.778456 2016] [:error] [pid 7698]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:11:38.778466 2016] [:error] [pid 7698]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Tue Jun 07 02:11:38.778477 2016] [:error] [pid 7698]     rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:11:38.778486 2016] [:error] [pid 7698] InvalidRequestError: Request req_8alDoCs5zlGaPF: Invalid email address: 
+[Tue Jun 07 02:12:24.853740 2016] [:error] [pid 7698] Not Found: /project-tweet-able-christmas-tree/
+[Tue Jun 07 02:14:01.117168 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 02:14:01.117456 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 02:14:01.117482 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Destroying interpreters.
+[Tue Jun 07 02:14:01.117560 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 02:14:01.307055 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Cleanup interpreter ''.
+[Tue Jun 07 02:14:01.310222 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Terminating Python.
+[Tue Jun 07 02:14:01.343011 2016] [:info] [pid 7698] mod_wsgi (pid=7698): Python has shutdown.
+[Mon Jun 06 22:14:02.395755 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Attach interpreter ''.
+[Mon Jun 06 22:14:02.396027 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 22:14:02.396380 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 22:14:14.170449 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 22:14:14.171967 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 22:14:14.172214 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 22:14:14.172729 2016] [:info] [pid 7802] [remote 70.197.136.241:50142] mod_wsgi (pid=7802, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Mon Jun 06 22:14:14.736015 2016] [:error] [pid 7802] <QueryDict: {u'username': [u'ansario1'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JZfgEWHMaQm4YFdt3bJTJO'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JZfgEWHMaQm4YFe4pr8f7F'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1992-03-31'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'hGywnAVb4IER2RpFhTVkrhaM6OIYPYqy'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'test@sc.com']}>
+[Mon Jun 06 22:14:14.736110 2016] [:error] [pid 7802] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: walkers.jpg (image/jpeg)>]}>
+[Mon Jun 06 22:14:14.892222 2016] [:error] [pid 7802] 2016
+[Mon Jun 06 22:14:14.892279 2016] [:error] [pid 7802] 2026
+[Tue Jun 07 02:14:15.787177 2016] [:error] [pid 7802] Internal Server Error: /register
+[Tue Jun 07 02:14:15.787231 2016] [:error] [pid 7802] Traceback (most recent call last):
+[Tue Jun 07 02:14:15.787237 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Tue Jun 07 02:14:15.787242 2016] [:error] [pid 7802]     response = self.process_exception_by_middleware(e, request)
+[Tue Jun 07 02:14:15.787246 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Tue Jun 07 02:14:15.787254 2016] [:error] [pid 7802]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Tue Jun 07 02:14:15.787263 2016] [:error] [pid 7802]   File "/var/www/campusthrift.ansario.com/campusthrift/views.py", line 296, in register
+[Tue Jun 07 02:14:15.787273 2016] [:error] [pid 7802]     default_currency="usd"
+[Tue Jun 07 02:14:15.787283 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Tue Jun 07 02:14:15.787293 2016] [:error] [pid 7802]     response, api_key = requestor.request('post', url, params, headers)
+[Tue Jun 07 02:14:15.787303 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Tue Jun 07 02:14:15.787313 2016] [:error] [pid 7802]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Tue Jun 07 02:14:15.787323 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Tue Jun 07 02:14:15.787334 2016] [:error] [pid 7802]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:14:15.787344 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Tue Jun 07 02:14:15.787355 2016] [:error] [pid 7802]     rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:14:15.787364 2016] [:error] [pid 7802] InvalidRequestError: Request req_8alF1JaK06LWFX: Invalid email address: 
+[Tue Jun 07 02:15:03.132211 2016] [:error] [pid 7802] <QueryDict: {u'username': [u'ansario1'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JZkAEWHMaQm4YFST6GTYka'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JZkAEWHMaQm4YFy7vcsJPN'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1995-02-12'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'hGywnAVb4IER2RpFhTVkrhaM6OIYPYqy'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'ansario@e.com']}>
+[Tue Jun 07 02:15:03.132470 2016] [:error] [pid 7802] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: cc.jpg (image/jpeg)>]}>
+[Tue Jun 07 02:15:03.301980 2016] [:error] [pid 7802] 2016
+[Tue Jun 07 02:15:03.302039 2016] [:error] [pid 7802] 2026
+[Tue Jun 07 02:15:04.577960 2016] [:error] [pid 7802] Internal Server Error: /register
+[Tue Jun 07 02:15:04.578010 2016] [:error] [pid 7802] Traceback (most recent call last):
+[Tue Jun 07 02:15:04.578016 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Tue Jun 07 02:15:04.578021 2016] [:error] [pid 7802]     response = self.process_exception_by_middleware(e, request)
+[Tue Jun 07 02:15:04.578025 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Tue Jun 07 02:15:04.578030 2016] [:error] [pid 7802]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Tue Jun 07 02:15:04.578034 2016] [:error] [pid 7802]   File "/var/www/campusthrift.ansario.com/campusthrift/views.py", line 296, in register
+[Tue Jun 07 02:15:04.578038 2016] [:error] [pid 7802]     default_currency="usd"
+[Tue Jun 07 02:15:04.578042 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Tue Jun 07 02:15:04.578046 2016] [:error] [pid 7802]     response, api_key = requestor.request('post', url, params, headers)
+[Tue Jun 07 02:15:04.578051 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Tue Jun 07 02:15:04.578055 2016] [:error] [pid 7802]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Tue Jun 07 02:15:04.578059 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Tue Jun 07 02:15:04.578132 2016] [:error] [pid 7802]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:15:04.578138 2016] [:error] [pid 7802]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Tue Jun 07 02:15:04.578143 2016] [:error] [pid 7802]     rbody, rcode, resp, rheaders)
+[Tue Jun 07 02:15:04.578147 2016] [:error] [pid 7802] InvalidRequestError: Request req_8alGJaf8Fo3eKv: Invalid email address: 
+[Tue Jun 07 02:15:48.417179 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Shutdown requested 'campusthrift.ansario.com'.
+[Tue Jun 07 02:15:48.417499 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Stopping process 'campusthrift.ansario.com'.
+[Tue Jun 07 02:15:48.417541 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Destroying interpreters.
+[Tue Jun 07 02:15:48.417654 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Destroy interpreter 'campusthrift.ansario.com|'.
+[Tue Jun 07 02:15:48.570753 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Cleanup interpreter ''.
+[Tue Jun 07 02:15:48.574274 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Terminating Python.
+[Tue Jun 07 02:15:48.607447 2016] [:info] [pid 7802] mod_wsgi (pid=7802): Python has shutdown.
+[Mon Jun 06 22:15:49.693567 2016] [:info] [pid 7910] mod_wsgi (pid=7910): Attach interpreter ''.
+[Mon Jun 06 22:15:49.693791 2016] [:info] [pid 7910] mod_wsgi (pid=7910): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 22:15:49.694106 2016] [:info] [pid 7910] mod_wsgi (pid=7910): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 22:15:53.536225 2016] [:info] [pid 7910] mod_wsgi (pid=7910): Create interpreter 'campusthrift.ansario.com|'.
+[Mon Jun 06 22:15:53.538777 2016] [:info] [pid 7910] mod_wsgi (pid=7910): Adding '/var/www/campusthrift.ansario.com' to path.
+[Mon Jun 06 22:15:53.539085 2016] [:info] [pid 7910] mod_wsgi (pid=7910): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Mon Jun 06 22:15:53.539610 2016] [:info] [pid 7910] [remote 70.197.136.241:47233] mod_wsgi (pid=7910, process='campusthrift.ansario.com', application='campusthrift.ansario.com|'): Loading WSGI script '/var/www/campusthrift.ansario.com/campusthrift/wsgi.py'.
+[Tue Jun 07 02:15:54.112500 2016] [:error] [pid 7910] <QueryDict: {u'username': [u'ansario1'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'name': [u'Omar Ansari'], u'zip': [u'29030'], u'stripeTokenCustomer': [u'tok_18JZkAEWHMaQm4YFST6GTYka'], u'cvc': [u'123'], u'stripeTokenSeller': [u'tok_18JZkAEWHMaQm4YFy7vcsJPN'], u'address': [u'8250 Old State Rd'], u'school': [u'USC'], u'number': [u'4000 0566 5566 5556'], u'state': [u'SC'], u'date_of_birth': [u'1995-02-12'], u'expiry_year': [u'2020'], u'ssn': [u'1234'], u'graduation_year': [u'2016'], u'csrfmiddlewaretoken': [u'hGywnAVb4IER2RpFhTVkrhaM6OIYPYqy'], u'password': [u'oa*45678'], u'expiry_month': [u'02'], u'email': [u'ansario@e.com']}>
+[Tue Jun 07 02:15:54.112604 2016] [:error] [pid 7910] <MultiValueDict: {u'picture': [<InMemoryUploadedFile: cc.jpg (image/jpeg)>]}>
+[Tue Jun 07 02:15:54.271095 2016] [:error] [pid 7910] 2016
+[Tue Jun 07 02:15:54.271152 2016] [:error] [pid 7910] 2026
+[Tue Jun 07 02:25:13.044916 2016] [:error] [pid 7910] Not Found: /pillow-talk/
+[Tue Jun 07 02:25:54.693712 2016] [:error] [pid 7910] Not Found: /pillow-talk/

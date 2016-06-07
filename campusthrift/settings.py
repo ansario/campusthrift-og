@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-# STATIC_ROOT="/Users/ansario/CurrentProjects/campusthrift/static/"
+STATIC_ROOT="/var/www/campusthrift.ansario.com/static/"
 # STATICFILES_DIRS = (BASE_DIR, 'static')
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"

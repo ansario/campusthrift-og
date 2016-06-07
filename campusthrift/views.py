@@ -281,7 +281,7 @@ def register(request):
         profile.state = request.POST['state']
         profile.zip = request.POST['zip']
 
-        if 'stripeTokenCustomer' in request.POST and 'stripeTokenSeller' in request.POST and 'ssn' in request.POST:
+        if not errors and 'stripeTokenCustomer' in request.POST and 'stripeTokenSeller' in request.POST and 'ssn' in request.POST:
 
 
             stripe_customer_object = stripe.Customer.create(
