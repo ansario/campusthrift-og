@@ -19,6 +19,7 @@ import os
 from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY
 import sendgrid
 import re
+import base64
 sg = sendgrid.SendGridClient(SG_KEY)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
@@ -40,6 +41,79 @@ def home(request):
 
 def about(request):
     return render(request, 'campusthrift/about.html')
+
+def password_reset(request):
+
+    errors = []
+
+    if request.method == "POST":
+
+
+        if 'email' in request.POST:
+
+            if User.objects.filter(email=request.POST['email']).exists():
+
+                user = User.objects.get(email=request.POST['email'])
+
+                password_reset_key = base64.urlsafe_b64encode(str(user.email))
+
+                base_activation_email_template = open(os.path.join(PROJECT_ROOT, 'emails/password_reset_email.html')).read()
+                personal_reset_link = HOSTED_URL + "/password_reset/" + password_reset_key
+                personal_reset_email_template = base_activation_email_template.replace("@@@RESET_URL@@@", personal_reset_link)
+
+                message = sendgrid.Mail(to=user.email, subject='CampusThrift Password Reset', html=personal_reset_email_template, text='Body', from_email='noreply@campusthrift.com')
+                sg.send(message)
+                return redirect('home')
+
+
+            else:
+                errors.append("That email was not found in our database.")
+        else:
+            errors.append("There was a problem with your request, please try again!")
+
+        if not errors:
+                return redirect('home')
+        else:
+                return render(request, 'campusthrift/reset.html', {"errors": errors})
+
+    else:
+
+        return render(request, 'campusthrift/reset.html')
+
+def password_reset_confirm(request, uidb64):
+
+    errors = []
+
+    if uidb64:
+
+        if request.method == "GET":
+
+            return render(request, 'campusthrift/reset_confirm.html')
+
+        if request.method == "POST":
+
+            user_email = base64.urlsafe_b64decode(str(uidb64))
+
+            if User.objects.filter(email=user_email).exists():
+
+                user = User.objects.get(email=user_email)
+
+                user.set_password(request.POST['password'])
+                user.save()
+                return redirect('home')
+
+            else:
+
+                errors.append("There was a problem resetting your password, please try again!")
+                return render(request, 'campusthrift/reset_confirm.html', {"errors": errors })
+
+
+
+
+    else:
+        return redirect('home')
+
+
 
 @login_required(login_url='/login')
 def order_view(request, order_number):
