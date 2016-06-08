@@ -2,22 +2,12 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block content %}
-    <style>
-        body {
-            background-image: url(/../../static/images/background.png);
-            background-repeat: repeat;
-        }
-    </style>
 
+    <div class="content">
+<div class="cart-items">
 
-
-    <div id="order-overlay" class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Order Detail</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
+    <div class="container">
+			 <div class="row">
                     <div class="col-xs-12">
 
                         <h4 class="pull-right">Order Number: {{ order.primary_key }}</h4>
@@ -111,9 +101,15 @@
                     </div>
 
                 </div>
-            </div>
+
+
+
         </div>
     </div>
+</div>
+
+
+
 
 
 
