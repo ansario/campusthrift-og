@@ -2,19 +2,19 @@
 {% load staticfiles %}
 {% block content %}
 
-{#    <style>#}
-{#    .content-area {#}
-{#    margin-left: 0px;#}
-{#    margin-right: 0px#}
-{#}#}
-{#    </style>#}
+    <style>
+ .content-area {
+
+    padding: 0;
+}
+    </style>
 
 
     <script src="{% static "js/mason.js" %}"></script>
 
     <!--header-->
     <div class="banner-section">
-        <div class="container">
+        <div class="container11">
             <div class="banner-grids">
                 <div class="col-md-12 full banner-grid">
                     <h2>CampusThrift</h2>
@@ -29,11 +29,12 @@
     </div>
 
     <div class="gallery">
-        <div class="container">
+        <div class="container11">
             <h3>Featured products</h3>
             <div class="gallery-grids">
-
+<div class="row">
                     {% for item in items %}
+
                         <div class="col-md-3 col-xs-12 col-sm-12 gallery-grid ">
                         <a href="/shop/view/{{ item.pk }}"><img class="center-image" src="{{ item.images.all.0.image.url }}"  height="200px" width="200px" alt=""/>
                             <div class="gallery-info">
@@ -54,8 +55,9 @@
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
 
+                    {% endfor %}
+ </div>
 
 
 
