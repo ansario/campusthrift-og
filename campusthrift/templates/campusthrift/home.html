@@ -1,175 +1,126 @@
 {% extends "campusthrift/base.html" %}
 {% load staticfiles %}
 {% block content %}
+
     <style>
-        html {
-            overflow-x: hidden;
-        }
-
-        .hovereffect {
-            width: 100%;
-            height: 100%;
-            float: left;
-            overflow: hidden;
-            position: relative;
-            text-align: center;
-            cursor: default;
-        }
-
-        .hovereffect .overlay {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            overflow: hidden;
-            left: 0;
-            background-color: rgba(255, 255, 255, 0.7);
-            top: -200px;
-            opacity: 0;
-            filter: alpha(opacity=0);
-            -webkit-transition: all 0.1s ease-out 0.5s;
-            transition: all 0.1s ease-out 0.5s;
-        }
-
-        .hovereffect:hover .overlay {
-            opacity: 1;
-            filter: alpha(opacity=100);
-            top: 0px;
-            -webkit-transition-delay: 0s;
-            transition-delay: 0s;
-        }
-
-        .hovereffect img {
-            display: block;
-            position: relative;
-            max-height: 100%;
-            max-width: 100%;
-        }
-
-        .hovereffect h2 {
-            text-transform: uppercase;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            font-size: 17px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            -webkit-transform: translateY(-200px);
-            -ms-transform: translateY(-200px);
-            transform: translateY(-200px);
-            -webkit-transition: all ease-in-out 0.1s;
-            transition: all ease-in-out 0.1s;
-            -webkit-transition-delay: 0.3s;
-            transition-delay: 0.3s;
-        }
-
-        .hovereffect:hover h2 {
-            -webkit-transform: translateY(0px);
-            -ms-transform: translateY(0px);
-            transform: translateY(0px);
-            -webkit-transition-delay: 0.3s;
-            transition-delay: 0.3s;
-        }
-
-        .hovereffect a.info {
-            display: inline-block;
-            text-decoration: none;
-            padding: 7px 14px;
-            text-transform: uppercase;
-            margin: 50px 0 0 0;
-            background-color: transparent;
-            -webkit-transform: translateY(-200px);
-            -ms-transform: translateY(-200px);
-            transform: translateY(-200px);
-            color: #000;
-            border: 1px solid #000;
-            -webkit-transition: all ease-in-out 0.3s;
-            transition: all ease-in-out 0.3s;
-        }
-
-        .hovereffect a.info:hover {
-            box-shadow: 0 0 5px #fff;
-        }
-
-        .hovereffect:hover a.info {
-            -webkit-transform: translateY(0px);
-            -ms-transform: translateY(0px);
-            transform: translateY(0px);
-            box-shadow: 0 0 5px #000;
-            color: #000;
-            border: 1px solid #000;
-            -webkit-transition-delay: 0.3s;
-            transition-delay: 0.3s;
-        }
-
-        .images {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .image-display {
-            width: 300px;
-            height: 300px;
-        }
+    .content-area {
+    margin-left: 0px;
+    margin-right: 0px
+}
     </style>
+
 
     <script src="{% static "js/mason.js" %}"></script>
 
-    <!-- Header -->
-    <div class="full parent">
-        <div class="child text-center white">
-            <h1 class="large text-shadow">Campus Thrift</h1>
-            <h5 class="med text-shadow">The first online thrift store exclusively for college students. Sign in with your
-                school
-                administered .edu email, and start buying and selling between students nationwide.</h5>
+    <!--header-->
+    <div class="banner-section">
+        <div class="container">
+            <div class="banner-grids">
+                <div class="col-md-12 full banner-grid">
+                    <h2>CampusThrift</h2>
+                    <p>The first online thrift store exclusively for college students. Sign in with your school
+                        administered .edu email, and start buying and selling between students nationwide.
+                    </p>
+                    <a href="/shop" class="button"> shop now </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="gallery">
+        <div class="container">
+            <h3>Featured products</h3>
+            <div class="gallery-grids">
 
-        {% for item in items %}
+                    {% for item in items %}
+                        <div class="col-md-3 col-xs-12 col-sm-12 gallery-grid ">
+                        <a href="/shop/view/{{ item.pk }}"><img class="center-image" src="{{ item.images.all.0.image.url }}"  height="200px" width="200px" alt=""/>
+                            <div class="gallery-info">
+                                <div class="quick">
+                                    <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="galy-info">
+                            <p>{{ item.title|truncatechars:20 }}</p>
+                            <div class="galry">
+                                <div class="prices">
+                                    <h5 class="item_price">${{ item.price }}</h5>
+                                </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 images">
-                <a href="/shop/view/{{ item.pk }}">
-                    <div class="hovereffect">
-                        <img class="image-display" src="{{ item.images.all.0.image.url }}" alt="">
-                        <div class="overlay">
-                            <h2>{{ item.title }}</h2>
-                            <br>
-                            <br>
-                            <h4>${{ item.price }}</h4>
+
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
-                </a>
+                    {% endfor %}
+
+
+
+
+                <div class="clearfix"></div>
             </div>
-
-        {% endfor %}
+        </div>
     </div>
 
 
-
-
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visible-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-
-    <script>
-        $(document).ready(function () {
-            function getRandomSize(min, max) {
-                return Math.round(Math.random() * (max - min) + min);
-            }
-
-            for (var i = 0; i < 25; i++) {
-                var width = getRandomSize(200, 400);
-                var height = getRandomSize(200, 400);
-                $('#photos').append('<img src="http://www.unsplash.it/' + width + '/' + height + '/" alt="pretty kitty">');
-            }
-        });
-    </script>
+    {#    <!-- Header -->#}
+    {#    <div class="full parent">#}
+    {#        <div class="child text-center white">#}
+    {#            <h1 class="large text-shadow">Campus Thrift</h1>#}
+    {#            <h5 class="med text-shadow">The first online thrift store exclusively for college students. Sign in with your#}
+    {#                school#}
+    {#                administered .edu email, and start buying and selling between students nationwide.</h5>#}
+    {#        </div>#}
+    {#    </div>#}
+    {##}
+    {#    <div class="row">#}
+    {##}
+    {#        {% for item in items %}#}
+    {##}
+    {#            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 images">#}
+    {#                <a href="/shop/view/{{ item.pk }}">#}
+    {#                    <div class="hovereffect">#}
+    {#                        <img class="image-display" src="{{ item.images.all.0.image.url }}" alt="">#}
+    {#                        <div class="overlay">#}
+    {#                            <h2>{{ item.title }}</h2>#}
+    {#                            <br>#}
+    {#                            <br>#}
+    {#                            <h4>${{ item.price }}</h4>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </a>#}
+    {#            </div>#}
+    {##}
+    {#        {% endfor %}#}
+    {#    </div>#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->#}
+    {#    <div class="scroll-top page-scroll visible-xs visible-sm">#}
+    {#        <a class="btn btn-primary" href="#page-top">#}
+    {#            <i class="fa fa-chevron-up"></i>#}
+    {#        </a>#}
+    {#    </div>#}
+    {##}
+    {##}
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            function getRandomSize(min, max) {#}
+    {#                return Math.round(Math.random() * (max - min) + min);#}
+    {#            }#}
+    {##}
+    {#            for (var i = 0; i < 25; i++) {#}
+    {#                var width = getRandomSize(200, 400);#}
+    {#                var height = getRandomSize(200, 400);#}
+    {#                $('#photos').append('<img src="http://www.unsplash.it/' + width + '/' + height + '/" alt="pretty kitty">');#}
+    {#            }#}
+    {#        });#}
+    {#    </script>#}
 
 
 

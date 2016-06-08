@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^profile/edit$', views.profile_edit, name="profile_edit"),
     url(r'^profile/payment/edit$', views.payment_edit, name="payment_edit"),
     url(r'^profile/order/view/(?P<order_number>\w+)/$', views.order_view, name="order_view"),
+    url(r'^profile/order/cancel/(?P<pk>\w+)/$', views.cancel_order, name="cancel_order"),
     url(r'^$', views.home, name='home'),
     url(r'^getdetails/', shop.views.getdetails),
     url(r'^activate/(?P<activation_key>\w+)$', views.activate, name="activate"),

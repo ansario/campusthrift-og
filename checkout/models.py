@@ -39,7 +39,8 @@ class Order(models.Model):
     confirmed = models.BooleanField(default=False)
     payment_confirmed = models.BooleanField(default=False)
     complete = models.BooleanField(default=False)
-
+    in_progress = models.BooleanField(default=False)
+    canceled = models.BooleanField(default=False)
     sub_total = models.DecimalField(max_digits=5,decimal_places=2,validators=[
 									MinValueValidator(0)])
     shipping_total = models.DecimalField(max_digits=5,decimal_places=2,validators=[

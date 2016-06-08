@@ -5,195 +5,186 @@
 {% load staticfiles %}
 {% block content %}
     <style>
-        body {
-            background-image: url(../../../static/images/background.png);
-            background-repeat: repeat;
-        }
-        a.btn.btn-success {
-    margin-bottom: 10px;
-}
+    h4, h3 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
     </style>
 
-
-
-    <div id="profile-modal" class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Profile</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div>
-                            <h1 class="pull-left">Hi {{ user.first_name }}!</h1>
-                            <img class="pull-right img-responsive	 profile-pic"
-                                 src=/media/{{ profile.picture }}>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-xs-12">
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Profile Information</h3>
+    <div class="content">
+        <div class="main-1">
+            <div class="container">
+                <div class="login-page">
+                    <div class="account_grid">
+                        {% if error %}
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                {{ error }}
                             </div>
-                            <div class="panel-body">
-                                <div class="">
-                                    <br>
-                                    <table class="table">
-                                        <tr>
-                                            <td><strong>First Name</strong></td>
-                                            <td>{{ user.first_name }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Last Name</strong></td>
-                                            <td>{{ user.last_name }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Email</strong></td>
-                                            <td>{{ user.email }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>School</strong></td>
-                                            <td>{{ profile.school }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Graduation Year</strong></td>
-                                            <td>{{ profile.graduation_year }}</td>
-                                            {#                                    {{ payment_information }}#}
-                                        </tr>
-                                    </table>
+
+                        {% endif %}
+                        <div class="col-xs-12">
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div>
+                                        <h1 class="pull-left">Hi {{ user.first_name }}!</h1>
+                                        <img class="pull-right img-responsive	 profile-pic"
+                                             style="max-height: 200px; max-width: 200px;"
+                                             src=/media/{{ profile.picture }}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-xs-12">
+
+                                    <div class="panel panel-default ">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Profile Information</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="">
+                                                <br>
+                                                <table class="table">
+                                                    <tr>
+                                                        <td><strong>First Name</strong></td>
+                                                        <td>{{ user.first_name }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Last Name</strong></td>
+                                                        <td>{{ user.last_name }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Email</strong></td>
+                                                        <td>{{ user.email }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>School</strong></td>
+                                                        <td>{{ profile.school }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Graduation Year</strong></td>
+                                                        <td>{{ profile.graduation_year }}</td>
+                                                        {#                                    {{ payment_information }}#}
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <a href="/profile/edit" class="btn btn-success">Edit Profile</a>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-xs-12">
+
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Payment Information</h3>
+                                        </div>
+                                        <div class="panel-body">
+
+                                            <table class="table">
+                                                <tr>
+                                                    <td><strong>Card Type</strong></td>
+                                                    <td>{{ payment_information.brand }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Last 4</strong></td>
+                                                    <td>{{ payment_information.last4 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Expiration</strong></td>
+                                                    <td>{{ payment_information.exp_month }}/{{ payment_information.exp_year }}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <a href="/profile/payment/edit" class="btn btn-success">Edit Payment
+                                        Information</a>
+
+
                                 </div>
 
                             </div>
 
-                        </div>
-                        <a href="/profile/edit" class="btn btn-success">Edit Profile</a>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Payment Information</h3>
-                            </div>
-                            <div class="panel-body">
-
-                                <table class="table">
-                                    <tr>
-                                        <td><strong>Card Type</strong></td>
-                                        <td>{{ payment_information.brand }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Last 4</strong></td>
-                                        <td>{{ payment_information.last4 }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Expiration</strong></td>
-                                        <td>{{ payment_information.exp_month }}/{{ payment_information.exp_year }}</td>
-                                    </tr>
-                                </table>
-                            </div>
 
                         </div>
-                        <a href="/profile/payment/edit" class="btn btn-success">Edit Payment Information</a>
+
+                        <h3>Selling:</h3>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <td>
+                                    ID
+                                </td>
+                                <td>
+                                    Title
+                                </td>
+                                <td>
+                                    Price
+                                </td>
+                                <td>
+                                    Shipping Method
+                                </td>
+                                <td>
+                                    Shipping Price
+                                </td>
+                                <td>
+                                    Action
+                                </td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for sale in current_sales %}
+                                <tr>
+                                    <td>
+                                        {{ sale.pk }}
+                                    </td>
+                                    <td>
+                                        {{ sale.title }}
+                                    </td>
+                                    <td>
+                                        ${{ sale.price }}
+                                    </td>
+                                    <td>
+                                        {% if sale.shipping == 1 %}
+                                            On Campus
+                                        {% elif sale.shipping == 2 %}
+                                            Off Campus
+                                        {% else %}
+                                            On or Off Campus
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if sale.shipping == 1 %}
+                                            Free!
+                                        {% elif sale.shipping == 2 %}
+                                            ${{ sale.shipping_price }}
+                                        {% else %}
+                                            Free or ${{ sale.shipping_price }}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a href="/shop/view/{{ sale.pk }}"
+                                           class="btn btn-primary" role="button">View Item in Shop</a>
+                                        <a href="/shop/item/{{ sale.pk }}/delete"
+                                           class="btn btn-danger" role="button">Delete</a>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
 
 
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="selling-modal" class="modal-dialog modal-lg ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Selling</h4>
-            </div>
-            <div class="modal-body">
-
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <td>
-                            ID
-                        </td>
-                        <td>
-                           Title
-                        </td>
-                        <td>
-                            Price
-                        </td>
-                        <td>
-                            Shipping Method
-                        </td>
-                        <td>
-                            Shipping Price
-                        </td>
-                        <td>
-                            Action
-                        </td>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for sale in current_sales %}
-                        <tr>
-                            <td>
-                                {{ sale.pk }}
-                            </td>
-                            <td>
-                                {{ sale.title }}
-                            </td>
-                            <td>
-                                ${{ sale.price }}
-                            </td>
-                            <td>
-                                {% if sale.shipping == 1 %}
-                                    On Campus
-                                {% elif sale.shipping == 2 %}
-                                    Off Campus
-                                {% else %}
-                                    On or Off Campus
-                                {% endif %}
-                            </td>
-                            <td>
-                               {% if sale.shipping == 1 %}
-                                   Free!
-                                {% elif sale.shipping == 2 %}
-                                    ${{ sale.shipping_price }}
-                                {% else %}
-                                    Free or ${{ sale.shipping_price }}
-                                {% endif %}
-                            </td>
-                            <td>
-                                <a href="/shop/view/{{ sale.pk }}"
-                                               class="btn btn-primary" role="button">View Item in Shop</a>
-                                <a href="/shop/item/{{ sale.pk }}/delete"
-                                               class="btn btn-danger" role="button">Delete</a>
-                            </td>
-
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div id="selling-modal" class="modal-dialog modal-lg ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Order Dashboard</h4>
-            </div>
-            <div class="modal-body">
-                <ul class="nav nav-pills">
+                    <h3>Order Dashboard</h3>
+                         <ul class="nav nav-pills">
                     <li class="active"><a data-toggle="pill" href="#home">Orders <span
                             class="badge">{{ orders|length }}</span></a></li>
                     <li><a data-toggle="pill" href="#menu1">Pending Sold Items <span
@@ -220,7 +211,7 @@
                                     Total
                                 </td>
                                 <td>
-                                    Status
+                                    Status/Action
                                 </td>
 
                             </tr>
@@ -235,18 +226,18 @@
                                         {{ order.date }}
                                     </td>
                                     <td>
-                                        {{ order.final_total }}
+                                        ${{ order.final_total }}
                                     </td>
                                     <td>
-                                        {% if order.payment_confirmed %}
-                                            <span class="label label-success">Payment Processed</span>
-                                        {% else %}
-                                            <span class="label label-warning">Payment Processing</span>
+                                        <a href="/profile/order/view/{{ order.pk }}"
+                                               class="btn btn-primary" role="button">View Order</a>
+                                        {% if not order.in_progress and not order.complete and not order.canceled %}
+                                            <a class="btn btn-warning" href="/profile/order/cancel/{{ order.pk }}">Cancel Order</a>
                                         {% endif %}
                                         {% if order.complete %}
                                             <span class="label label-success">Order Complete</span>
-                                        {% else %}
-                                            <span class="label label-warning">Order Incomplete</span>
+                                        {% elif order.canceled %}
+                                            <span class="label label-danger">Order Canceled</span>
                                         {% endif %}
                                     </td>
 
@@ -293,7 +284,9 @@
                                         </td>
                                         <td>
                                             {% if pending_item.shipping_method == 1 %}
-                                                On Campus Pickup - Contact <a href="mailto:{{ pending_item.order.buyer.email }}?Subject=CampustThrift%20Order%20{{ pending_item.order.primary_key }}" target="_top">{{ pending_item.order.buyer.email }}</a>
+                                                On Campus Pickup - Contact
+                                                <a href="mailto:{{ pending_item.order.buyer.email }}?Subject=CampustThrift%20Order%20{{ pending_item.order.primary_key }}"
+                                                   target="_top">{{ pending_item.order.buyer.email }}</a>
                                             {% else %}
                                                 {{ pending_item.order.shipping_address }}
                                                 {{ pending_item.order.city }},
@@ -399,8 +392,21 @@
                     </div>
 
                 </div>
+
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

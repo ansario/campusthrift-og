@@ -2,34 +2,25 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block content %}
-    <style>
-        body {
-            background-image: url(../../../static/images/background.png);
-            background-repeat: repeat;
-        }
-    </style>
 
-    <div id="login-overlay" class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Post a new item!</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="well">
+    <div class="content">
+        <div class="main-1">
+            <div class="container">
+                <div class="login-page">
+                    <div class="account_grid">
                         {% if error %}
-                        {% for errors in error %}
-                            <div class="alert alert-danger" role="alert">{{ errors }}</div>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                {{ error }}
+                            </div>
 
-                        {% endfor %}
                         {% endif %}
+                        <div class="col-xs-12">
+                            <div class="well">
+                                <form id="loginForm" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
 
-                            <form id="loginForm" method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form | crispy }}
-
-                                <div class="form-group">
+                                    <div class="form-group">
                                     <label for="selectcategories">Category:</label>
 
                                     <select class="form-control" name="selectcategories" id="selectcategories">
@@ -64,176 +55,160 @@
                                     <p class="small"> Note, there is a $.50 listing fee after your first item. The debit card we have on file for you will be charged.</p>
                                    <button type="submit" class="save btn btn-default black-button">Post</button>
                             </form>
-
-                                <script>
-
-                                      $(document).ready(function() {
-                                                $('#id_meeting_place').hide();
-                                                $('label[for="id_meeting_place"]').hide();
-
-                                                $('#id_shipping').change(function() {
-
-                                                    if ($(this).val() != 2 ) {
-                                                        $('#id_meeting_place').show();
-                                                        $('label[for="id_meeting_place"]').show();
-                                                    } else {
-                                                        $('#id_meeting_place').hide();
-                                                        $('label[for="id_meeting_place"]').hide();
-                                                    }
-                                            });
-                                        });
-
-
-
-                                    $(".add").click(function (){
-
-{#                                        var uploads = $('[id ^=rotation-]').find('*');#}
-                                        var divs  = $('[id ^=rotation-]');
-
-                                        var last = divs.length - 1;
-
-                                        var last_id = divs[last].id;
-
-                                        var next = last + 1;
-                                        if (last < 4){
-                                            $('#'+last_id).after('<input onchange="displayImage(this); readURL(this)" id="picture-' + next + '" type="file" name="picture-'+ next + '" accept="image/*"> ' +
-                                                '<input id="rotation-'+ next + '" type="hidden" name="rotation-'+ next +'" value="0"><br>')
-                                        }
-                                        else {
-                                            alert("You may only upload a maximum of 5 images.")
-                                        }
-
-
-                                    });
-
-                                    var rotateLeft = function(e) {
-                                        var classList = e.className.split(/\s+/);
-                                        console.log(classList);
-                                        for (var i = 0; i < classList.length; i++) {
-
-                                            if (classList[i] !== 'btn') {
-
-                                               rotation_string = classList[i].replace("img", "rotation");
-                                                original_image_string =  classList[i];
-
-
-{#                                                $("#rotation-1").val($("#rotation-1").val() - 90);#}
-
-                                                $(document).ready(function () {
-                                                    $("#rotation-0").val(parseInt($("#rotation-0").val()) - 90);
-                                                      console.log($("#rotation-0").val());
-                                                      console.log("."+original_image_string);
-{#                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'#}
-{#                                                    console.log("."+original_image_string);#}
-                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#rotation-0").val()+"deg)");
-                                                });
-                                            }
-                                        }
-                                    };
-                                     var rotateRight = function(e) {
-                                        var classList = e.className.split(/\s+/);
-                                        console.log(classList);
-                                        for (var i = 0; i < classList.length; i++) {
-
-                                            if (classList[i] !== 'btn') {
-
-                                               rotation_string = classList[i].replace("img", "rotation");
-                                                original_image_string =  classList[i];
-
-
-{#                                                $("#rotation-1").val($("#rotation-1").val() - 90);#}
-
-                                                $(document).ready(function () {
-                                                    $("#rotation-0").val(parseInt($("#rotation-0").val()) + 90);
-                                                      console.log($("#rotation-0").val());
-                                                      console.log("."+original_image_string);
-{#                                                    css_class = '.rotated-image {-webkit-transform: rotate('+$("#"+rotation_string).val()+'deg);transform: rotate('+$("#"+rotation_string).val()+'deg);}'#}
-{#                                                    console.log("."+original_image_string);#}
-                                                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#rotation-0").val()+"deg)");
-                                                });
-                                            }
-                                        }
-                                    };
-                                    function readURL(input) {
-                                        if (input.files && input.files[0]) {
-                                            var reader = new FileReader();
-
-
-                                            reader.onload =  function (e) {
-
-                                                var class_string = ".img_prev"+input.getAttribute('id')
-
-                                                var preview_image = $(class_string);
-
-                                                $(class_string).attr('src', e.target.result);
-
-                                            }
-
-                                            reader.readAsDataURL(input.files[0]);
-                                        }
-                                    };
-
-{#                                    $("document").ready(function () {#}
-                                    var displayImage = function (element) {
-
-
-
-                                            var groupNumber = element.getAttribute('id').split('-')[1];
-                                            var id = element.getAttribute('id');
-
-                                            $('.img_prev' + id).remove();
-
-                                            class_string = "img_prev" + id;
-
-                                            $("#" + id).after('<img class=img_prev' + id + ' height=\'100px\' width=\'100px\' src=\'\'>');
-{#                                            var image_string = '<img src="" height="100px" width="100px" class="' + class_string + '" >'#}
-
-
-                                            $(".img_prev" + id).after('<br><button type="button" onclick="rotateLeft(this); return false;"" class="btn img_prev' + id + '" style="margin-right: 5px""><i class="fa fa-rotate-left" aria-hidden="true"></i></button><button type="button" class="btn img_prev' + id + '" onclick="rotateRight(this); return false;"" style="margin-left: 5px"><i class="fa fa-rotate-right" aria-hidden="true"></i></button><br>');
-
-                                            readURL(this);
-
-
-                                    };
-{#                                    });#}
-                                </script>
-                                <script>
-                                    $(document).ready(function () {
-                                        $("#selectcategories").prop("selectedIndex", -1);
-                                        $('select#selectcategories').change(function () {
-                                            var optionSelected = $(this).find("option:selected");
-                                            var valueSelected = optionSelected.val();
-                                            var category_name = optionSelected.text();
-{#                                            data = {'cnt': category_name};#}
-                                             $.ajax({url: '/getdetails', data: {'cnt': category_name}, success: function(result){
-                                                    $("#selectsubcategories option").remove();
-                                                    for (var i = result.length - 1; i >= 0; i--) {
-                                                        $("#selectsubcategories").append('<option>' + result[i].name + '</option>');
-                                                    }
-                                             }});
-
-
-{#                                            ajax('/getdetails', data, function (result) {#}
-{#                                                console.log(result);#}
-{#                                                $("#selectsubcategories option").remove();#}
-{#                                                for (var i = result.length - 1; i >= 0; i--) {#}
-{#                                                    $("#selectsubcategories").append('<option>' + result[i].name + '</option>');#}
-{#                                                }#}
-{#                                                ;#}
-{#                                            });#}
-                                        });
-                                    });
-                                </script>
-
+                            </div>
                         </div>
-                    </div>
 
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
+
+   <script>
+
+      $(document).ready(function() {
+                $('#id_meeting_place').hide();
+                $('label[for="id_meeting_place"]').hide();
+
+                $('#id_shipping').change(function() {
+
+                    if ($(this).val() != 2 ) {
+                        $('#id_meeting_place').show();
+                        $('label[for="id_meeting_place"]').show();
+                    } else {
+                        $('#id_meeting_place').hide();
+                        $('label[for="id_meeting_place"]').hide();
+                    }
+            });
+        });
+
+
+
+    $(".add").click(function (){
+
+        var divs  = $('[id ^=rotation-]');
+
+        var last = divs.length - 1;
+
+        var last_id = divs[last].id;
+
+        var next = last + 1;
+        if (last < 4){
+            $('#'+last_id).after('<input onchange="displayImage(this); readURL(this)" id="picture-' + next + '" type="file" name="picture-'+ next + '" accept="image/*"> ' +
+                '<input id="rotation-'+ next + '" type="hidden" name="rotation-'+ next +'" value="0"><br>')
+        }
+        else {
+            alert("You may only upload a maximum of 5 images.")
+        }
+
+
+    });
+
+    var rotateLeft = function(e) {
+        var classList = e.className.split(/\s+/);
+        console.log(classList);
+        for (var i = 0; i < classList.length; i++) {
+
+            if (classList[i] !== 'btn') {
+
+               rotation_string = classList[i].replace("img", "rotation");
+                original_image_string =  classList[i];
+
+
+                $(document).ready(function () {
+                    $("#rotation-0").val(parseInt($("#rotation-0").val()) - 90);
+                      console.log($("#rotation-0").val());
+                      console.log("."+original_image_string);
+
+                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#rotation-0").val()+"deg)");
+                });
+            }
+        }
+    };
+     var rotateRight = function(e) {
+        var classList = e.className.split(/\s+/);
+        console.log(classList);
+        for (var i = 0; i < classList.length; i++) {
+
+            if (classList[i] !== 'btn') {
+
+               rotation_string = classList[i].replace("img", "rotation");
+                original_image_string =  classList[i];
+
+                $(document).ready(function () {
+                    $("#rotation-0").val(parseInt($("#rotation-0").val()) + 90);
+                      console.log($("#rotation-0").val());
+                      console.log("."+original_image_string);
+
+                    $("."+original_image_string).filter("img").css("transform", "rotate("+$("#rotation-0").val()+"deg)");
+                });
+            }
+        }
+    };
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+
+            reader.onload =  function (e) {
+
+                var class_string = ".img_prev"+input.getAttribute('id')
+
+                var preview_image = $(class_string);
+
+                $(class_string).attr('src', e.target.result);
+
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+
+    var displayImage = function (element) {
+
+
+
+            var groupNumber = element.getAttribute('id').split('-')[1];
+            var id = element.getAttribute('id');
+
+            $('.img_prev' + id).remove();
+
+            class_string = "img_prev" + id;
+
+            $("#" + id).after('<img class=img_prev' + id + ' height=\'100px\' width=\'100px\' src=\'\'>');
+
+
+
+            $(".img_prev" + id).after('<br><button type="button" onclick="rotateLeft(this); return false;"" class="btn img_prev' + id + '" style="margin-right: 5px""><i class="fa fa-rotate-left" aria-hidden="true"></i></button><button type="button" class="btn img_prev' + id + '" onclick="rotateRight(this); return false;"" style="margin-left: 5px"><i class="fa fa-rotate-right" aria-hidden="true"></i></button><br>');
+
+            readURL(this);
+
+
+    };
+
+</script>
+<script>
+    $(document).ready(function () {
+        $("#selectcategories").prop("selectedIndex", -1);
+        $('select#selectcategories').change(function () {
+            var optionSelected = $(this).find("option:selected");
+            var valueSelected = optionSelected.val();
+            var category_name = optionSelected.text();
+
+             $.ajax({url: '/getdetails', data: {'cnt': category_name}, success: function(result){
+                    $("#selectsubcategories option").remove();
+                    for (var i = result.length - 1; i >= 0; i--) {
+                        $("#selectsubcategories").append('<option>' + result[i].name + '</option>');
+                    }
+             }});
+
+
+        });
+    });
+</script>
 
 
 

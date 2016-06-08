@@ -4,45 +4,29 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block content %}
-    <style>
-        body {
-            background-image: url(../../../static/images/background.png);
-            background-repeat: repeat;
-        }
-    </style>
+
     <script src="{% static "js/card.js" %}"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
 
 
 
-    {#<form method="POST" enctype="multipart/form-data">#}
-    {#    {%  csrf_token %}#}
-    {#        {{ form | crispy}}#}
-    {#    <button type="submit" class="save btn btn-default black-button">Save</button>#}
-    {#    </form>#}
-    {#  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->#}
-    {#  <div class="scroll-top page-scroll visible-xs visible-sm">#}
-    {#    <a class="btn btn-primary" href="#page-top">#}
-    {#      <i class="fa fa-chevron-up"></i>#}
-    {#    </a>#}
-    {#  </div>#}
+   <div class="content">
+        <div class="main-1">
+            <div class="container">
+                <div class="login-page">
+                    <div class="account_grid">
+                        {% if error %}
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                {{ error }}
+                            </div>
 
+                        {% endif %}
+                        <div class="col-xs-12">
 
-    <div id="login-overlay" class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Payment Update</h4>
-            </div>
-            <div class="modal-body">
-                {% for error in errors %}
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        {{ error }}
-                    </div>
-                {% endfor %}
-                <div class="row">
+                                <form id="loginForm" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="row">
                     <div class="col-xs-12">
                         <div class="well">
                             <form id="payment-update-form" method="POST" enctype="multipart/form-data">
@@ -216,9 +200,19 @@
                     </div>
 
                 </div>
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 
     <script>
         var card = new Card({

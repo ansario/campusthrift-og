@@ -2,54 +2,30 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block content %}
-    <style>
-        body {
-            background-image: url(../../../static/images/background.png);
-            background-repeat: repeat;
-        }
-    </style>
+
+
     <script src="{% static "js/card.js" %}"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
 
 
-
-    {#<form method="POST" enctype="multipart/form-data">#}
-    {#    {%  csrf_token %}#}
-    {#        {{ form | crispy}}#}
-    {#    <button type="submit" class="save btn btn-default black-button">Save</button>#}
-    {#    </form>#}
-    {#  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->#}
-    {#  <div class="scroll-top page-scroll visible-xs visible-sm">#}
-    {#    <a class="btn btn-primary" href="#page-top">#}
-    {#      <i class="fa fa-chevron-up"></i>#}
-    {#    </a>#}
-    {#  </div>#}
-
-    {% if registered %}
-        Rango says: <strong>thank you for registering!</strong>
-        <a href="/rango/">Return to the homepage.</a><br/>
-    {% else %}
-
-        <div id="login-overlay" class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Register for <b>CampusThrift.com</b></h4> or go back to
-                    our <a href="/">main site</a>. If you have an account, please <a href="/login">login</a>.
-                </div>
-                <div class="modal-body">
-                    <form id="signup-form" method="post" enctype="multipart/form-data">
-                        {% for error in errors %}
+<div class="content">
+        <div class="main-1">
+            <div class="container">
+                <div class="login-page">
+                    <div class="account_grid">
+                        {% if error %}
                             <div class="alert alert-danger alert-dismissible" role="alert">
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              {{ error }}
+                                {{ error }}
                             </div>
-                        {% endfor %}
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="well">
 
-                                        {% csrf_token %}
+                        {% endif %}
+                        <div class="col-xs-12">
+                            <div class="well">
+                                <form id="loginForm" method="POST" enctype="multipart/form-data">
+
+
+                                     {% csrf_token %}
                                         <h4>Personal Information</h4>
                                         <p class="small">We need to know you! Fill out the information below. Be sure to
                                             use a
@@ -278,39 +254,31 @@
                                         </div>
 
 
-                                        <p class="small">By registering, you agree to our <a data-toggle="modal" data-target="#tosModal" href="#">terms of service.</a></p>
+                                        <p class="small text-right">By registering, you agree to our <a data-toggle="modal" data-target="#tosModal" href="#">terms of service.</a></p>
                                         <input type="hidden" data-stripe="currency" value="usd">
-                                        <button type="submit" class="save btn btn-default black-button">Register
+                                        <button type="submit" class="save btn btn-success black-button pull-right">Register
                                         </button>
 
-                                </div>
-                            </div>
 
+
+
+
+                                </form>
+                            </div>
                         </div>
-                    </form>
+
+
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        {#        <form id="user_form" method="post" enctype="multipart/form-data">#}
-        {##}
-        {#            {% csrf_token %}#}
-        {##}
-        {#            <!-- Display each form. The as_p method wraps each element in a paragraph#}
-        {#                 (<p>) element. This ensures each element appears on a new line,#}
-        {#                 making everything look neater. -->#}
-        {#            {{ user_form | crispy}}#}
-        {#            {{ profile_form | crispy }}#}
-        {##}
-        {#            <!-- Provide a button to click to submit the form. -->#}
-        {#            <input type="submit" name="submit" value="Register" />#}
-        {#        </form>#}
-    {% endif %}
 
     <script>
         var card = new Card({
-            form: document.getElementById('signup-form'),
+            form: document.getElementById('loginForm'),
             container: '.card-wrapper',
 {#            formSelectors: {#}
                 expiryInput: 'input[name="expiry_month"], input[name="expiry_year"]'
@@ -322,7 +290,7 @@
         Stripe.setPublishableKey('pk_test_ofXAwR1osCQFcO2eLywBPTHC');
 
         $(function () {
-            var $form = $('#signup-form');
+            var $form = $('#loginForm');
             $form.submit(function (event) {
                 // Disable the submit button to prevent repeated clicks:
                 $form.find('.submit').prop('disabled', true);
@@ -342,7 +310,7 @@
 
         function stripeResponseHandlerCustomer(status, response) {
           // Grab the form:
-          var $form = $('#signup-form');
+          var $form = $('#loginForm');
 
 
           if (response.error) { // Problem!

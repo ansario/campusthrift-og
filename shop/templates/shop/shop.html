@@ -1,91 +1,128 @@
 {% extends "campusthrift/base.html" %}
 {% load staticfiles %}
 {% block content %}
+
     <style>
-    ul.nav.nav-list li a {
-    padding-top: 0;
-    padding-bottom: 0;
-}
+
+        .error {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .error-code {
+            bottom: 60%;
+            color: #2d353c;
+            font-size: 96px;
+            line-height: 100px;
+        }
+
+        .error-desc {
+            font-size: 12px;
+            color: #647788;
+        }
+
+        .m-b-10 {
+            margin-bottom: 10px !important;
+        }
+
+        .m-b-20 {
+            margin-bottom: 20px !important;
+        }
+
+        .m-t-20 {
+            margin-top: 20px !important;
+        }
+
     </style>
-    <div class="padding">
 
 
-        <div class="row padding">
-            <div class="col-md-2">
-                <div class="sidebar-nav">
-                    <div class="well">
-                        <ul class="nav nav-list">
-                            {% for category in categories %}
-                                <a href="/shop/category/{{ category }}" class="nav-header">
-                                    <li>{{ category }}</li>
-                                </a>
-                                {% for sub_category in category.subcategories.all %}
-                                    <li>
-                                        <a href="/shop/category/{{ category }}/{{ sub_category }}">{{ sub_category }}</a>
-                                    </li>
-                                {% endfor %}
-                                <li class="divider"></li>
-                            {% endfor %}
+    <div class="content">
+        <div class="product-model">
+            <div class="container">
+                <h2>Our Marketplace</h2>
+                <div class="col-md-9 product-model-sec">
 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div id="products" class="row list-group">
                     {% if items %}
-                        {% for item in items %}
+
+                    {% for item in items %}
 
 
-                            <div class="item  col-xs-4 col-lg-4">
-                                <div class="thumbnail">
-                                    <img class="group list-group-image" src=" {{ item.images.all.0.image.url }}"
-                                         alt=""/>
-                                    <div class="caption">
-                                        <h4 class="">
-                                            {{ item.title|truncatechars:20 }}</h4>
-                                        <p class="group inner list-group-item-text">
-                                            {{ item.description|truncatechars:25 }}</p>
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-6">
-                                                <p class="lead">
-                                                    ${{ item.price }}</p>
-                                            </div>
-                                            <div class="col-xs-12 col-md-6">
-                                                <a class="btn btn-success" href="/shop/view/{{ item.pk }}">View Item</a>
+                        <div class="product-grid">
+                            <div class="more-product"><span> </span></div>
+                            <div class="product-img b-link-stripe b-animate-go  thickbox">
+                                <img src="{{ item.images.all.0.image.url }}" height="200px" width="200px" alt=""/>
+
+                            </div>
+
+                            <div class="product-info simpleCart_shelfItem">
+                                <div class="product-info-cust prt_name">
+                                    <h4>{{ item.title|truncatechars:20 }}</h4>
+                                    <span class="item_price">${{ item.price }}</span>
+                                    <a class="btn btn-success item_add items" href="/shop/view/{{ item.pk }}"> View </a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                {% else %}
+                        <div class="error">
+                                        <div class="error-code m-b-10 m-t-20"><img src="{% static "images/cactuslooking.png" %}"></div>
+                                        <h3 class="font-bold">We couldn't find any items in this category..</h3>
+
+                                        <div class="error-desc">
+                                            Sorry, but it looks like there aren't any items matching this category right now. Try a
+                                            different category or check back later. Happy Thrifting!
+
+                                            <div>
+
                                             </div>
                                         </div>
                                     </div>
+                        {% endif %}
+
+                </div>
+                <div class="rsidebar span_1_of_left">
+                    <section class="sky-form">
+                        <div class="product_right">
+                            <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories
+                            </h4>
+
+                            {% for category in categories %}
+                                <div class="tab{{ category.pk }}">
+                                    <ul class="place">
+                                        <li class="sort">{{ category }}</li>
+                                        <li class="by"><span class="glyphicon glyphicon-chevron-down"
+                                                             aria-hidden="true"></span>
+                                        </li>
+                                        <div class="clearfix"></div>
+                                    </ul>
+                                    <div class="single-bottom">
+                                        {% for subcategory in category.subcategories.all %}
+                                            <a href="/shop/category/{{ category }}/{{ subcategory }}">
+                                                <p>{{ subcategory }}</p></a>
+                                        {% endfor %}
+                                    </div>
+                                    <script>
+
+                                        $(".tab{{ category.pk }} .single-bottom").hide();
+                                        $(".tab{{ category.pk }} ul").click(function () {
+                                            $(".tab{{ category.pk }} .single-bottom").slideToggle(300);
+                                        });
+
+
+                                    </script>
                                 </div>
-                            </div>
+                            {% endfor %}
 
 
-                        {% endfor %}
 
-                    {% else %}
-                        <h4>Oops! It looks like there are not items matching this category right now! Please try again later.
-                        Happy Thrifting!</h4>
-                    {% endif %}
+                    </section>
 
 
                 </div>
-                <div class="col-md-2">
-
-                </div>
-
             </div>
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 {% endblock content %}

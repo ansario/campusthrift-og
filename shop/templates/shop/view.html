@@ -2,192 +2,315 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block content %}
-    <style>
-        body {
-            background-image: url(../../../static/images/background.png);
-            background-repeat: repeat;
-        }
-    </style>
-
-    <div id="login-overlay" class="modal-dialog modal-lg" style="width: 80%">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">{{ item.title }}</h4>
-            </div>
-            <div class="modal-body">
 
 
-                    <div class="product service-image-left">
-
-                        <center>
-                            {#                            <img height="400px" width="400px" id="primary_image" src="{{ pictures.0.image.url }}"/>#}
-                            <img id="primary_image" src="{{ pictures.0.image.url }}"/>
-                        </center>
-                    </div>
-
-                    <div class="container service1-items col-sm-2 col-md-2 pull-left">
-                        <center>
-                            {% for picture in pictures|slice:"1:" %}
-
-                                <a id="item-{{ forloop.counter }}" class="service1-item">
-                                    <img id="{{ forloop.counter }}" src="{{ picture.image.url }}"
-                                         alt="" onclick="swap(this)">
-                                </a>
-                            {% endfor %}
-
-                        </center>
-                    </div>
+    <script>
+        // Can also be used with $(document).ready()
+        $(document).ready(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
 
 
+    <div class="content">
+        <div class="single">
+            <div class="container">
+                <div class="single-grids">
+                    <div class="col-md-4 single-grid1">
+                        <h2>Seller Information</h2>
+                        <div class="card hovercard">
+                        <div class="cardheader">
 
-
-
-
-                        <div class="product view-info text-center">
-
-
-                                <div class="price-info">
-
-                                    <h4>Item Price</h4>
-                                    <p>${{ item.price }}</p>
-                                    <h4>Shipping Price</h4>
-                                    <p>${{ item.shipping_price }}</p>
-                                    <h4>Shipping</h4>
-                                    {% if item.shipping == 1 %}
-                                        <p>On Campus Pickup Only</p>
-                                    {% elif item.shipping == 2 %}
-                                        <p>Off Campus Shipping Only</p>
-                                    {% else %}
-                                        <p>Off Campus Shipping</p>
-                                        <p>On Campus Pickup</p>
-                                    {% endif %}
-                                </div>
-                                <div class="seller-info">
-                                    <h4>About the seller:</h4>
-                                    <h5>Name</h5>
-                                    {{ item.user.first_name }}
-                                    <h5>School</h5>
-                                    {{ seller.school }}
-                                    <h5>Profile</h5>
-                                    <a href="http://campusthrift.ansario.com/user/{{ item.user.username }}">campusthrift.ansario.com/user/{{ item.user.username }}</a>
-
-                                    <form id="addToCart" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="item" value="{{ item.pk }}">
-                                        <button type="submit" class="save btn btn-success btn-block"><i class="fa fa-cart-plus"
-                                                                                                        aria-hidden="true"></i>
-                                            Add to Cart
-                                        </button>
-                                    </form>
-
-
-                                </div>
+                        </div>
+                        <div class="avatar">
+                            <img alt="" src="{{ item.user.user.picture.url }}">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <h3>{{ item.user.first_name }} {{ item.user.last_name }}</h3>
+                            </div>
+                            <div class="desc">{{ item.user.user.school }}</div>
+                            <div class="desc">Graduates: {{ item.user.user.graduation_year }}</div>
+                            <div class="desc">Store: <a href="http://localhost:8000/user/{{ item.user.username }}">localhost:8000/user/{{ item.user.username }}</a></div>
                         </div>
 
-
-
-
-                </div>
-                <div class="clearfix"></div>
-
-                <div class="row">
-                    <div class="col-md-12 padding">
-                        <h4>Description:</h4>
-                        {{ item.description }}
                     </div>
+                    </div>
+                    <div class="col-md-4 single-grid">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                {% for picture in pictures.all %}
+                                    <li data-thumb="{{ picture.image.url }}">
+                                        <div class="thumb-image"><img src="{{ picture.image.url }}"
+                                                                      data-imagezoom="true" class="img-responsive">
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-grid simpleCart_shelfItem">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+
+                        <div class="galry">
+                            <div>
+                                <h4 class="item_price"> Price: ${{ item.price }}</h4>
+                                <div class="clearfix"></div>
+
+                                <hr>
+
+                                <h4 > Shipping Options</h4>
+                                {% if item.shipping == 1 %}
+                                    <h5>On Campus Pickup Only</h5>
+                                {% elif item.shipping == 2 %}
+                                    <h5>Off Campus Shipping Only</h5>
+                                {% else %}
+                                    <h5>Off Campus Shipping</h5>
+                                    <h5>On Campus Pickup</h5>
+                                {% endif %}
+
+                                <hr>
+                                <h4 > Shipping Price</h4>
+                                {% if item.shipping == 1 %}
+                                    <h5>Free On Campus Pickup</h5>
+                                {% elif item.shipping == 2 %}
+                                    <h5>${{ item.shipping_price }}</h5>
+                                {% else %}
+                                   <h5>Free On Campus Pickup or
+                                    ${{ item.shipping_price }} Off Campus Shipping</h5>
+                                {% endif %}
+
+                                <hr>
+
+
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="btn_form">
+                            <form id="addToCart" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="item" value="{{ item.pk }}">
+                                <button type="submit" class="add-cart item_add"><i class="fa fa-cart-plus"
+                                                                                                aria-hidden="true"></i>
+                                    Add to Cart
+                                </button>
+                            </form>
+                        </div>
+                        <div class="tag">
+                            <p>Category : <a href="/shop/category/{{ item.category }}"> {{ item.category }} </a></p>
+                            <p>Sub Category : <a href="/shop/category/{{ item.category }}/{{ item.sub_category }}"> {{ item.sub_category }} </a></p>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-        <script>
 
-            (function ($) {
-                $.fn.imageLens = function (options) {
+    </div>
+    </div>
+    <!-- collapse -->
 
-                    var defaults = {
-                        lensSize: 100,
-                        borderSize: 4,
-                        borderColor: "#888"
-                    };
-                    var options = $.extend(defaults, options);
-                    var lensStyle = "background-position: 0px 0px;width: " + String(options.lensSize) + "px;height: " + String(options.lensSize)
-                            + "px;float: left;display: none;border-radius: " + String(options.lensSize / 2 + options.borderSize)
-                            + "px;border: " + String(options.borderSize) + "px solid " + options.borderColor
-                            + ";background-repeat: no-repeat;position: absolute;";
-
-                    return this.each(function () {
-                        obj = $(this);
-
-                        var offset = $(this).offset();
-
-                        // Creating lens
-                        if (obj.data("imageLens")) {
-                            obj.data("imageLens").obj.remove();
-                        }
-                        var target = $("<div style='" + lensStyle + "' class='" + options.lensCss + "'>&nbsp;</div>").appendTo($("body"));
-
-                        obj.data("imageLens", {obj: target});
-
-                        var targetSize = target.size();
-
-                        // Calculating actual size of image
-                        var imageSrc = options.imageSrc ? options.imageSrc : $(this).attr("src");
-                        var imageTag = "<img style='display:none;' src='" + imageSrc + "' />";
-
-                        var widthRatio = 0;
-                        var heightRatio = 0;
-
-                        $(imageTag).load(function () {
-                            widthRatio = $(this).width() / obj.width();
-                            heightRatio = $(this).height() / obj.height();
-                        }).appendTo($(this).parent());
-
-                        target.css({backgroundImage: "url('" + imageSrc + "')"});
-
-                        target.mousemove(setPosition);
-                        $(this).mousemove(setPosition);
-
-                        function setPosition(e) {
-
-                            var leftPos = parseInt(e.pageX - offset.left);
-                            var topPos = parseInt(e.pageY - offset.top);
-
-                            if (leftPos < 0 || topPos < 0 || leftPos > obj.width() || topPos > obj.height()) {
-                                target.hide();
-                            }
-                            else {
-                                target.show();
-
-                                leftPos = String(((e.pageX - offset.left) * widthRatio - target.width() / 2) * (-1));
-                                topPos = String(((e.pageY - offset.top) * heightRatio - target.height() / 2) * (-1));
-                                target.css({backgroundPosition: leftPos + 'px ' + topPos + 'px'});
-
-                                leftPos = String(e.pageX - target.width() / 2);
-                                topPos = String(e.pageY - target.height() / 2);
-                                target.css({left: leftPos + 'px', top: topPos + 'px'});
-                            }
-                        }
-                    });
-                };
-            })(jQuery);
+    </div>
 
 
-            $("#primary_image").imageLens({lensSize: 200});
-
-            function swap(element) {
-                console.log(element);
-                var primary = $('#primary_image').attr('src');
-                to_swap_id = jQuery(element).attr("id");
-                var to_swap = jQuery(element).attr("src");
-                $('#primary_image').attr('src', to_swap);
-                $('#' + to_swap_id).attr('src', primary);
-                console.log(primary);
-                console.log(to_swap);
-                console.log($('#primary_image').attr('src'));
-                $("#primary_image").imageLens({lensSize: 200});
-            }
 
 
-        </script>
+
+
+
+    {#    <style>#}
+    {#        body {#}
+    {#            background-image: url(../../../static/images/background.png);#}
+    {#            background-repeat: repeat;#}
+    {#        }#}
+    {#    </style>#}
+    {##}
+    {#    <div id="login-overlay" class="modal-dialog modal-lg" style="width: 80%">#}
+    {#        <div class="modal-content">#}
+    {#            <div class="modal-header">#}
+    {#                <h4 class="modal-title" id="myModalLabel">{{ item.title }}</h4>#}
+    {#            </div>#}
+    {#            <div class="modal-body">#}
+    {##}
+    {##}
+    {#                    <div class="product service-image-left">#}
+    {##}
+    {#                        <center>#}
+    {#                            <img height="400px" width="400px" id="primary_image" src="{{ pictures.0.image.url }}"/>#}
+    {#                            <img id="primary_image" src="{{ pictures.0.image.url }}"/>#}
+    {#                        </center>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="container service1-items col-sm-2 col-md-2 pull-left">#}
+    {#                        <center>#}
+    {#                            {% for picture in pictures|slice:"1:" %}#}
+    {##}
+    {#                                <a id="item-{{ forloop.counter }}" class="service1-item">#}
+    {#                                    <img id="{{ forloop.counter }}" src="{{ picture.image.url }}"#}
+    {#                                         alt="" onclick="swap(this)">#}
+    {#                                </a>#}
+    {#                            {% endfor %}#}
+    {##}
+    {#                        </center>#}
+    {#                    </div>#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#                        <div class="product view-info text-center">#}
+    {##}
+    {##}
+    {#                                <div class="price-info">#}
+    {##}
+    {#                                    <h4>Item Price</h4>#}
+    {#                                    <p>${{ item.price }}</p>#}
+    {#                                    <h4>Shipping Price</h4>#}
+    {#                                    <p>${{ item.shipping_price }}</p>#}
+    {#                                    <h4>Shipping</h4>#}
+{#                                        {% if item.shipping == 1 %}#}
+{#                                            <p>On Campus Pickup Only</p>#}
+{#                                        {% elif item.shipping == 2 %}#}
+{#                                            <p>Off Campus Shipping Only</p>#}
+{#                                        {% else %}#}
+{#                                            <p>Off Campus Shipping</p>#}
+{#                                            <p>On Campus Pickup</p>#}
+{#                                        {% endif %}#}
+    {#                                </div>#}
+    {#                                <div class="seller-info">#}
+    {#                                    <h4>About the seller:</h4>#}
+    {#                                    <h5>Name</h5>#}
+    {#                                    {{ item.user.first_name }}#}
+    {#                                    <h5>School</h5>#}
+    {#                                    {{ seller.school }}#}
+    {#                                    <h5>Profile</h5>#}
+    {#                                    <a href="http://campusthrift.ansario.com/user/{{ item.user.username }}">campusthrift.ansario.com/user/{{ item.user.username }}</a>#}
+    {##}
+{#                                        <form id="addToCart" method="POST">#}
+{#                                            {% csrf_token %}#}
+{#                                            <input type="hidden" name="item" value="{{ item.pk }}">#}
+{#                                            <button type="submit" class="save btn btn-success btn-block"><i class="fa fa-cart-plus"#}
+{#                                                                                                            aria-hidden="true"></i>#}
+{#                                                Add to Cart#}
+{#                                            </button>#}
+{#                                        </form>#}
+    {##}
+    {##}
+    {#                                </div>#}
+    {#                        </div>#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#                </div>#}
+    {#                <div class="clearfix"></div>#}
+    {##}
+    {#                <div class="row">#}
+    {#                    <div class="col-md-12 padding">#}
+    {#                        <h4>Description:</h4>#}
+    {#                        {{ item.description }}#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        <script>#}
+    {##}
+    {#            (function ($) {#}
+    {#                $.fn.imageLens = function (options) {#}
+    {##}
+    {#                    var defaults = {#}
+    {#                        lensSize: 100,#}
+    {#                        borderSize: 4,#}
+    {#                        borderColor: "#888"#}
+    {#                    };#}
+    {#                    var options = $.extend(defaults, options);#}
+    {#                    var lensStyle = "background-position: 0px 0px;width: " + String(options.lensSize) + "px;height: " + String(options.lensSize)#}
+    {#                            + "px;float: left;display: none;border-radius: " + String(options.lensSize / 2 + options.borderSize)#}
+    {#                            + "px;border: " + String(options.borderSize) + "px solid " + options.borderColor#}
+    {#                            + ";background-repeat: no-repeat;position: absolute;";#}
+    {##}
+    {#                    return this.each(function () {#}
+    {#                        obj = $(this);#}
+    {##}
+    {#                        var offset = $(this).offset();#}
+    {##}
+    {#                        // Creating lens#}
+    {#                        if (obj.data("imageLens")) {#}
+    {#                            obj.data("imageLens").obj.remove();#}
+    {#                        }#}
+    {#                        var target = $("<div style='" + lensStyle + "' class='" + options.lensCss + "'>&nbsp;</div>").appendTo($("body"));#}
+    {##}
+    {#                        obj.data("imageLens", {obj: target});#}
+    {##}
+    {#                        var targetSize = target.size();#}
+    {##}
+    {#                        // Calculating actual size of image#}
+    {#                        var imageSrc = options.imageSrc ? options.imageSrc : $(this).attr("src");#}
+    {#                        var imageTag = "<img style='display:none;' src='" + imageSrc + "' />";#}
+    {##}
+    {#                        var widthRatio = 0;#}
+    {#                        var heightRatio = 0;#}
+    {##}
+    {#                        $(imageTag).load(function () {#}
+    {#                            widthRatio = $(this).width() / obj.width();#}
+    {#                            heightRatio = $(this).height() / obj.height();#}
+    {#                        }).appendTo($(this).parent());#}
+    {##}
+    {#                        target.css({backgroundImage: "url('" + imageSrc + "')"});#}
+    {##}
+    {#                        target.mousemove(setPosition);#}
+    {#                        $(this).mousemove(setPosition);#}
+    {##}
+    {#                        function setPosition(e) {#}
+    {##}
+    {#                            var leftPos = parseInt(e.pageX - offset.left);#}
+    {#                            var topPos = parseInt(e.pageY - offset.top);#}
+    {##}
+    {#                            if (leftPos < 0 || topPos < 0 || leftPos > obj.width() || topPos > obj.height()) {#}
+    {#                                target.hide();#}
+    {#                            }#}
+    {#                            else {#}
+    {#                                target.show();#}
+    {##}
+    {#                                leftPos = String(((e.pageX - offset.left) * widthRatio - target.width() / 2) * (-1));#}
+    {#                                topPos = String(((e.pageY - offset.top) * heightRatio - target.height() / 2) * (-1));#}
+    {#                                target.css({backgroundPosition: leftPos + 'px ' + topPos + 'px'});#}
+    {##}
+    {#                                leftPos = String(e.pageX - target.width() / 2);#}
+    {#                                topPos = String(e.pageY - target.height() / 2);#}
+    {#                                target.css({left: leftPos + 'px', top: topPos + 'px'});#}
+    {#                            }#}
+    {#                        }#}
+    {#                    });#}
+    {#                };#}
+    {#            })(jQuery);#}
+    {##}
+    {##}
+    {#            $("#primary_image").imageLens({lensSize: 200});#}
+    {##}
+    {#            function swap(element) {#}
+    {#                console.log(element);#}
+    {#                var primary = $('#primary_image').attr('src');#}
+    {#                to_swap_id = jQuery(element).attr("id");#}
+    {#                var to_swap = jQuery(element).attr("src");#}
+    {#                $('#primary_image').attr('src', to_swap);#}
+    {#                $('#' + to_swap_id).attr('src', primary);#}
+    {#                console.log(primary);#}
+    {#                console.log(to_swap);#}
+    {#                console.log($('#primary_image').attr('src'));#}
+    {#                $("#primary_image").imageLens({lensSize: 200});#}
+    {#            }#}
+    {##}
+    {##}
+    {#        </script>#}
 
 
 

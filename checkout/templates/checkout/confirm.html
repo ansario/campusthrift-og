@@ -2,36 +2,24 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block content %}
-    <style>
-        body {
-            background-image: url(../../../static/images/background.png);
-            background-repeat: repeat;
-        }
-    </style>
-    {% if error %}
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            {{ error }}
-        </div>
 
-    {% endif %}
+    <div class="content">
+        <div class="main-1">
+            <div class="container">
+                <div class="login-page">
+                    <div class="account_grid">
+                        <div class="col-md-12">
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visible-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
+                                {% if error %}
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        {{ error }}
+                                    </div>
 
-    <div id="confirm-modal" class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Order Confirmation</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
+                                {% endif %}
 
-                        <h4>You're almost there!</h4>
+
+
+                                <h4>You're almost there!</h4>
                         <p> Confirm your purchase here.</p>
                         <h4 class="pull-right">Order #{{ order.primary_key }}</h4>
                         <br>
@@ -91,22 +79,28 @@
                             </tbody>
                         </table>
 
-                    <h4>Final Total</h4>
-                     <h4>${{ order.final_total }}</h4>
+                    <h4 class="pull-right">Final Total</h4>
+                            <div class="clearfix"></div>
+                     <h4 class="pull-right">${{ order.final_total }}</h4>
 
+                            <div class="clearfix"></div>
+                            <br>
                     <form method="post">
                         {% csrf_token %}
 
-                        <button class="btn btn-success pull-right">Checkout</button>
+                        <button class="btn acount-btn pull-right">Checkout</button>
 
 
                     </form>
-
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
 
 

@@ -37,6 +37,7 @@ def home(request):
     random.shuffle( items )
     item_list = items[:8]
 
+
     return render(request, 'campusthrift/home.html', {'items': item_list})
 
 def about(request):
@@ -132,8 +133,8 @@ def profile(request):
         current_sales = Item.objects.all().filter(user=request.user, sold=False)
         orders = Order.objects.all().filter(buyer=user)
 
-        pending_sold_items = OrderItem.objects.all().filter(seller=user, seller_confirmed=False)
-        pending_purchased_items = OrderItem.objects.all().filter(order__buyer=user, buyer_confirmed=False)
+        pending_sold_items = OrderItem.objects.all().filter(seller=user, seller_confirmed=False, order__canceled=False)
+        pending_purchased_items = OrderItem.objects.all().filter(order__buyer=user, buyer_confirmed=False,  order__canceled=False)
 
 
         # need_to_ship = OrderItem.objects.all().filter(user=request.user, sold=True, buyer_confirmed=False)
@@ -464,15 +465,43 @@ def seller_confirm(request, id):
     order_number = id[:10]
     order_item_id = id[10:]
 
+    order = Order.objects.get(primary_key=order_number)
+
+    if order.in_progress == False:
+        order.in_progress = True
+        order.save()
+
     order_item = OrderItem.objects.get(order_id=order_number, pk=order_item_id)
     order_item.seller_confirmed = True
     order_item.save()
+
+
+    order_items = OrderItem.objects.all().filter(order_id=order_number)
+
+    incomplete = False
+    for order_item_check in order_items:
+
+        if not order_item_check.buyer_confirmed or not order_item_check.seller_confirmed:
+            incomplete = True
+
+    order.in_progress = incomplete
+
+    order.save()
+
+
     return redirect('profile')
 
 @login_required(login_url='/login')
 def buyer_confirm(request, id):
     order_number = id[:10]
     order_item_id = id[10:]
+
+    order = Order.objects.get(primary_key=order_number)
+
+    if order.in_progress == False:
+        order.in_progress = True
+        order.save()
+
 
     order_item = OrderItem.objects.get(order_id=order_number, pk=order_item_id)
     order_item.buyer_confirmed = True
@@ -487,6 +516,42 @@ def buyer_confirm(request, id):
         destination = seller_stripe_account,
         description = "Transfer for " + order_item.seller.email
     )
+
+    order_items = OrderItem.objects.all().filter(order_id=order_number)
+
+    incomplete = False
+    for order_item_check in order_items:
+
+        if not order_item_check.buyer_confirmed or not order_item_check.seller_confirmed:
+            incomplete = True
+
+    order.in_progress = incomplete
+
+    order.save()
+
+    return redirect('profile')
+
+@login_required(login_url='/login')
+def cancel_order(request, pk):
+
+    if Order.objects.filter(pk=pk).exists():
+        order = Order.objects.get(pk=pk)
+
+        if order.buyer == request.user:
+
+            order.canceled = True
+            order.in_progress = False
+            order.complete = False
+            order.save()
+
+            order_items = OrderItem.objects.all().filter(order=order)
+
+            for item in order_items:
+                item.item.sold = False
+                re = stripe.Refund.create(
+                    charge=item.stripe_charge_id
+                )
+                item.item.save()
 
     return redirect('profile')
 
