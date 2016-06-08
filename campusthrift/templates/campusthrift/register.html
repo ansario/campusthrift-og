@@ -9,9 +9,9 @@
 
 
 
-<div class="content">
+    <div class="content1">
         <div class="main-1">
-            <div class="container">
+            <div class="containe1r">
                 <div class="login-page">
                     <div class="account_grid">
                         {% if error %}
@@ -25,253 +25,253 @@
                                 <form id="loginForm" method="POST" enctype="multipart/form-data">
 
 
-                                     {% csrf_token %}
-                                        <h4>Personal Information</h4>
-                                        <p class="small">We need to know you! Fill out the information below. Be sure to
-                                            use a
-                                            .edu email address to verify your status as a college student.</p>
+                                    {% csrf_token %}
+                                    <h4>Personal Information</h4>
+                                    <p class="small">We need to know you! Fill out the information below. Be sure to
+                                        use a
+                                        .edu email address to verify your status as a college student.</p>
 
-                                        <div class="form-group required">
-                                            <label for="first_name" class='control-label'>First Name</label>
-                                            <input type="text" class="form-control" id="first_name" name="first_name"
-                                                   required="true">
+                                    <div class="form-group required">
+                                        <label for="first_name" class='control-label'>First Name</label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="last_name" class='control-label'>Last Name</label>
+                                        <input type="text" class="form-control" id="last_name" name="last_name"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="email" class='control-label'>Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="username" class='control-label'>Username</label>
+                                        <input type="text" class="form-control" id="username" name="username"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="password" class='control-label'>Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="my-file-selector" class='control-label'>Profile Picture</label>
+                                        <br>
+                                        <label class="btn btn-success" for="my-file-selector">
+                                            <input id="my-file-selector" required="true" type="file" name="picture"
+                                                   style="display:none;"
+                                                   onchange="$('#upload-file-info').html($(this).val());">
+                                            Choose File
+                                        </label>
+                                        <span class='label label-info' id="upload-file-info"></span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="school" class='control-label'>School</label>
+                                        <input type="text" class="form-control" id="school" name="school"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="graduation_year" class='control-label'>Graduation Year</label>
+                                        <input type="number" class="form-control" id="graduation_year"
+                                               name="graduation_year" required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="date_of_birth" class='control-label'>Date of Birth</label>
+                                        <input type="date" class="form-control" id="date_of_birth"
+                                               name="date_of_birth"
+                                               required="true">
+                                    </div>
+
+                                    <hr>
+
+
+                                    <h4>Billing and Payment</h4>
+                                    <p class="small">We need your <strong>debit card</strong> information to bill you
+                                        for your
+                                        purchases and
+                                        pay you for your sales! You will not be charged until you make a
+                                        purchase.</p>
+                                    <div class="form-group required">
+                                        <label for="address" class='control-label'>Billing Address</label>
+                                        <input type="text" class="form-control" id="address" name="address"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="city" class='control-label'>City</label>
+                                        <input type="text" class="form-control" id="city" name="city"
+                                               required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="state" class='control-label'>State</label>
+                                        {#                            <label for="state">State</label>#}
+                                        <select class="form-control required" name="state" id="state"
+                                                required="true">
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="zip" class='control-label'>Zip</label>
+                                        <input type="number" class="form-control" id="zip"
+                                               name="zip" required="true">
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group required">
+                                                <label for="name" class='control-label'>Full Name</label>
+                                                <input type="text" data-braintree-name="cardholder_name"
+                                                       class="form-control input-lg" name="name" required="true"
+                                                       placeholder="First Last" required autofocus
+                                                />
+                                            </div>
                                         </div>
-                                        <div class="form-group required">
-                                            <label for="last_name" class='control-label'>Last Name</label>
-                                            <input type="text" class="form-control" id="last_name" name="last_name"
-                                                   required="true">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="number" class='control-label'>Card Number</label>
+                                        <input type="text" type="text" name="number"
+                                               class="form-control input-lg"
+                                               data-stripe="number"
+                                               placeholder="Valid Card Number" required="true" autofocus/>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-xs-4 col-sm-4 col-md-4">
+                                            <div class="form-group required">
+                                                <label for="expiry_month" class='control-label'>Expiration
+                                                    Month</label>
+                                                <input name="expiry_month" id="card-expiry-month"
+                                                       data-stripe="exp_month"
+                                                       class="form-control input-lg" required="true"
+                                                       placeholder="MM" type="text"/>
+                                            </div>
                                         </div>
-                                        <div class="form-group required">
-                                            <label for="email" class='control-label'>Email</label>
-                                            <input type="email" class="form-control" id="email" name="email"
-                                                   required="true">
+                                        <div class="col-xs-4 col-sm-4 col-md-4">
+                                            <div class="form-group required">
+                                                <label for="expiry_year" class='control-label'>Expiration
+                                                    Year</label>
+                                                <input name="expiry_year" id="card-expiry-year"
+                                                       data-stripe="exp_year"
+                                                       class="form-control input-lg" required="true"
+                                                       placeholder="YYYY" type="text"/>
+                                            </div>
                                         </div>
-                                        <div class="form-group required">
-                                            <label for="username" class='control-label'>Username</label>
-                                            <input type="text" class="form-control" id="username" name="username"
-                                                   required="true">
+                                        <div class="col-xs-4 col-sm-4 col-md-4">
+                                            <div class="form-group required">
+                                                <label for="cvv" class='control-label'>CVV</label>
+                                                <input type="password" class="form-control input-lg" name="cvc"
+                                                       placeholder="CVV" data-stripe="cvc" required="true"
+                                                />
+                                            </div>
                                         </div>
-                                        <div class="form-group required">
-                                            <label for="password" class='control-label'>Password</label>
-                                            <input type="password" class="form-control" id="password" name="password"
-                                                   required="true">
+                                    </div>
+                                    <div class="row" style="display:none;">
+                                        <div class="col-xs-12">
+                                            <p class="payment-errors"></p>
                                         </div>
-                                        <div class="form-group required">
-                                            <label for="my-file-selector" class='control-label'>Profile Picture</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 ">
+                                            <div class="card-wrapper"></div>
                                             <br>
-                                            <label class="btn btn-success" for="my-file-selector">
-                                                <input id="my-file-selector" required="true" type="file" name="picture"
-                                                       style="display:none;"
-                                                       onchange="$('#upload-file-info').html($(this).val());">
-                                                Choose File
-                                            </label>
-                                            <span class='label label-info' id="upload-file-info"></span>
+                                            <p class="small">Please verify that this debit card looks similar to yours!
+                                                We
+                                                want to make sure we are
+                                                paying and billing the right card!</p>
                                         </div>
-                                        <div class="form-group required">
-                                            <label for="school" class='control-label'>School</label>
-                                            <input type="text" class="form-control" id="school" name="school"
-                                                   required="true">
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="graduation_year" class='control-label'>Graduation Year</label>
-                                            <input type="number" class="form-control" id="graduation_year"
-                                                   name="graduation_year" required="true">
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="date_of_birth" class='control-label'>Date of Birth</label>
-                                            <input type="date" class="form-control" id="date_of_birth"
-                                                   name="date_of_birth"
-                                                   required="true">
-                                        </div>
-
-                                        <hr>
-
-
-
-
-                                        <h4>Billing and Payment</h4>
-                                        <p class="small">We need your <strong>debit card</strong> information to bill you for your
-                                            purchases and
-                                            pay you for your sales! You will not be charged until you make a
-                                            purchase.</p>
-                                         <div class="form-group required">
-                                            <label for="address" class='control-label'>Billing Address</label>
-                                            <input type="text" class="form-control" id="address" name="address"
-                                                   required="true">
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="city" class='control-label'>City</label>
-                                            <input type="text" class="form-control" id="city" name="city"
-                                                   required="true">
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="state" class='control-label'>State</label>
-                                            {#                            <label for="state">State</label>#}
-                                            <select class="form-control required" name="state" id="state"
-                                                    required="true">
-                                                <option value="AL">Alabama</option>
-                                                <option value="AK">Alaska</option>
-                                                <option value="AZ">Arizona</option>
-                                                <option value="AR">Arkansas</option>
-                                                <option value="CA">California</option>
-                                                <option value="CO">Colorado</option>
-                                                <option value="CT">Connecticut</option>
-                                                <option value="DE">Delaware</option>
-                                                <option value="DC">District Of Columbia</option>
-                                                <option value="FL">Florida</option>
-                                                <option value="GA">Georgia</option>
-                                                <option value="HI">Hawaii</option>
-                                                <option value="ID">Idaho</option>
-                                                <option value="IL">Illinois</option>
-                                                <option value="IN">Indiana</option>
-                                                <option value="IA">Iowa</option>
-                                                <option value="KS">Kansas</option>
-                                                <option value="KY">Kentucky</option>
-                                                <option value="LA">Louisiana</option>
-                                                <option value="ME">Maine</option>
-                                                <option value="MD">Maryland</option>
-                                                <option value="MA">Massachusetts</option>
-                                                <option value="MI">Michigan</option>
-                                                <option value="MN">Minnesota</option>
-                                                <option value="MS">Mississippi</option>
-                                                <option value="MO">Missouri</option>
-                                                <option value="MT">Montana</option>
-                                                <option value="NE">Nebraska</option>
-                                                <option value="NV">Nevada</option>
-                                                <option value="NH">New Hampshire</option>
-                                                <option value="NJ">New Jersey</option>
-                                                <option value="NM">New Mexico</option>
-                                                <option value="NY">New York</option>
-                                                <option value="NC">North Carolina</option>
-                                                <option value="ND">North Dakota</option>
-                                                <option value="OH">Ohio</option>
-                                                <option value="OK">Oklahoma</option>
-                                                <option value="OR">Oregon</option>
-                                                <option value="PA">Pennsylvania</option>
-                                                <option value="RI">Rhode Island</option>
-                                                <option value="SC">South Carolina</option>
-                                                <option value="SD">South Dakota</option>
-                                                <option value="TN">Tennessee</option>
-                                                <option value="TX">Texas</option>
-                                                <option value="UT">Utah</option>
-                                                <option value="VT">Vermont</option>
-                                                <option value="VA">Virginia</option>
-                                                <option value="WA">Washington</option>
-                                                <option value="WV">West Virginia</option>
-                                                <option value="WI">Wisconsin</option>
-                                                <option value="WY">Wyoming</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="zip" class='control-label'>Zip</label>
-                                            <input type="number" class="form-control" id="zip"
-                                                   name="zip" required="true">
-                                        </div>
-
-                                        <div class="row">
-
-                                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                                <div class="form-group required">
-                                                    <label for="name" class='control-label'>Full Name</label>
-                                                    <input type="text" data-braintree-name="cardholder_name"
-                                                           class="form-control input-lg" name="name" required="true"
-                                                           placeholder="First Last" required autofocus
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="number" class='control-label'>Card Number</label>
-                                            <input type="text" type="text" name="number"
-                                                   class="form-control input-lg"
-                                                   data-stripe="number"
-                                                   placeholder="Valid Card Number" required="true" autofocus/>
-                                        </div>
-                                        <div class="row">
-
-                                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                                <div class="form-group required">
-                                                    <label for="expiry_month" class='control-label'>Expiration
-                                                        Month</label>
-                                                    <input name="expiry_month" id="card-expiry-month"
-                                                           data-stripe="exp_month"
-                                                           class="form-control input-lg" required="true"
-                                                           placeholder="MM" type="text"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                                <div class="form-group required">
-                                                    <label for="expiry_year" class='control-label'>Expiration
-                                                        Year</label>
-                                                    <input name="expiry_year" id="card-expiry-year"
-                                                           data-stripe="exp_year"
-                                                           class="form-control input-lg" required="true"
-                                                           placeholder="YYYY" type="text"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                                <div class="form-group required">
-                                                    <label for="cvv" class='control-label'>CVV</label>
-                                                    <input type="password" class="form-control input-lg" name="cvc"
-                                                           placeholder="CVV" data-stripe="cvc" required="true"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="display:none;">
-                                            <div class="col-xs-12">
-                                                <p class="payment-errors"></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-12 ">
-                                                <div class="card-wrapper"></div>
-                                                <br>
-                                                <p class="small">Please verify that this debit card looks similar to yours! We
-                                                    want to make sure we are
-                                                    paying and billing the right card!</p>
-                                            </div>
-                                        </div>
+                                    </div>
                                     <hr>
                                     <p class="small">Finally, we need the last 4 of your Social Security Number. We need
-                                    this to verify your identity in order to keep our fellow students safe!</p>
-                                        <div class="row">
+                                        this to verify your identity in order to keep our fellow students safe!</p>
+                                    <div class="row">
 
-                                            <div class="col-md-4 text-center">
-                                                </div>
-                                            <div class="col-md-4 text-center">
+                                        <div class="col-md-4 text-center">
+                                        </div>
+                                        <div class="col-md-4 text-center">
 
-                                                <div class="form-group required">
-                                                    <label for="ssn" class='control-label'>Last 4 of SSN</label>
-                                                    <input type="password" pattern=".{4,4}" class="form-control" name="ssn"
-                                                           placeholder="0000" required="true"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 text-center">
-                                                </div>
+                                            <div class="form-group required">
+                                                <label for="ssn" class='control-label'>Last 4 of SSN</label>
+                                                <input type="password" pattern=".{4,4}" class="form-control" name="ssn"
+                                                       placeholder="0000" required="true"
+                                                />
                                             </div>
                                         </div>
-
-
-                                        <p class="small text-right">By registering, you agree to our <a data-toggle="modal" data-target="#tosModal" href="#">terms of service.</a></p>
-                                        <input type="hidden" data-stripe="currency" value="usd">
-                                        <button type="submit" class="save btn btn-success black-button pull-right">Register
-                                        </button>
-
-
-
-
+                                        <div class="col-md-4 text-center">
+                                        </div>
+                                    </div>
+                                    <p class="small text-right">By registering, you agree to our <a data-toggle="modal"
+                                                                                                    data-target="#tosModal"
+                                                                                                    href="#">terms of
+                                        service.</a></p>
+                                    <input type="hidden" data-stripe="currency" value="usd">
+                                    <button type="submit" class="save btn btn-success black-button pull-right">
+                                        Register
+                                    </button>
 
                                 </form>
                             </div>
+
+
                         </div>
-
-
                     </div>
+
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -280,10 +280,10 @@
         var card = new Card({
             form: document.getElementById('loginForm'),
             container: '.card-wrapper',
-{#            formSelectors: {#}
-                expiryInput: 'input[name="expiry_month"], input[name="expiry_year"]'
-{#                cvcInput: 'input#cvc'#}
-{#            }#}
+            {#            formSelectors: {#}
+            expiryInput: 'input[name="expiry_month"], input[name="expiry_year"]'
+            {#                cvcInput: 'input#cvc'#}
+            {#            }#}
         })
     </script>
     <script>
@@ -298,9 +298,9 @@
                 // Request a token from Stripe:
                 var token = Stripe.card.createToken($form, stripeResponseHandlerCustomer);
                 console.log(token);
-{#                $form.append($('<input type="hidden" name="stripeTokenCustomer">').val(token.id));#}
-{#                var token = Stripe.card.createToken($form, stripeResponseHandler);#}
-{#                $form.append($('<input type="hidden" name="stripeTokenSeller">').val(token.id));#}
+                {#                $form.append($('<input type="hidden" name="stripeTokenCustomer">').val(token.id));#}
+                {#                var token = Stripe.card.createToken($form, stripeResponseHandler);#}
+                {#                $form.append($('<input type="hidden" name="stripeTokenSeller">').val(token.id));#}
 
 
                 // Prevent the form from being submitted:
@@ -309,57 +309,53 @@
         });
 
         function stripeResponseHandlerCustomer(status, response) {
-          // Grab the form:
-          var $form = $('#loginForm');
+            // Grab the form:
+            var $form = $('#loginForm');
 
 
-          if (response.error) { // Problem!
+            if (response.error) { // Problem!
 
-            // Show the errors on the form:
-            $form.find('.payment-errors').text(response.error.message);
-            $form.find('.submit').prop('disabled', false); // Re-enable submission
+                // Show the errors on the form:
+                $form.find('.payment-errors').text(response.error.message);
+                $form.find('.submit').prop('disabled', false); // Re-enable submission
 
-          } else { // Token was created!
+            } else { // Token was created!
 
-            // Get the token ID:
-            var token = response.id;
-
-
-            $form.append($('<input type="hidden" name="stripeTokenCustomer" />').val(token));
-              var token = Stripe.card.createToken($form, stripeResponseHandlerSeller);
+                // Get the token ID:
+                var token = response.id;
 
 
+                $form.append($('<input type="hidden" name="stripeTokenCustomer" />').val(token));
+                var token = Stripe.card.createToken($form, stripeResponseHandlerSeller);
 
-          }
-        };
+
+            }
+        }
+        ;
         function stripeResponseHandlerSeller(status, response) {
-          // Grab the form:
-          var $form = $('#signup-form');
+            // Grab the form:
+            var $form = $('#loginForm');
 
 
-          if (response.error) { // Problem!
+            if (response.error) { // Problem!
 
-            // Show the errors on the form:
-            $form.find('.payment-errors').text(response.error.message);
-            $form.find('.submit').prop('disabled', false); // Re-enable submission
+                // Show the errors on the form:
+                $form.find('.payment-errors').text(response.error.message);
+                $form.find('.submit').prop('disabled', false); // Re-enable submission
 
-          } else { // Token was created!
+            } else { // Token was created!
 
-            // Get the token ID:
-            var token = response.id;
-
-
-            $form.append($('<input type="hidden" name="stripeTokenSeller" />').val(token));
-              $form.get(0).submit();
+                // Get the token ID:
+                var token = response.id;
 
 
-
-          }
-        };
-
+                $form.append($('<input type="hidden" name="stripeTokenSeller" />').val(token));
+                $form.get(0).submit();
 
 
-
+            }
+        }
+        ;
 
 
     </script>

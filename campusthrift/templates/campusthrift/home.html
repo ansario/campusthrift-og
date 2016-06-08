@@ -13,57 +13,53 @@
     <script src="{% static "js/mason.js" %}"></script>
 
     <!--header-->
-    <div class="banner-section">
-        <div class="container11">
-            <div class="banner-grids">
-                <div class="col-md-12 full banner-grid">
-                    <h2>CampusThrift</h2>
-                    <p>The first online thrift store exclusively for college students. Sign in with your school
-                        administered .edu email, and start buying and selling between students nationwide.
-                    </p>
-                    <a href="/shop" class="button"> shop now </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+    <!-- Header -->
+    <div class="full parent gallery">
+        <div class="child text-center white">
+            <h1 class="large text-shadow">Campus Thrift</h1>
+            <p class="med text-shadow">The first online thrift store exclusively for college students. Sign in with your
+                school
+                administered .edu email, and start buying and selling between students nationwide.<p/>
         </div>
     </div>
 
-    <div class="gallery">
-        <div class="container11">
+
+    <div class="row gallery-prod">
+
             <h3>Featured products</h3>
-            <div class="gallery-grids">
-<div class="row">
-                    {% for item in items %}
-
-                        <div class="col-md-3 col-xs-12 col-sm-12 gallery-grid ">
-                        <a href="/shop/view/{{ item.pk }}"><img class="center-image" src="{{ item.images.all.0.image.url }}"  height="200px" width="200px" alt=""/>
-                            <div class="gallery-info">
-                                <div class="quick">
-                                    <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="galy-info">
-                            <p>{{ item.title|truncatechars:20 }}</p>
-                            <div class="galry">
-                                <div class="prices">
-                                    <h5 class="item_price">${{ item.price }}</h5>
-                                </div>
 
 
-                                <div class="clearfix"></div>
-                            </div>
+            {% for item in items %}
+
+                <div class="col-md-3 col-xs-12 col-sm-6">
+                <a href="/shop/view/{{ item.pk }}"><img class="center-image" src="{{ item.images.all.0.image.url }}"  height="200px" width="200px" alt=""/>
+                    <div class="gallery-info">
+                        <div class="quick">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
                         </div>
                     </div>
+                </a>
+                <div class="galy-info">
+                    <p>{{ item.title|truncatechars:20 }}</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">${{ item.price }}</h5>
+                        </div>
 
-                    {% endfor %}
- </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
 
 
 
                 <div class="clearfix"></div>
-            </div>
-        </div>
+
+
     </div>
 
 

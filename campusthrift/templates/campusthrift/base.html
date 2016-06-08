@@ -35,99 +35,54 @@
 
 </head>
 
+
 <body>
-<!--header-->
-<div class="header">
-    <div class="header-top">
-        <div class="container">
-            <div class="top-right">
-                <ul>
-                    {% if request.user.is_authenticated %}
-                    <li class="text"><a href="/profile">Profile</a></li>
-                    <li class="text"><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
-                    <li class="text"><a href="/shop/new">Sell</a></li>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+{#    <div class="container">#}
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img
+                    src="{% static "images/campusthrift logo.png" %}" alt="Logo">
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="col-sm-3 col-md-3 search pull-right">
+                <form class="navbar-form" action='/shop' role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/shop">Shop</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
+                    <li><a href="/shop/new">Sell New Item</a></li>
                 {% else %}
-                    <li class="text"><a href="/login">Login</a></li>
-                    <li class="text"><a href="/register">Register</a></li>
-                    <li class="text"><a href="/about">About Us</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/about">About Us</a></li>
                 {% endif %}
-
-                </ul>
-            </div>
-            <div class="clearfix"></div>
+            </ul>
         </div>
-    </div>
-    <div class="header-bottom">
-        <div class="container">
-            <!--/.content-->
-            <div class="content white">
-                <nav class="navbar navbar-default" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand " href="/" style="margin-bottom: 15px;"><img class="img-responsive"
-                                src="{% static "images/campusthrift logo.png" %}" alt="Logo">
-                        </a>
-                    </div>
-                    <!--/.navbar-header-->
+        <!-- /.navbar-collapse -->
+{#    </div>#}
+    <!-- /.container-fluid -->
+</nav>
 
-                    <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-
-                        <ul class="nav navbar-nav">
-                            {%  for category in categories %}
-
-                                <li class="dropdown">
-                                <a style="color:white;" href="/shop/{{ category }}" class="dropdown-toggle" data-toggle="dropdown">{{ category }} <b class="caret"></b></a>
-
-                                <ul class="dropdown-menu multi-column columns-3">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                {% for subcategory in category.subcategories.all %}
-                                                    <li><a class="list1" href="/shop/category/{{ category }}/{{ subcategory }}">{{ subcategory }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li>
-
-
-                            {% endfor %}
-                         <li>
-                                <form class="navbar-form" action='/shop' role="search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="q">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-default" style="margin:0;" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-                                </form>
-                                </li>
-                        </ul>
-                    </div>
-                    <!--/.navbar-collapse-->
-                </nav>
-                <!--/.navbar-->
-            </div>
-
-
-            <!-- search-scripts -->
-            <script src="{% static "js/classie.js" %}"></script>
-            <script src="{% static "js/uisearch.js" %}"></script>
-            <script>
-                new UISearch(document.getElementById('sb-search'));
-            </script>
-            <!-- //search-scripts -->
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
 
 <div class="content-area">
     {% block content %}
