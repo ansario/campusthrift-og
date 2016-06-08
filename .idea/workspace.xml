@@ -2,76 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67e58d84-6545-4801-a966-f8291374c834" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/account_inactive.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/base.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email/email_confirmation_message.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email/email_confirmation_signup_message.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email/email_confirmation_signup_subject.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email/email_confirmation_subject.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email/password_reset_key_message.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email/password_reset_key_subject.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/email_confirm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/logout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/cannot_delete_primary_email.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/email_confirmation_sent.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/email_confirmed.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/email_deleted.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/logged_in.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/logged_out.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/password_changed.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/password_set.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/primary_email_set.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/messages/unverified_primary_email.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/password_change.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/password_reset.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/password_reset_done.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/password_reset_from_key.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/password_reset_from_key_done.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/password_set.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/signup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/signup_closed.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/snippets/already_logged_in.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/verification_sent.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/account/verified_email_required.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/openid/base.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/openid/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/shopify/base.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/shopify/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/authentication_error.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/base.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/connections.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/login_cancelled.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/messages/account_connected.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/messages/account_connected_other.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/messages/account_disconnected.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/signup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/snippets/login_extra.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campusthrift/templates/socialaccount/snippets/provider_list.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/settings.py" afterPath="$PROJECT_DIR$/campusthrift/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/home.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/login.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/payment_edit.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/payment_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/profile.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/profile_edit.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/profile_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/register.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/reset.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/reset.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/reset_confirm.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/reset_confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/urls.py" afterPath="$PROJECT_DIR$/campusthrift/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/views.py" afterPath="$PROJECT_DIR$/campusthrift/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkout/models.py" afterPath="$PROJECT_DIR$/checkout/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkout/templates/checkout/checkout.html" afterPath="$PROJECT_DIR$/checkout/templates/checkout/checkout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkout/templates/checkout/confirm.html" afterPath="$PROJECT_DIR$/checkout/templates/checkout/confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkout/templates/checkout/thanks.html" afterPath="$PROJECT_DIR$/checkout/templates/checkout/thanks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/templates/shop/cart.html" afterPath="$PROJECT_DIR$/shop/templates/shop/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/templates/shop/new.html" afterPath="$PROJECT_DIR$/shop/templates/shop/new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/templates/shop/shop.html" afterPath="$PROJECT_DIR$/shop/templates/shop/shop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/templates/shop/view.html" afterPath="$PROJECT_DIR$/shop/templates/shop/view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/custom_styles.css" afterPath="$PROJECT_DIR$/static/css/custom_styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
     </list>
     <ignored path="campusthrift.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,21 +49,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.3529415">
-              <caret line="862" column="16" selection-start-line="862" selection-start-column="16" selection-end-line="862" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.52025586">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shop.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shop.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shop/templates/shop/shop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5766129">
-              <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+            <state vertical-scroll-proportion="44.958332">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -139,8 +72,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5416667">
-              <caret line="142" column="26" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.5833333">
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-2.5">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <caret line="4" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -240,9 +173,9 @@
         <option value="$PROJECT_DIR$/campusthrift/views.py" />
         <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/profile.html" />
         <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" />
+        <option value="$PROJECT_DIR$/shop/templates/shop/shop.html" />
         <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/home.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/shop/templates/shop/shop.html" />
       </list>
     </option>
   </component>
@@ -1122,34 +1055,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/home.html">
+    <entry file="file://$PROJECT_DIR$/shop/templates/shop/shop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state vertical-scroll-proportion="44.958332">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5416667">
-          <caret line="142" column="26" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.5833333">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.3529415">
-          <caret line="862" column="16" selection-start-line="862" selection-start-column="16" selection-end-line="862" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop/templates/shop/shop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5766129">
-          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.52025586">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
