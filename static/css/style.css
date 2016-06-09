@@ -1649,7 +1649,12 @@ i.sele{
     display: block;
     float: left;
     margin: 4em 2em 0% 0;
+    padding: 1em;
+    border: solid;
+    border-radius: 2em;
     width: 22%;
+    /*background-image: url("../images/background.png");*/
+    background-color: #00BFA5;
 }
 /*-----*/
 .b-link-stripe{
@@ -3019,4 +3024,8 @@ p {
 
 nav.navbar.navbar-default.navbar-fixed-top {
     width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, td, label {
+	font-size: 130%;
 }

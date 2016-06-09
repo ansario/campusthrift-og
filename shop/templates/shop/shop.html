@@ -40,6 +40,46 @@
         <div class="product-model">
             <div class="container11">
                 <h2>Our Shop</h2>
+            <div class="rsidebar span_1_of_left">
+                    <section class="sky-form">
+                        <div class="product_right">
+                            <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories
+                            </h4>
+
+                            {% for category in categories %}
+                                <div class="tab{{ category.pk }}">
+                                    <ul class="place">
+                                        <li class="sort">{{ category }}</li>
+                                        <li class="by"><span class="glyphicon glyphicon-chevron-down"
+                                                             aria-hidden="true"></span>
+                                        </li>
+                                        <div class="clearfix"></div>
+                                    </ul>
+                                    <div class="single-bottom">
+                                        {% for subcategory in category.subcategories.all %}
+                                            <a href="/shop/category/{{ category }}/{{ subcategory }}">
+                                                <p>{{ subcategory }}</p></a>
+                                        {% endfor %}
+                                    </div>
+                                    <script>
+
+                                        $(".tab{{ category.pk }} .single-bottom").hide();
+                                        $(".tab{{ category.pk }} ul").click(function () {
+                                            $(".tab{{ category.pk }} .single-bottom").slideToggle(300);
+                                        });
+
+
+                                    </script>
+                                </div>
+                            {% endfor %}
+
+
+
+                    </section>
+
+
+
+                </div>
                 <div class="col-md-9 product-model-sec">
 
                     {% if items %}
@@ -82,46 +122,7 @@
                         {% endif %}
 
                 </div>
-                <div class="rsidebar span_1_of_left">
-                    <section class="sky-form">
-                        <div class="product_right">
-                            <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories
-                            </h4>
 
-                            {% for category in categories %}
-                                <div class="tab{{ category.pk }}">
-                                    <ul class="place">
-                                        <li class="sort">{{ category }}</li>
-                                        <li class="by"><span class="glyphicon glyphicon-chevron-down"
-                                                             aria-hidden="true"></span>
-                                        </li>
-                                        <div class="clearfix"></div>
-                                    </ul>
-                                    <div class="single-bottom">
-                                        {% for subcategory in category.subcategories.all %}
-                                            <a href="/shop/category/{{ category }}/{{ subcategory }}">
-                                                <p>{{ subcategory }}</p></a>
-                                        {% endfor %}
-                                    </div>
-                                    <script>
-
-                                        $(".tab{{ category.pk }} .single-bottom").hide();
-                                        $(".tab{{ category.pk }} ul").click(function () {
-                                            $(".tab{{ category.pk }} .single-bottom").slideToggle(300);
-                                        });
-
-
-                                    </script>
-                                </div>
-                            {% endfor %}
-
-
-
-                    </section>
-
-
-
-                </div>
             </div>
         </div>
     </div>
