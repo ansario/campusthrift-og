@@ -17,7 +17,7 @@ def reminder_email():
     base_reminder_email_template = open(os.path.join(PROJECT_ROOT, 'emails/reminder_email.html')).read()
 
 
-    orders = Order.objects.all().filter(date__lte=datetime.now()-timedelta(days=3), date__gte=datetime.now()-timedelta(days=6) )
+    orders = Order.objects.all().filter(date__gte=datetime.now()-timedelta(days=3), complete=False)
 
 
     for order in orders:
@@ -30,7 +30,7 @@ def reminder_email():
 @kronos.register('0 0 * * *')
 def process_sales():
 
-    orders = Order.objects.all().filter(date__lte=datetime.now()-timedelta(days=6))
+    orders = Order.objects.all().filter(date__gte=datetime.now()-timedelta(days=6))
 
     for order in orders:
         order_items = OrderItem.objects.all().filter(order=order)
@@ -40,6 +40,9 @@ def process_sales():
             if item.seller_confirmed and not item.buyer_confirmed:
                 item.buyer_confirmed = True
                 item.save()
+
+        order.complete = True
+        order.save()
 
 @kronos.register('0 0 * * *')
 def process_graduates():
