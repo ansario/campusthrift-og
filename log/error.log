@@ -337,3 +337,24 @@
 [Tue Jun 07 02:15:54.271152 2016] [:error] [pid 7910] 2026
 [Tue Jun 07 02:25:13.044916 2016] [:error] [pid 7910] Not Found: /pillow-talk/
 [Tue Jun 07 02:25:54.693712 2016] [:error] [pid 7910] Not Found: /pillow-talk/
+[Sun Jun 12 15:40:15.023300 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Attach interpreter ''.
+[Sun Jun 12 15:40:15.023583 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 15:40:15.023818 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 15:41:54.057085 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Shutdown requested 'campusthrift.com'.
+[Sun Jun 12 15:41:54.057454 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Stopping process 'campusthrift.com'.
+[Sun Jun 12 15:41:54.057490 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Destroying interpreters.
+[Sun Jun 12 15:41:54.057512 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Cleanup interpreter ''.
+[Sun Jun 12 15:41:54.063196 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Terminating Python.
+[Sun Jun 12 15:41:54.066204 2016] [:info] [pid 7014:tid 140031082133376] mod_wsgi (pid=7014): Python has shutdown.
+[Sun Jun 12 15:41:55.089633 2016] [:info] [pid 7158:tid 139946414581632] mod_wsgi (pid=7158): Attach interpreter ''.
+[Sun Jun 12 15:41:55.089875 2016] [:info] [pid 7158:tid 139946414581632] mod_wsgi (pid=7158): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 15:41:55.090118 2016] [:info] [pid 7158:tid 139946414581632] mod_wsgi (pid=7158): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 15:42:20.227263 2016] [:info] [pid 7158:tid 139946224875264] mod_wsgi (pid=7158): Create interpreter '127.0.1.1|'.
+[Sun Jun 12 15:42:20.229687 2016] [:info] [pid 7158:tid 139946224875264] mod_wsgi (pid=7158): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 15:42:20.230116 2016] [:info] [pid 7158:tid 139946224875264] mod_wsgi (pid=7158): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 15:42:20.230887 2016] [:info] [pid 7158:tid 139946224875264] [remote 74.110.162.236:18640] mod_wsgi (pid=7158, process='campusthrift.com', application='127.0.1.1|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Sun Jun 12 15:42:21.873549 2016] [core:info] [pid 7159:tid 139946157381376] [client 74.110.162.236:55713] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: http://107.170.27.124/static/css/style.css
+[Sun Jun 12 15:42:24.412887 2016] [core:info] [pid 7159:tid 139946165774080] [client 74.110.162.236:55710] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: http://107.170.27.124/static/css/style.css
+[Sun Jun 12 15:42:25.895924 2016] [core:info] [pid 7159:tid 139946115417856] [client 74.110.162.236:55710] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: http://107.170.27.124/static/css/style.css
+[Sun Jun 12 15:42:30.831853 2016] [core:info] [pid 7159:tid 139946048276224] [client 74.110.162.236:55710] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: http://107.170.27.124/static/css/style.css
+[Sun Jun 12 15:42:34.544750 2016] [core:info] [pid 7159:tid 139946090239744] [client 74.110.162.236:55710] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: http://107.170.27.124/static/css/style.css
