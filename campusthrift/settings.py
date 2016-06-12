@@ -171,5 +171,5 @@ BRAINTREE_PRIVATE_KEY = 'c39332d36893a20f0e20ee7afc39a860'
 
 SG_KEY = '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'
 
-HOSTED_URL = "http://campusthrift.ansario.com"
+HOSTED_URL = "http://campusthrift.com"
 

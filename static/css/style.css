@@ -1648,7 +1648,7 @@ i.sele{
 .rsidebar {
     display: block;
     float: left;
-    margin: 4em 2em 0% 0;
+    /*margin: 4em 2em 0% 0;*/
     padding: 1em;
     border: solid;
     border-radius: 2em;
@@ -1656,6 +1656,9 @@ i.sele{
     /*background-image: url("../images/background.png");*/
     background-color: #00BFA5;
 }
+
+
+
 /*-----*/
 .b-link-stripe{
 	position:relative;
