@@ -27,7 +27,7 @@ urlpatterns = [
 
 
     url(r'^admin/', admin.site.urls),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/login'}),
+    url(r'^logout$', views.logout_user, name='logout'),
     url(r'^shop/', include('shop.urls')),
     url(r'^checkout/', include('checkout.urls')),
     url(r'^register$', views.register, name='register'),

@@ -20,6 +20,7 @@ from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY
 import sendgrid
 import re
 import base64
+from django.contrib.auth import logout
 sg = sendgrid.SendGridClient(SG_KEY)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
@@ -590,3 +591,7 @@ def user_store(request, user):
 
 def handler404(request):
     return render(request, 'campusthrift/404.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
