@@ -300,8 +300,8 @@ def register(request):
     if request.method == 'POST':
         # Attempt to grab information from the raw form information.
         # Note that we make use of both UserForm and UserProfileForm.
-        print request.POST
-        print request.FILES
+
+
 
         user = User()
         user.first_name = request.POST['first_name']
@@ -340,8 +340,6 @@ def register(request):
         now = datetime.datetime.now()
         graduation_year = int(request.POST['graduation_year'])
         max_graduation_year = int(now.year + 10)
-        print now.year
-        print max_graduation_year
 
         if graduation_year  > max_graduation_year:
             errors.append("Your graduation year is too far ahead in the future!")
@@ -372,7 +370,7 @@ def register(request):
             )
 
 
-            print request.POST['stripeTokenCustomer']
+
 
             try:
 
@@ -403,6 +401,9 @@ def register(request):
             stripe_account_object.legal_entity.address.postal_code = profile.zip
             stripe_account_object.legal_entity.ssn_last_4 =  request.POST['ssn']
 
+
+
+
             # stripe_account.external_account = request.POST['stripeToken']
 
 
@@ -416,9 +417,15 @@ def register(request):
                     stripe_account_object.save()
                 except:
                     errors.append("Please verify your financial details")
+                    return render(request,
+                    'campusthrift/register.html',
+                    {'registered': registered, 'errors': errors} )
 
         else:
             errors.append("There was an error with your payment information!")
+            return render(request,
+                    'campusthrift/register.html',
+                    {'registered': registered, 'errors': errors} )
 
         if not errors:
             try:
@@ -526,6 +533,8 @@ def buyer_confirm(request, id):
             incomplete = True
 
     order.in_progress = incomplete
+    if order.in_progress == False:
+        order.complete = True
 
     order.save()
 

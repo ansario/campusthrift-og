@@ -16,9 +16,7 @@ def reminder_email():
 
     base_reminder_email_template = open(os.path.join(PROJECT_ROOT, 'emails/reminder_email.html')).read()
 
-
     orders = Order.objects.all().filter(date__gte=datetime.now()-timedelta(days=3), complete=False)
-
 
     for order in orders:
         order_items = OrderItem.objects.all().filter(order=order)

@@ -71,9 +71,12 @@
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
                     <li><a href="/shop/new">Sell New Item</a></li>
+                    <li><a href="/logout">Logout</a></li>
+
                 {% else %}
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Sell New Item</a></li>
                     <li><a href="/about">About Us</a></li>
                 {% endif %}
             </ul>
