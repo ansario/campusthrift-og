@@ -585,7 +585,7 @@ def user_store(request, user):
 
     try:
         user = User.objects.get(username=user)
-        items = Item.objects.all().filter(user=user)
+        items = Item.objects.all().filter(user=user, sold=False)
 
         return render(request, 'campusthrift/user_shop.html', {"user":user, "items":items})
     except:

@@ -1221,3 +1221,12 @@
 [Sun Jun 12 23:15:47.023887 2016] [ssl:info] [pid 11224:tid 140463180822272] (70014)End of file found: [client 74.110.162.236:64657] AH01991: SSL input filter read failed.
 [Sun Jun 12 23:15:47.041597 2016] [ssl:info] [pid 11224:tid 140463281534720] [client 74.110.162.236:64659] AH01964: Connection to child 7 established (server campusthrift.com:443)
 [Sun Jun 12 23:15:51.885120 2016] [core:info] [pid 11224:tid 140463239571200] [client 74.110.162.236:64659] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:17:39.393824 2016] [ssl:info] [pid 11224:tid 140463164036864] [client 74.110.162.236:64697] AH01964: Connection to child 21 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:40.286427 2016] [core:info] [pid 11224:tid 140463273142016] [client 74.110.162.236:64697] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:17:48.279288 2016] [ssl:info] [pid 11225:tid 140463222785792] [client 74.110.162.236:64701] AH01964: Connection to child 78 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:48.280036 2016] [ssl:info] [pid 11225:tid 140463214393088] [client 74.110.162.236:64706] AH01964: Connection to child 79 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:48.281988 2016] [ssl:info] [pid 11225:tid 140463206000384] [client 74.110.162.236:64705] AH01964: Connection to child 80 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:48.282741 2016] [ssl:info] [pid 11225:tid 140463197607680] [client 74.110.162.236:64704] AH01964: Connection to child 81 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:48.283162 2016] [ssl:info] [pid 11225:tid 140463189214976] [client 74.110.162.236:64702] AH01964: Connection to child 82 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:48.283739 2016] [ssl:info] [pid 11225:tid 140463180822272] [client 74.110.162.236:64703] AH01964: Connection to child 83 established (server campusthrift.com:443)
+[Sun Jun 12 23:17:48.661746 2016] [core:info] [pid 11225:tid 140463164036864] [client 74.110.162.236:64706] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
