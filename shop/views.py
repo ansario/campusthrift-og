@@ -20,7 +20,7 @@ def shop(request):
         categories = Category.objects.all()
 
     else:
-        items = Item.objects.all().filter(user__user__graduated=False)
+        items = Item.objects.all().filter(user__user__graduated=False, sold=False)
         categories = Category.objects.all()
 
     return render(request, 'shop/shop.html', {'items':items, 'categories':categories})
