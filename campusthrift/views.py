@@ -16,7 +16,7 @@ import random, string
 import datetime
 from django.http import Http404
 import os
-from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY
+from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY, STRIPE_API_KEY
 import sendgrid
 import re
 import base64
@@ -25,7 +25,7 @@ sg = sendgrid.SendGridClient(SG_KEY)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 
-stripe.api_key = "sk_test_s0ajVDOjYhLtpA6cuJMuyr6e"
+stripe.api_key = STRIPE_API_KEY
 
 
 

@@ -2,13 +2,14 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.forms import modelformset_factory, BaseFormSet
 from django import forms
 import stripe
+from campusthrift.settings import STRIPE_API_KEY
 from users.models import UserProfile
 from campusthrift.forms import ItemForm, ImageForm
 from models import Category, Subcategory, Item, ItemImage
 import simplejson
 from PIL import Image
 from django.contrib.auth.decorators import login_required
-
+stripe.api_key = STRIPE_API_KEY
 from watson import search as watson
 # Create your views here.
 def shop(request):

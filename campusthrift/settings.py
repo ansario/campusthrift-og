@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT="/var/www/campusthrift.ansario.com/static/"
+STATIC_ROOT="/var/www/campusthrift.com/static/"
 # STATICFILES_DIRS = (BASE_DIR, 'static')
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
@@ -169,7 +169,9 @@ BRAINTREE_MERCHANT_ID = 'svphctvpmh3kx2jy'
 BRAINTREE_PUBLIC_KEY = 'vswpdt5j8dky88gj'
 BRAINTREE_PRIVATE_KEY = 'c39332d36893a20f0e20ee7afc39a860'
 
+STRIPE_API_KEY = "sk_live_Sv81yk5vaudEoBPur3hpqhX0 "
+
 SG_KEY = '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'
 
-HOSTED_URL = "http://campusthrift.com"
+HOSTED_URL = "https://campusthrift.com"
 
