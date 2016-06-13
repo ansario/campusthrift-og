@@ -162,7 +162,7 @@ def confirm(request):
 
            order_item.item.sold = True
            order_item.item.save()
-           application_fee = order_item.order_item_total_price * 100 * .15
+
 
            result = stripe.Charge.create(
                amount = int(order_item.order_item_total_price * 100),
@@ -170,8 +170,6 @@ def confirm(request):
                customer = request.user.user.stripe_customer_id,
                description = "charge for " + request.user.email,
                destination = order_item.seller.user.stripe_account_id,
-               application_fee = application_fee
-
            )
 
 

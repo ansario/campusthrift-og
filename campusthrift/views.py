@@ -518,11 +518,13 @@ def buyer_confirm(request, id):
 
     seller_stripe_account = stripe.Account.retrieve(order_item.seller.user.stripe_account_id)
 
+
     stripe.Transfer.create(
-        amount = int(float(order_item.order_item_total_price) * 100 * .85),
+        amount = int((float(order_item.order_item_total_price) * 100)),
         currency = "usd",
         destination = seller_stripe_account,
-        description = "Transfer for " + order_item.seller.email
+        description = "Transfer for " + order_item.seller.email,
+        application_fee = int(float(order_item.order_item_total_price) * 100 * .15)
     )
 
     order_items = OrderItem.objects.all().filter(order_id=order_number)
