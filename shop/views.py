@@ -27,7 +27,7 @@ def shop(request):
 
 def shop_category(request, category):
 
-    items = Item.objects.all().filter(category=category, user__user__graduated=False)
+    items = Item.objects.all().filter(sold=False,category=category, user__user__graduated=False)
     categories = Category.objects.all()
     return render(request, 'shop/shop.html', {'items':items, 'categories':categories})
 
@@ -36,7 +36,7 @@ def shop_subcategory(request, category, subcategory):
     category = category.replace("%20", ' ')
     subcategory = subcategory.replace("%20", ' ')
 
-    items = Item.objects.all().filter(category=category, sub_category=subcategory, user__user__graduated=False)
+    items = Item.objects.all().filter(category=category,sold=False, sub_category=subcategory, user__user__graduated=False)
     categories = Category.objects.all()
 
     return render(request, 'shop/shop.html', {'items': items, 'categories': categories})

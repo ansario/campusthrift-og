@@ -1230,3 +1230,47 @@
 [Sun Jun 12 23:17:48.283162 2016] [ssl:info] [pid 11225:tid 140463189214976] [client 74.110.162.236:64702] AH01964: Connection to child 82 established (server campusthrift.com:443)
 [Sun Jun 12 23:17:48.283739 2016] [ssl:info] [pid 11225:tid 140463180822272] [client 74.110.162.236:64703] AH01964: Connection to child 83 established (server campusthrift.com:443)
 [Sun Jun 12 23:17:48.661746 2016] [core:info] [pid 11225:tid 140463164036864] [client 74.110.162.236:64706] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:18:45.792012 2016] [ssl:info] [pid 11225:tid 140463206000384] (70014)End of file found: [client 74.110.162.236:64705] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:45.792403 2016] [ssl:info] [pid 11225:tid 140463197607680] (70014)End of file found: [client 74.110.162.236:64704] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:45.793169 2016] [ssl:info] [pid 11225:tid 140463189214976] (70014)End of file found: [client 74.110.162.236:64702] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:45.793390 2016] [ssl:info] [pid 11225:tid 140463180822272] (70014)End of file found: [client 74.110.162.236:64703] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:58.887350 2016] [ssl:info] [pid 11224:tid 140463256356608] [client 74.110.162.236:64720] AH01964: Connection to child 10 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:58.889615 2016] [ssl:info] [pid 11225:tid 140463155644160] [client 74.110.162.236:64718] AH01964: Connection to child 86 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:58.890777 2016] [ssl:info] [pid 11225:tid 140463147251456] [client 74.110.162.236:64717] AH01964: Connection to child 87 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:58.891652 2016] [ssl:info] [pid 11224:tid 140463247963904] [client 74.110.162.236:64719] AH01964: Connection to child 11 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:58.892759 2016] [ssl:info] [pid 11225:tid 140463138858752] [client 74.110.162.236:64715] AH01964: Connection to child 88 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:58.893629 2016] [ssl:info] [pid 11224:tid 140463197607680] [client 74.110.162.236:64716] AH01964: Connection to child 17 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:59.350194 2016] [ssl:info] [pid 11224:tid 140463172429568] (70014)End of file found: [client 74.110.162.236:64720] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:59.351190 2016] [ssl:info] [pid 11225:tid 140463361447680] (70014)End of file found: [client 74.110.162.236:64715] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:59.351654 2016] [ssl:info] [pid 11224:tid 140463147251456] (70014)End of file found: [client 74.110.162.236:64716] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:18:59.422271 2016] [core:info] [pid 11224:tid 140463411803904] [client 74.110.162.236:64719] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:18:59.450626 2016] [ssl:info] [pid 11224:tid 140463403411200] [client 74.110.162.236:64724] AH01964: Connection to child 1 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:59.451031 2016] [ssl:info] [pid 11224:tid 140463155644160] [client 74.110.162.236:64726] AH01964: Connection to child 22 established (server campusthrift.com:443)
+[Sun Jun 12 23:18:59.454903 2016] [ssl:info] [pid 11224:tid 140463231178496] [client 74.110.162.236:64725] AH01964: Connection to child 13 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:01.185838 2016] [core:info] [pid 11224:tid 140463369840384] [client 74.110.162.236:64726] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Mon Jun 13 03:19:06.006534 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Shutdown requested 'campusthrift.com'.
+[Mon Jun 13 03:19:06.007186 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Stopping process 'campusthrift.com'.
+[Mon Jun 13 03:19:06.007254 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Destroying interpreters.
+[Mon Jun 13 03:19:06.007350 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Destroy interpreter 'campusthrift.com|'.
+[Mon Jun 13 03:19:06.055290 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Cleanup interpreter ''.
+[Mon Jun 13 03:19:06.060086 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Terminating Python.
+[Mon Jun 13 03:19:06.106602 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Python has shutdown.
+[Sun Jun 12 23:19:07.059126 2016] [ssl:info] [pid 11378:tid 140026218583936] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:19:07.059984 2016] [ssl:info] [pid 11378:tid 140026218583936] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:19:07.082233 2016] [ssl:info] [pid 11379:tid 140026218583936] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:19:07.082952 2016] [ssl:info] [pid 11379:tid 140026218583936] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:19:07.171751 2016] [:info] [pid 11382:tid 140026218583936] mod_wsgi (pid=11382): Attach interpreter ''.
+[Sun Jun 12 23:19:07.172108 2016] [:info] [pid 11382:tid 140026218583936] mod_wsgi (pid=11382): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:19:07.172534 2016] [:info] [pid 11382:tid 140026218583936] mod_wsgi (pid=11382): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:19:07.847209 2016] [ssl:info] [pid 11383:tid 140025924642560] [client 74.110.162.236:64730] AH01964: Connection to child 14 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:07.847509 2016] [ssl:info] [pid 11383:tid 140025941427968] [client 74.110.162.236:64727] AH01964: Connection to child 12 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:07.853267 2016] [ssl:info] [pid 11384:tid 140025974998784] [client 74.110.162.236:64728] AH01964: Connection to child 72 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:07.854102 2016] [ssl:info] [pid 11384:tid 140025924642560] [client 74.110.162.236:64731] AH01964: Connection to child 78 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:07.854683 2016] [ssl:info] [pid 11384:tid 140025882679040] [client 74.110.162.236:64729] AH01964: Connection to child 83 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:07.855197 2016] [ssl:info] [pid 11384:tid 140025983391488] [client 74.110.162.236:64732] AH01964: Connection to child 71 established (server campusthrift.com:443)
+[Sun Jun 12 23:19:07.940876 2016] [:info] [pid 11382:tid 140026101835520] mod_wsgi (pid=11382): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 23:19:07.941893 2016] [:info] [pid 11382:tid 140026101835520] mod_wsgi (pid=11382): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:19:07.942101 2016] [:info] [pid 11382:tid 140026101835520] mod_wsgi (pid=11382): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:19:07.942411 2016] [:info] [pid 11382:tid 140026101835520] [remote 74.110.162.236:357] mod_wsgi (pid=11382, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Sun Jun 12 23:19:08.605647 2016] [core:info] [pid 11383:tid 140025974998784] [client 74.110.162.236:64727] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:19:12.292005 2016] [core:info] [pid 11384:tid 140025949820672] [client 74.110.162.236:64732] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
