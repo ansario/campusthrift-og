@@ -771,3 +771,453 @@
 [Sun Jun 12 21:49:52.446099 2016] [ssl:info] [pid 9040:tid 140544030250752] [client 216.218.206.66:57026] AH02008: SSL library error 1 in handshake (server campusthrift.com:443)
 [Sun Jun 12 21:49:52.446287 2016] [ssl:info] [pid 9040:tid 140544030250752] SSL Library Error: error:1408A0C1:SSL routines:SSL3_GET_CLIENT_HELLO:no shared cipher -- Too restrictive SSLCipherSuite or using DSA server certificate?
 [Sun Jun 12 21:49:52.446303 2016] [ssl:info] [pid 9040:tid 140544030250752] [client 216.218.206.66:57026] AH01998: Connection closed to child 9 with abortive shutdown (server campusthrift.com:443)
+[Sun Jun 12 22:46:05.324965 2016] [ssl:info] [pid 10543:tid 140244625909632] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 22:46:05.326468 2016] [ssl:info] [pid 10543:tid 140244625909632] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 22:46:05.349662 2016] [ssl:info] [pid 10544:tid 140244625909632] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 22:46:05.350529 2016] [ssl:info] [pid 10544:tid 140244625909632] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 22:46:05.429017 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Attach interpreter ''.
+[Sun Jun 12 22:46:05.429591 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 22:46:05.438407 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 22:46:37.642874 2016] [ssl:info] [pid 10548:tid 140244414351104] [client 74.110.162.236:64106] AH01964: Connection to child 4 established (server campusthrift.com:443)
+[Sun Jun 12 22:46:37.646330 2016] [ssl:info] [pid 10549:tid 140244517553920] [client 74.110.162.236:64104] AH01964: Connection to child 64 established (server campusthrift.com:443)
+[Sun Jun 12 22:46:37.650186 2016] [ssl:info] [pid 10549:tid 140244439529216] [client 74.110.162.236:64105] AH01964: Connection to child 65 established (server campusthrift.com:443)
+[Sun Jun 12 22:46:38.142000 2016] [ssl:info] [pid 10549:tid 140244414351104] [client 74.110.162.236:64109] AH01964: Connection to child 68 established (server campusthrift.com:443)
+[Sun Jun 12 22:46:38.143725 2016] [ssl:info] [pid 10548:tid 140244422743808] [client 74.110.162.236:64111] AH01964: Connection to child 3 established (server campusthrift.com:443)
+[Sun Jun 12 22:46:38.144600 2016] [ssl:info] [pid 10548:tid 140244405958400] [client 74.110.162.236:64110] AH01964: Connection to child 5 established (server campusthrift.com:443)
+[Sun Jun 12 22:46:38.163144 2016] [:info] [pid 10547:tid 140244509161216] mod_wsgi (pid=10547): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 22:46:38.167924 2016] [:info] [pid 10547:tid 140244509161216] mod_wsgi (pid=10547): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 22:46:38.168401 2016] [:info] [pid 10547:tid 140244509161216] mod_wsgi (pid=10547): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 22:46:38.169609 2016] [:info] [pid 10547:tid 140244509161216] [remote 74.110.162.236:6207] mod_wsgi (pid=10547, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Sun Jun 12 22:46:39.406479 2016] [core:info] [pid 10548:tid 140244431136512] [client 74.110.162.236:64106] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:46:53.861490 2016] [ssl:info] [pid 10549:tid 140244517553920] (70014)End of file found: [client 74.110.162.236:64104] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:46:53.862174 2016] [ssl:info] [pid 10549:tid 140244414351104] (70014)End of file found: [client 74.110.162.236:64109] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:46:53.862265 2016] [ssl:info] [pid 10548:tid 140244422743808] (70014)End of file found: [client 74.110.162.236:64111] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:46:53.862358 2016] [ssl:info] [pid 10548:tid 140244405958400] (70014)End of file found: [client 74.110.162.236:64110] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:50:55.051301 2016] [ssl:info] [pid 10549:tid 140244288460544] [client 74.110.162.236:64205] AH01964: Connection to child 83 established (server campusthrift.com:443)
+[Sun Jun 12 22:50:55.424931 2016] [ssl:info] [pid 10548:tid 140244389172992] [client 74.110.162.236:64206] AH01964: Connection to child 7 established (server campusthrift.com:443)
+[Sun Jun 12 22:50:55.549010 2016] [core:info] [pid 10549:tid 140244363994880] [client 74.110.162.236:64205] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:51:10.320562 2016] [ssl:info] [pid 10548:tid 140244389172992] (70014)End of file found: [client 74.110.162.236:64206] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:51:10.335342 2016] [ssl:info] [pid 10548:tid 140244380780288] [client 74.110.162.236:64207] AH01964: Connection to child 8 established (server campusthrift.com:443)
+[Mon Jun 13 02:51:10.371774 2016] [:error] [pid 10547:tid 140244391663360] 
+[Mon Jun 13 02:51:10.371925 2016] [:error] [pid 10547:tid 140244391663360]  Accessories 
+[Sun Jun 12 22:51:19.869120 2016] [ssl:info] [pid 10549:tid 140244313638656] [client 74.110.162.236:64208] AH01964: Connection to child 80 established (server campusthrift.com:443)
+[Mon Jun 13 02:51:19.900660 2016] [:error] [pid 10547:tid 140244391663360] 
+[Mon Jun 13 02:51:19.900817 2016] [:error] [pid 10547:tid 140244391663360]  Shoes 
+[Sun Jun 12 22:51:32.784841 2016] [ssl:info] [pid 10549:tid 140244254889728] [client 74.110.162.236:64210] AH01964: Connection to child 87 established (server campusthrift.com:443)
+[Mon Jun 13 02:51:32.983613 2016] [:error] [pid 10547:tid 140244509161216] Internal Server Error: /shop/new
+[Mon Jun 13 02:51:32.983667 2016] [:error] [pid 10547:tid 140244509161216] Traceback (most recent call last):
+[Mon Jun 13 02:51:32.983677 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 13 02:51:32.983687 2016] [:error] [pid 10547:tid 140244509161216]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 13 02:51:32.983696 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 13 02:51:32.983706 2016] [:error] [pid 10547:tid 140244509161216]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 13 02:51:32.983716 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 13 02:51:32.983725 2016] [:error] [pid 10547:tid 140244509161216]     return view_func(request, *args, **kwargs)
+[Mon Jun 13 02:51:32.983734 2016] [:error] [pid 10547:tid 140244509161216]   File "/var/www/campusthrift.com/shop/views.py", line 87, in new
+[Mon Jun 13 02:51:32.983743 2016] [:error] [pid 10547:tid 140244509161216]     item.save()
+[Mon Jun 13 02:51:32.983750 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 708, in save
+[Mon Jun 13 02:51:32.983774 2016] [:error] [pid 10547:tid 140244509161216]     force_update=force_update, update_fields=update_fields)
+[Mon Jun 13 02:51:32.983782 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 736, in save_base
+[Mon Jun 13 02:51:32.983789 2016] [:error] [pid 10547:tid 140244509161216]     updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+[Mon Jun 13 02:51:32.983797 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 820, in _save_table
+[Mon Jun 13 02:51:32.983804 2016] [:error] [pid 10547:tid 140244509161216]     result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+[Mon Jun 13 02:51:32.983811 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py", line 859, in _do_insert
+[Mon Jun 13 02:51:32.983818 2016] [:error] [pid 10547:tid 140244509161216]     using=using, raw=raw)
+[Mon Jun 13 02:51:32.983824 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 122, in manager_method
+[Mon Jun 13 02:51:32.983831 2016] [:error] [pid 10547:tid 140244509161216]     return getattr(self.get_queryset(), name)(*args, **kwargs)
+[Mon Jun 13 02:51:32.983838 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 1039, in _insert
+[Mon Jun 13 02:51:32.983845 2016] [:error] [pid 10547:tid 140244509161216]     return query.get_compiler(using=using).execute_sql(return_id)
+[Mon Jun 13 02:51:32.983852 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 1060, in execute_sql
+[Mon Jun 13 02:51:32.983859 2016] [:error] [pid 10547:tid 140244509161216]     cursor.execute(sql, params)
+[Mon Jun 13 02:51:32.983865 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 79, in execute
+[Mon Jun 13 02:51:32.983873 2016] [:error] [pid 10547:tid 140244509161216]     return super(CursorDebugWrapper, self).execute(sql, params)
+[Mon Jun 13 02:51:32.983881 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 64, in execute
+[Mon Jun 13 02:51:32.983889 2016] [:error] [pid 10547:tid 140244509161216]     return self.cursor.execute(sql, params)
+[Mon Jun 13 02:51:32.983894 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py", line 95, in __exit__
+[Mon Jun 13 02:51:32.983901 2016] [:error] [pid 10547:tid 140244509161216]     six.reraise(dj_exc_type, dj_exc_value, traceback)
+[Mon Jun 13 02:51:32.983908 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 64, in execute
+[Mon Jun 13 02:51:32.983916 2016] [:error] [pid 10547:tid 140244509161216]     return self.cursor.execute(sql, params)
+[Mon Jun 13 02:51:32.983925 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 323, in execute
+[Mon Jun 13 02:51:32.983933 2016] [:error] [pid 10547:tid 140244509161216]     return Database.Cursor.execute(self, query, params)
+[Mon Jun 13 02:51:32.983941 2016] [:error] [pid 10547:tid 140244509161216] OperationalError: attempt to write a readonly database
+[Sun Jun 12 22:51:52.590889 2016] [ssl:info] [pid 10548:tid 140244439529216] [client 74.110.162.236:64213] AH01964: Connection to child 1 established (server campusthrift.com:443)
+[Sun Jun 12 22:51:52.594126 2016] [ssl:info] [pid 10548:tid 140244363994880] [client 74.110.162.236:64215] AH01964: Connection to child 10 established (server campusthrift.com:443)
+[Sun Jun 12 22:51:52.596954 2016] [ssl:info] [pid 10548:tid 140244347209472] [client 74.110.162.236:64211] AH01964: Connection to child 12 established (server campusthrift.com:443)
+[Sun Jun 12 22:51:52.599495 2016] [ssl:info] [pid 10548:tid 140244338816768] [client 74.110.162.236:64216] AH01964: Connection to child 13 established (server campusthrift.com:443)
+[Sun Jun 12 22:51:52.602230 2016] [ssl:info] [pid 10548:tid 140244330424064] [client 74.110.162.236:64214] AH01964: Connection to child 14 established (server campusthrift.com:443)
+[Sun Jun 12 22:51:52.604765 2016] [ssl:info] [pid 10549:tid 140244338816768] [client 74.110.162.236:64212] AH01964: Connection to child 77 established (server campusthrift.com:443)
+[Mon Jun 13 02:51:52.913134 2016] [:error] [pid 10547:tid 140244391663360] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Mon Jun 13 02:51:52.913179 2016] [:error] [pid 10547:tid 140244391663360] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Sun Jun 12 22:51:53.637825 2016] [core:info] [pid 10548:tid 140244246497024] [client 74.110.162.236:64213] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:51:56.168671 2016] [core:info] [pid 10548:tid 140244397565696] [client 74.110.162.236:64211] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:52:01.678542 2016] [ssl:info] [pid 10549:tid 140244330424064] [client 74.110.162.236:64219] AH01964: Connection to child 78 established (server campusthrift.com:443)
+[Sun Jun 12 22:52:01.997575 2016] [core:info] [pid 10549:tid 140244355602176] [client 74.110.162.236:64219] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:52:04.107076 2016] [core:info] [pid 10549:tid 140244389172992] [client 74.110.162.236:64219] AH00128: File does not exist: /var/www/campusthrift.com/static/images/close_1.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:52:04.120659 2016] [core:info] [pid 10549:tid 140244372387584] [client 74.110.162.236:64219] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:52:04.127067 2016] [ssl:info] [pid 10548:tid 140244431136512] [client 74.110.162.236:64220] AH01964: Connection to child 2 established (server campusthrift.com:443)
+[Sun Jun 12 22:52:06.868596 2016] [core:info] [pid 10549:tid 140244431136512] [client 74.110.162.236:64219] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:52:16.249872 2016] [ssl:info] [pid 10548:tid 140244431136512] (70014)End of file found: [client 74.110.162.236:64220] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:52:16.263999 2016] [ssl:info] [pid 10548:tid 140244422743808] [client 74.110.162.236:64221] AH01964: Connection to child 3 established (server campusthrift.com:443)
+[Mon Jun 13 02:52:16.283951 2016] [:error] [pid 10547:tid 140244509161216] <QueryDict: {u'2_ship_method': [u'2'], u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'zip': [u'29030'], u'state': [u'SC'], u'address': [u'8250 Old State Rd'], u'csrfmiddlewaretoken': [u'1QtDJrIAStpgRl3XLOiwUeEY7pjdElAL']}>
+[Mon Jun 13 02:52:16.284006 2016] [:error] [pid 10547:tid 140244509161216] {u'2': 1}
+[Mon Jun 13 02:52:16.284018 2016] [:error] [pid 10547:tid 140244509161216] {u'2': 1}
+[Mon Jun 13 02:52:16.294327 2016] [:error] [pid 10547:tid 140244509161216] /usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1453: RuntimeWarning: DateTimeField Order.date received a naive datetime (2016-06-13 02:46:38.765875) while time zone support is active.
+[Mon Jun 13 02:52:16.294380 2016] [:error] [pid 10547:tid 140244509161216]   RuntimeWarning)
+[Mon Jun 13 02:52:16.294391 2016] [:error] [pid 10547:tid 140244509161216] 
+[Sun Jun 12 22:52:16.606330 2016] [core:info] [pid 10548:tid 140244389172992] [client 74.110.162.236:64221] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:52:20.747307 2016] [core:info] [pid 10548:tid 140244363994880] [client 74.110.162.236:64221] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:53:38.566384 2016] [ssl:info] [pid 10549:tid 140244439529216] [client 104.15.81.76:52056] AH01964: Connection to child 65 established (server campusthrift.com:443)
+[Sun Jun 12 22:53:39.011938 2016] [ssl:info] [pid 10549:tid 140244517553920] [client 104.15.81.76:52058] AH01964: Connection to child 64 established (server campusthrift.com:443)
+[Sun Jun 12 22:53:39.016407 2016] [ssl:info] [pid 10548:tid 140244322031360] [client 104.15.81.76:52057] AH01964: Connection to child 15 established (server campusthrift.com:443)
+[Sun Jun 12 22:53:39.019006 2016] [ssl:info] [pid 10549:tid 140244414351104] [client 104.15.81.76:52060] AH01964: Connection to child 68 established (server campusthrift.com:443)
+[Sun Jun 12 22:53:39.020549 2016] [ssl:info] [pid 10549:tid 140244288460544] [client 104.15.81.76:52061] AH01964: Connection to child 83 established (server campusthrift.com:443)
+[Sun Jun 12 22:53:39.022003 2016] [ssl:info] [pid 10548:tid 140244330424064] [client 104.15.81.76:52059] AH01964: Connection to child 14 established (server campusthrift.com:443)
+[Sun Jun 12 22:53:39.815342 2016] [core:info] [pid 10549:tid 140244330424064] [client 104.15.81.76:52058] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Mon Jun 13 02:53:41.841939 2016] [:error] [pid 10547:tid 140244391663360] Not Found: /favicon.ico
+[Sun Jun 12 22:54:21.148496 2016] [ssl:info] [pid 10548:tid 140244355602176] [client 74.110.162.236:64252] AH01964: Connection to child 11 established (server campusthrift.com:443)
+[Sun Jun 12 22:54:22.514469 2016] [core:info] [pid 10548:tid 140244313638656] [client 74.110.162.236:64252] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:54:30.345011 2016] [ssl:info] [pid 10548:tid 140244296853248] [client 74.110.162.236:64253] AH01964: Connection to child 18 established (server campusthrift.com:443)
+[Mon Jun 13 02:54:31.323719 2016] [:error] [pid 10547:tid 140244509161216] Internal Server Error: /buyer_confirm/vy4h3g3bgy2/
+[Mon Jun 13 02:54:31.323764 2016] [:error] [pid 10547:tid 140244509161216] Traceback (most recent call last):
+[Mon Jun 13 02:54:31.323769 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 13 02:54:31.323774 2016] [:error] [pid 10547:tid 140244509161216]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 13 02:54:31.323778 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 13 02:54:31.323782 2016] [:error] [pid 10547:tid 140244509161216]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 13 02:54:31.323786 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 13 02:54:31.323790 2016] [:error] [pid 10547:tid 140244509161216]     return view_func(request, *args, **kwargs)
+[Mon Jun 13 02:54:31.323794 2016] [:error] [pid 10547:tid 140244509161216]   File "/var/www/campusthrift.com/campusthrift/views.py", line 527, in buyer_confirm
+[Mon Jun 13 02:54:31.323798 2016] [:error] [pid 10547:tid 140244509161216]     application_fee = int(float(order_item.order_item_total_price) * 100 * .15)
+[Mon Jun 13 02:54:31.323820 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Mon Jun 13 02:54:31.323825 2016] [:error] [pid 10547:tid 140244509161216]     response, api_key = requestor.request('post', url, params, headers)
+[Mon Jun 13 02:54:31.323828 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Mon Jun 13 02:54:31.323832 2016] [:error] [pid 10547:tid 140244509161216]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Mon Jun 13 02:54:31.323835 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Mon Jun 13 02:54:31.323839 2016] [:error] [pid 10547:tid 140244509161216]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Mon Jun 13 02:54:31.323842 2016] [:error] [pid 10547:tid 140244509161216]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Mon Jun 13 02:54:31.323846 2016] [:error] [pid 10547:tid 140244509161216]     rbody, rcode, resp, rheaders)
+[Mon Jun 13 02:54:31.323849 2016] [:error] [pid 10547:tid 140244509161216] InvalidRequestError: Request req_8d1GIqG9RV1jUK: Insufficient funds in Stripe account.   You can use the the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).
+[Mon Jun 13 02:57:05.110353 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Shutdown requested 'campusthrift.com'.
+[Mon Jun 13 02:57:05.110774 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Stopping process 'campusthrift.com'.
+[Mon Jun 13 02:57:05.110807 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Destroying interpreters.
+[Mon Jun 13 02:57:05.110925 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Destroy interpreter 'campusthrift.com|'.
+[Mon Jun 13 02:57:05.145900 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Cleanup interpreter ''.
+[Mon Jun 13 02:57:05.150813 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Terminating Python.
+[Mon Jun 13 02:57:05.197728 2016] [:info] [pid 10547:tid 140244625909632] mod_wsgi (pid=10547): Python has shutdown.
+[Sun Jun 12 22:57:06.117967 2016] [ssl:info] [pid 10685:tid 140441854371712] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 22:57:06.118452 2016] [ssl:info] [pid 10685:tid 140441854371712] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 22:57:06.131498 2016] [ssl:info] [pid 10686:tid 140441854371712] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 22:57:06.131923 2016] [ssl:info] [pid 10686:tid 140441854371712] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 22:57:06.172650 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Attach interpreter ''.
+[Sun Jun 12 22:57:06.172898 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 22:57:06.173109 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 22:57:12.115674 2016] [ssl:info] [pid 10690:tid 140441672480512] [client 74.110.162.236:64323] AH01964: Connection to child 64 established (server campusthrift.com:443)
+[Sun Jun 12 22:57:12.124406 2016] [ssl:info] [pid 10689:tid 140441588553472] [client 74.110.162.236:64324] AH01964: Connection to child 10 established (server campusthrift.com:443)
+[Sun Jun 12 22:57:12.129401 2016] [ssl:info] [pid 10690:tid 140441563375360] [client 74.110.162.236:64326] AH01964: Connection to child 77 established (server campusthrift.com:443)
+[Sun Jun 12 22:57:12.136804 2016] [ssl:info] [pid 10689:tid 140441580160768] [client 74.110.162.236:64325] AH01964: Connection to child 11 established (server campusthrift.com:443)
+[Sun Jun 12 22:57:12.145267 2016] [ssl:info] [pid 10690:tid 140441546589952] [client 74.110.162.236:64328] AH01964: Connection to child 79 established (server campusthrift.com:443)
+[Sun Jun 12 22:57:12.152616 2016] [ssl:info] [pid 10689:tid 140441571768064] [client 74.110.162.236:64327] AH01964: Connection to child 12 established (server campusthrift.com:443)
+[Sun Jun 12 22:57:12.187464 2016] [:info] [pid 10688:tid 140441737623296] mod_wsgi (pid=10688): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 22:57:12.189068 2016] [:info] [pid 10688:tid 140441737623296] mod_wsgi (pid=10688): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 22:57:12.189383 2016] [:info] [pid 10688:tid 140441737623296] mod_wsgi (pid=10688): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 22:57:12.189980 2016] [:info] [pid 10688:tid 140441737623296] [remote 74.110.162.236:54314] mod_wsgi (pid=10688, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Sun Jun 12 22:57:13.116528 2016] [core:info] [pid 10690:tid 140441630516992] [client 74.110.162.236:64326] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:57:14.685163 2016] [core:info] [pid 10690:tid 140441596946176] [client 74.110.162.236:64326] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:57:24.361726 2016] [ssl:info] [pid 10689:tid 140441571768064] (70014)End of file found: [client 74.110.162.236:64327] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:57:24.361950 2016] [ssl:info] [pid 10689:tid 140441580160768] (70014)End of file found: [client 74.110.162.236:64325] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:57:24.362399 2016] [ssl:info] [pid 10689:tid 140441588553472] (70014)End of file found: [client 74.110.162.236:64324] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:57:24.362577 2016] [ssl:info] [pid 10690:tid 140441546589952] (70014)End of file found: [client 74.110.162.236:64328] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:57:24.375638 2016] [ssl:info] [pid 10690:tid 140441529804544] [client 74.110.162.236:64330] AH01964: Connection to child 81 established (server campusthrift.com:443)
+[Mon Jun 13 02:57:24.391845 2016] [:error] [pid 10688:tid 140441737623296] 
+[Mon Jun 13 02:57:24.392052 2016] [:error] [pid 10688:tid 140441737623296]  Shoes 
+[Sun Jun 12 22:57:30.759376 2016] [ssl:info] [pid 10690:tid 140441613731584] [client 74.110.162.236:64332] AH01964: Connection to child 71 established (server campusthrift.com:443)
+[Mon Jun 13 02:57:30.925569 2016] [:error] [pid 10688:tid 140441628518144] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Mon Jun 13 02:57:30.925642 2016] [:error] [pid 10688:tid 140441628518144] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Sun Jun 12 22:57:33.421122 2016] [core:info] [pid 10690:tid 140441647302400] [client 74.110.162.236:64332] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:58:17.079412 2016] [ssl:info] [pid 10689:tid 140441563375360] [client 74.110.162.236:64345] AH01964: Connection to child 13 established (server campusthrift.com:443)
+[Sun Jun 12 22:58:17.514990 2016] [core:info] [pid 10689:tid 140441496233728] [client 74.110.162.236:64345] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:58:19.146581 2016] [core:info] [pid 10689:tid 140441647302400] [client 74.110.162.236:64345] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:58:21.228953 2016] [core:info] [pid 10689:tid 140441504626432] [client 74.110.162.236:64345] AH00128: File does not exist: /var/www/campusthrift.com/static/images/close_1.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:58:21.242857 2016] [ssl:info] [pid 10690:tid 140441638909696] [client 74.110.162.236:64360] AH01964: Connection to child 68 established (server campusthrift.com:443)
+[Sun Jun 12 22:58:21.249259 2016] [core:info] [pid 10689:tid 140441638909696] [client 74.110.162.236:64345] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:58:23.944114 2016] [core:info] [pid 10689:tid 140441622124288] [client 74.110.162.236:64345] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Mon Jun 13 02:58:29.333512 2016] [:error] [pid 10688:tid 140441628518144] <QueryDict: {u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'zip': [u'29030'], u'state': [u'SC'], u'address': [u'8250 Old State Rd'], u'csrfmiddlewaretoken': [u'1QtDJrIAStpgRl3XLOiwUeEY7pjdElAL'], u'3_ship_method': [u'2']}>
+[Mon Jun 13 02:58:29.334767 2016] [:error] [pid 10688:tid 140441628518144] {u'3': 1}
+[Mon Jun 13 02:58:29.334907 2016] [:error] [pid 10688:tid 140441628518144] {u'3': 1}
+[Mon Jun 13 02:58:29.360488 2016] [:error] [pid 10688:tid 140441628518144] /usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1453: RuntimeWarning: DateTimeField Order.date received a naive datetime (2016-06-13 02:57:12.538701) while time zone support is active.
+[Mon Jun 13 02:58:29.360513 2016] [:error] [pid 10688:tid 140441628518144]   RuntimeWarning)
+[Mon Jun 13 02:58:29.360518 2016] [:error] [pid 10688:tid 140441628518144] 
+[Sun Jun 12 22:58:29.736451 2016] [core:info] [pid 10690:tid 140441588553472] [client 74.110.162.236:64360] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:58:33.594042 2016] [core:info] [pid 10690:tid 140441554982656] [client 74.110.162.236:64360] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:59:29.173820 2016] [ssl:info] [pid 10689:tid 140441605338880] [client 74.110.162.236:64376] AH01964: Connection to child 8 established (server campusthrift.com:443)
+[Sun Jun 12 22:59:29.175547 2016] [ssl:info] [pid 10689:tid 140441596946176] [client 74.110.162.236:64375] AH01964: Connection to child 9 established (server campusthrift.com:443)
+[Sun Jun 12 22:59:29.177826 2016] [ssl:info] [pid 10689:tid 140441554982656] [client 74.110.162.236:64374] AH01964: Connection to child 14 established (server campusthrift.com:443)
+[Sun Jun 12 22:59:29.179416 2016] [ssl:info] [pid 10689:tid 140441538197248] [client 74.110.162.236:64377] AH01964: Connection to child 16 established (server campusthrift.com:443)
+[Sun Jun 12 22:59:29.180040 2016] [ssl:info] [pid 10690:tid 140441521411840] [client 74.110.162.236:64378] AH01964: Connection to child 82 established (server campusthrift.com:443)
+[Sun Jun 12 22:59:29.212364 2016] [ssl:info] [pid 10689:tid 140441529804544] [client 74.110.162.236:64379] AH01964: Connection to child 17 established (server campusthrift.com:443)
+[Mon Jun 13 02:59:30.428171 2016] [:error] [pid 10688:tid 140441628518144] Internal Server Error: /buyer_confirm/vy4h3g3bgy2/
+[Mon Jun 13 02:59:30.428234 2016] [:error] [pid 10688:tid 140441628518144] Traceback (most recent call last):
+[Mon Jun 13 02:59:30.428244 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 13 02:59:30.428295 2016] [:error] [pid 10688:tid 140441628518144]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 13 02:59:30.428305 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 13 02:59:30.428314 2016] [:error] [pid 10688:tid 140441628518144]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 13 02:59:30.428321 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 13 02:59:30.428330 2016] [:error] [pid 10688:tid 140441628518144]     return view_func(request, *args, **kwargs)
+[Mon Jun 13 02:59:30.428337 2016] [:error] [pid 10688:tid 140441628518144]   File "/var/www/campusthrift.com/campusthrift/views.py", line 527, in buyer_confirm
+[Mon Jun 13 02:59:30.428344 2016] [:error] [pid 10688:tid 140441628518144]     application_fee = int(float(order_item.order_item_total_price) * 100 * .15)
+[Mon Jun 13 02:59:30.428351 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Mon Jun 13 02:59:30.428359 2016] [:error] [pid 10688:tid 140441628518144]     response, api_key = requestor.request('post', url, params, headers)
+[Mon Jun 13 02:59:30.428366 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Mon Jun 13 02:59:30.428373 2016] [:error] [pid 10688:tid 140441628518144]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Mon Jun 13 02:59:30.428380 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Mon Jun 13 02:59:30.428388 2016] [:error] [pid 10688:tid 140441628518144]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Mon Jun 13 02:59:30.428395 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Mon Jun 13 02:59:30.428402 2016] [:error] [pid 10688:tid 140441628518144]     rbody, rcode, resp, rheaders)
+[Mon Jun 13 02:59:30.428409 2016] [:error] [pid 10688:tid 140441628518144] InvalidRequestError: Request req_8d1LDjJVWJXGLp: Insufficient funds in Stripe account.   You can use the the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).
+[Sun Jun 12 22:59:35.121849 2016] [ssl:info] [pid 10689:tid 140441513019136] [client 74.110.162.236:64381] AH01964: Connection to child 19 established (server campusthrift.com:443)
+[Sun Jun 12 22:59:35.514012 2016] [core:info] [pid 10689:tid 140441471055616] [client 74.110.162.236:64374] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:59:37.977106 2016] [core:info] [pid 10689:tid 140441672480512] [client 74.110.162.236:64374] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 22:59:52.987254 2016] [ssl:info] [pid 10689:tid 140441538197248] (70014)End of file found: [client 74.110.162.236:64377] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:59:52.988558 2016] [ssl:info] [pid 10690:tid 140441521411840] (70014)End of file found: [client 74.110.162.236:64378] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:59:52.989365 2016] [ssl:info] [pid 10689:tid 140441513019136] (70014)End of file found: [client 74.110.162.236:64381] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:59:52.989505 2016] [ssl:info] [pid 10689:tid 140441529804544] (70014)End of file found: [client 74.110.162.236:64379] AH01991: SSL input filter read failed.
+[Sun Jun 12 22:59:53.009679 2016] [ssl:info] [pid 10690:tid 140441513019136] [client 74.110.162.236:64382] AH01964: Connection to child 83 established (server campusthrift.com:443)
+[Mon Jun 13 02:59:54.080856 2016] [:error] [pid 10688:tid 140441628518144] Internal Server Error: /buyer_confirm/tyy25n6f3j3/
+[Mon Jun 13 02:59:54.080909 2016] [:error] [pid 10688:tid 140441628518144] Traceback (most recent call last):
+[Mon Jun 13 02:59:54.080919 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 13 02:59:54.080928 2016] [:error] [pid 10688:tid 140441628518144]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 13 02:59:54.080936 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 13 02:59:54.080946 2016] [:error] [pid 10688:tid 140441628518144]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 13 02:59:54.080954 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 13 02:59:54.080963 2016] [:error] [pid 10688:tid 140441628518144]     return view_func(request, *args, **kwargs)
+[Mon Jun 13 02:59:54.080970 2016] [:error] [pid 10688:tid 140441628518144]   File "/var/www/campusthrift.com/campusthrift/views.py", line 527, in buyer_confirm
+[Mon Jun 13 02:59:54.080978 2016] [:error] [pid 10688:tid 140441628518144]     application_fee = int(float(order_item.order_item_total_price) * 100 * .15)
+[Mon Jun 13 02:59:54.080986 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Mon Jun 13 02:59:54.080994 2016] [:error] [pid 10688:tid 140441628518144]     response, api_key = requestor.request('post', url, params, headers)
+[Mon Jun 13 02:59:54.081002 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Mon Jun 13 02:59:54.081011 2016] [:error] [pid 10688:tid 140441628518144]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Mon Jun 13 02:59:54.081019 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Mon Jun 13 02:59:54.081028 2016] [:error] [pid 10688:tid 140441628518144]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Mon Jun 13 02:59:54.081036 2016] [:error] [pid 10688:tid 140441628518144]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Mon Jun 13 02:59:54.081044 2016] [:error] [pid 10688:tid 140441628518144]     rbody, rcode, resp, rheaders)
+[Mon Jun 13 02:59:54.081052 2016] [:error] [pid 10688:tid 140441628518144] InvalidRequestError: Request req_8d1L158KDuboh1: Insufficient funds in Stripe account.   You can use the the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).
+[Mon Jun 13 03:06:05.650264 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Shutdown requested 'campusthrift.com'.
+[Mon Jun 13 03:06:05.654647 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Stopping process 'campusthrift.com'.
+[Mon Jun 13 03:06:05.654756 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Destroying interpreters.
+[Mon Jun 13 03:06:05.654980 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Destroy interpreter 'campusthrift.com|'.
+[Mon Jun 13 03:06:05.715348 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Cleanup interpreter ''.
+[Mon Jun 13 03:06:05.723002 2016] [:info] [pid 10688:tid 140441854371712] mod_wsgi (pid=10688): Terminating Python.
+[Sun Jun 12 23:06:09.639997 2016] [ssl:info] [pid 10829:tid 140089600059264] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:06:09.640476 2016] [ssl:info] [pid 10829:tid 140089600059264] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:06:09.651067 2016] [ssl:info] [pid 10830:tid 140089600059264] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:06:09.651414 2016] [ssl:info] [pid 10830:tid 140089600059264] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:06:09.685227 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Attach interpreter ''.
+[Sun Jun 12 23:06:09.685407 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:06:09.685596 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:06:10.915141 2016] [ssl:info] [pid 10835:tid 140089283770112] [client 74.110.162.236:64466] AH01964: Connection to child 80 established (server campusthrift.com:443)
+[Sun Jun 12 23:06:10.977400 2016] [:info] [pid 10833:tid 140089458132736] mod_wsgi (pid=10833): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 23:06:10.979741 2016] [:info] [pid 10833:tid 140089458132736] mod_wsgi (pid=10833): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:06:10.980104 2016] [:info] [pid 10833:tid 140089458132736] mod_wsgi (pid=10833): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:06:10.980828 2016] [:info] [pid 10833:tid 140089458132736] [remote 74.110.162.236:54822] mod_wsgi (pid=10833, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Mon Jun 13 03:06:11.535410 2016] [:error] [pid 10833:tid 140089458132736] Internal Server Error: /profile
+[Mon Jun 13 03:06:11.535455 2016] [:error] [pid 10833:tid 140089458132736] Traceback (most recent call last):
+[Mon Jun 13 03:06:11.535461 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 123, in get_response
+[Mon Jun 13 03:06:11.535468 2016] [:error] [pid 10833:tid 140089458132736]     response = middleware_method(request)
+[Mon Jun 13 03:06:11.535473 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 61, in process_request
+[Mon Jun 13 03:06:11.535479 2016] [:error] [pid 10833:tid 140089458132736]     if self.should_redirect_with_slash(request):
+[Mon Jun 13 03:06:11.535484 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 79, in should_redirect_with_slash
+[Mon Jun 13 03:06:11.535489 2016] [:error] [pid 10833:tid 140089458132736]     not urlresolvers.is_valid_path(request.path_info, urlconf)
+[Mon Jun 13 03:06:11.535494 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 668, in is_valid_path
+[Mon Jun 13 03:06:11.535499 2016] [:error] [pid 10833:tid 140089458132736]     resolve(path, urlconf)
+[Mon Jun 13 03:06:11.535504 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 534, in resolve
+[Mon Jun 13 03:06:11.535509 2016] [:error] [pid 10833:tid 140089458132736]     return get_resolver(urlconf).resolve(path)
+[Mon Jun 13 03:06:11.535514 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 374, in resolve
+[Mon Jun 13 03:06:11.535519 2016] [:error] [pid 10833:tid 140089458132736]     for pattern in self.url_patterns:
+[Mon Jun 13 03:06:11.535524 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 33, in __get__
+[Mon Jun 13 03:06:11.535529 2016] [:error] [pid 10833:tid 140089458132736]     res = instance.__dict__[self.name] = self.func(instance)
+[Mon Jun 13 03:06:11.535534 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 417, in url_patterns
+[Mon Jun 13 03:06:11.535556 2016] [:error] [pid 10833:tid 140089458132736]     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[Mon Jun 13 03:06:11.535562 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 33, in __get__
+[Mon Jun 13 03:06:11.535568 2016] [:error] [pid 10833:tid 140089458132736]     res = instance.__dict__[self.name] = self.func(instance)
+[Mon Jun 13 03:06:11.535573 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 410, in urlconf_module
+[Mon Jun 13 03:06:11.535579 2016] [:error] [pid 10833:tid 140089458132736]     return import_module(self.urlconf_name)
+[Mon Jun 13 03:06:11.535584 2016] [:error] [pid 10833:tid 140089458132736]   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+[Mon Jun 13 03:06:11.535590 2016] [:error] [pid 10833:tid 140089458132736]     __import__(name)
+[Mon Jun 13 03:06:11.535595 2016] [:error] [pid 10833:tid 140089458132736]   File "/var/www/campusthrift.com/campusthrift/urls.py", line 23, in <module>
+[Mon Jun 13 03:06:11.535600 2016] [:error] [pid 10833:tid 140089458132736]     import views
+[Mon Jun 13 03:06:11.535605 2016] [:error] [pid 10833:tid 140089458132736]   File "/var/www/campusthrift.com/campusthrift/views.py", line 529
+[Mon Jun 13 03:06:11.535611 2016] [:error] [pid 10833:tid 140089458132736]     order_items = OrderItem.objects.all().filter(order_id=order_number)
+[Mon Jun 13 03:06:11.535616 2016] [:error] [pid 10833:tid 140089458132736]               ^
+[Mon Jun 13 03:06:11.535621 2016] [:error] [pid 10833:tid 140089458132736] SyntaxError: invalid syntax
+[Mon Jun 13 03:07:19.841730 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Shutdown requested 'campusthrift.com'.
+[Mon Jun 13 03:07:19.841940 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Stopping process 'campusthrift.com'.
+[Mon Jun 13 03:07:19.841968 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Destroying interpreters.
+[Mon Jun 13 03:07:19.842030 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Destroy interpreter 'campusthrift.com|'.
+[Mon Jun 13 03:07:19.862906 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Cleanup interpreter ''.
+[Mon Jun 13 03:07:19.868468 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Terminating Python.
+[Mon Jun 13 03:07:19.904549 2016] [:info] [pid 10833:tid 140089600059264] mod_wsgi (pid=10833): Python has shutdown.
+[Sun Jun 12 23:07:20.891974 2016] [ssl:info] [pid 10959:tid 140653381814144] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:07:20.892654 2016] [ssl:info] [pid 10959:tid 140653381814144] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:07:20.913822 2016] [ssl:info] [pid 10960:tid 140653381814144] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:07:20.916444 2016] [ssl:info] [pid 10960:tid 140653381814144] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:07:20.967841 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Attach interpreter ''.
+[Sun Jun 12 23:07:20.968011 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:07:20.968199 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:07:21.553332 2016] [ssl:info] [pid 10964:tid 140653199619840] [client 74.110.162.236:64467] AH01964: Connection to child 0 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:21.560189 2016] [ssl:info] [pid 10964:tid 140653191227136] [client 74.110.162.236:64469] AH01964: Connection to child 1 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:21.567638 2016] [ssl:info] [pid 10964:tid 140653182834432] [client 74.110.162.236:64468] AH01964: Connection to child 2 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:21.574514 2016] [ssl:info] [pid 10964:tid 140653174441728] [client 74.110.162.236:64471] AH01964: Connection to child 3 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:21.581613 2016] [ssl:info] [pid 10964:tid 140653166049024] [client 74.110.162.236:64470] AH01964: Connection to child 4 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:21.590427 2016] [ssl:info] [pid 10964:tid 140653157656320] [client 74.110.162.236:64472] AH01964: Connection to child 5 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:21.645111 2016] [:info] [pid 10963:tid 140653248280320] mod_wsgi (pid=10963): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 23:07:21.646499 2016] [:info] [pid 10963:tid 140653248280320] mod_wsgi (pid=10963): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:07:21.646694 2016] [:info] [pid 10963:tid 140653248280320] mod_wsgi (pid=10963): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:07:21.647079 2016] [:info] [pid 10963:tid 140653248280320] [remote 74.110.162.236:55658] mod_wsgi (pid=10963, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Sun Jun 12 23:07:23.773481 2016] [core:info] [pid 10964:tid 140653082121984] [client 74.110.162.236:64472] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:32.102592 2016] [ssl:info] [pid 10965:tid 140653174441728] [client 74.110.162.236:64477] AH01964: Connection to child 67 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:32.443360 2016] [core:info] [pid 10965:tid 140653199619840] [client 74.110.162.236:64477] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:42.141008 2016] [ssl:info] [pid 10964:tid 140653073729280] [client 74.110.162.236:64478] AH01964: Connection to child 15 established (server campusthrift.com:443)
+[Mon Jun 13 03:07:42.161642 2016] [:error] [pid 10963:tid 140653248280320] 
+[Mon Jun 13 03:07:42.161988 2016] [:error] [pid 10963:tid 140653248280320]  Shoes 
+[Mon Jun 13 03:07:46.466914 2016] [:error] [pid 10963:tid 140653265065728] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Mon Jun 13 03:07:46.466985 2016] [:error] [pid 10963:tid 140653265065728] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Sun Jun 12 23:07:48.355363 2016] [core:info] [pid 10964:tid 140653031765760] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:49.917083 2016] [core:info] [pid 10964:tid 140652998194944] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:51.149294 2016] [core:info] [pid 10964:tid 140653157656320] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:51.967853 2016] [core:info] [pid 10964:tid 140653166049024] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/close_1.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:51.981177 2016] [ssl:info] [pid 10965:tid 140653191227136] [client 74.110.162.236:64479] AH01964: Connection to child 65 established (server campusthrift.com:443)
+[Sun Jun 12 23:07:51.982514 2016] [core:info] [pid 10964:tid 140653140870912] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:07:54.372711 2016] [core:info] [pid 10964:tid 140653115692800] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Mon Jun 13 03:07:59.065672 2016] [:error] [pid 10963:tid 140653265065728] <QueryDict: {u'city': [u'Cameron'], u'4_ship_method': [u'2'], u'last_name': [u'Ansari'], u'zip': [u'29030'], u'first_name': [u'Omar'], u'state': [u'SC'], u'address': [u'8250 Old State Rd'], u'csrfmiddlewaretoken': [u'1QtDJrIAStpgRl3XLOiwUeEY7pjdElAL']}>
+[Mon Jun 13 03:07:59.065752 2016] [:error] [pid 10963:tid 140653265065728] {u'4': 1}
+[Mon Jun 13 03:07:59.065765 2016] [:error] [pid 10963:tid 140653265065728] {u'4': 1}
+[Mon Jun 13 03:07:59.081871 2016] [:error] [pid 10963:tid 140653265065728] /usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1453: RuntimeWarning: DateTimeField Order.date received a naive datetime (2016-06-13 03:07:22.000649) while time zone support is active.
+[Mon Jun 13 03:07:59.081897 2016] [:error] [pid 10963:tid 140653265065728]   RuntimeWarning)
+[Mon Jun 13 03:07:59.081902 2016] [:error] [pid 10963:tid 140653265065728] 
+[Sun Jun 12 23:07:59.356417 2016] [core:info] [pid 10964:tid 140653098907392] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:08:03.406211 2016] [ssl:info] [pid 10965:tid 140653191227136] (70014)End of file found: [client 74.110.162.236:64479] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:08:03.656730 2016] [core:info] [pid 10964:tid 140653073729280] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:08:05.367243 2016] [core:info] [pid 10964:tid 140653048551168] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:08:07.222685 2016] [core:info] [pid 10964:tid 140653031765760] [client 74.110.162.236:64478] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Mon Jun 13 03:09:03.491566 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Shutdown requested 'campusthrift.com'.
+[Mon Jun 13 03:09:03.492001 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Stopping process 'campusthrift.com'.
+[Mon Jun 13 03:09:03.492036 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Destroying interpreters.
+[Mon Jun 13 03:09:03.492115 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Destroy interpreter 'campusthrift.com|'.
+[Mon Jun 13 03:09:03.533630 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Cleanup interpreter ''.
+[Mon Jun 13 03:09:03.539769 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Terminating Python.
+[Mon Jun 13 03:09:03.591543 2016] [:info] [pid 10963:tid 140653381814144] mod_wsgi (pid=10963): Python has shutdown.
+[Sun Jun 12 23:09:04.493977 2016] [ssl:info] [pid 11087:tid 140089257437056] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:09:04.494507 2016] [ssl:info] [pid 11087:tid 140089257437056] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:09:04.507385 2016] [ssl:info] [pid 11088:tid 140089257437056] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:09:04.507849 2016] [ssl:info] [pid 11088:tid 140089257437056] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:09:04.555788 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Attach interpreter ''.
+[Sun Jun 12 23:09:04.555979 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:09:04.556167 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:09:07.378298 2016] [ssl:info] [pid 11091:tid 140089149081344] [client 74.110.162.236:64505] AH01964: Connection to child 0 established (server campusthrift.com:443)
+[Sun Jun 12 23:09:07.435172 2016] [:info] [pid 11090:tid 140089140688640] mod_wsgi (pid=11090): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 23:09:07.437169 2016] [:info] [pid 11090:tid 140089140688640] mod_wsgi (pid=11090): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:09:07.437492 2016] [:info] [pid 11090:tid 140089140688640] mod_wsgi (pid=11090): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:09:07.438170 2016] [:info] [pid 11090:tid 140089140688640] [remote 74.110.162.236:27154] mod_wsgi (pid=11090, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Sun Jun 12 23:09:08.033335 2016] [ssl:info] [pid 11092:tid 140089123903232] [client 74.110.162.236:64506] AH01964: Connection to child 67 established (server campusthrift.com:443)
+[Sun Jun 12 23:09:08.090604 2016] [ssl:info] [pid 11091:tid 140089140688640] (70014)End of file found: [client 74.110.162.236:64505] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:09:08.602378 2016] [core:info] [pid 11092:tid 140089149081344] [client 74.110.162.236:64506] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:20.340484 2016] [ssl:info] [pid 11092:tid 140089132295936] [client 74.110.162.236:64514] AH01964: Connection to child 66 established (server campusthrift.com:443)
+[Mon Jun 13 03:09:20.374715 2016] [:error] [pid 11090:tid 140089031583488] 
+[Mon Jun 13 03:09:20.375062 2016] [:error] [pid 11090:tid 140089031583488]  Shoes 
+[Mon Jun 13 03:09:24.665690 2016] [:error] [pid 11090:tid 140089023190784] <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Hidden field rotation) This field is required.</li></ul></td></tr>
+[Mon Jun 13 03:09:24.665750 2016] [:error] [pid 11090:tid 140089023190784] <tr><th><label for="id_image">Image:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input id="id_image" name="image" type="file" /><input id="id_rotation" name="rotation" type="hidden" /></td></tr>
+[Sun Jun 12 23:09:26.856528 2016] [core:info] [pid 11092:tid 140088889509632] [client 74.110.162.236:64514] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:28.300687 2016] [core:info] [pid 11092:tid 140088948258560] [client 74.110.162.236:64514] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:29.578798 2016] [core:info] [pid 11092:tid 140089015400192] [client 74.110.162.236:64514] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:31.250810 2016] [core:info] [pid 11092:tid 140088906295040] [client 74.110.162.236:64514] AH00128: File does not exist: /var/www/campusthrift.com/static/images/close_1.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:31.263622 2016] [ssl:info] [pid 11091:tid 140089132295936] [client 74.110.162.236:64517] AH01964: Connection to child 2 established (server campusthrift.com:443)
+[Sun Jun 12 23:09:31.266435 2016] [core:info] [pid 11092:tid 140088881116928] [client 74.110.162.236:64514] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:33.598159 2016] [core:info] [pid 11092:tid 140088990222080] [client 74.110.162.236:64514] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Mon Jun 13 03:09:38.975127 2016] [:error] [pid 11090:tid 140089023190784] <QueryDict: {u'city': [u'Cameron'], u'first_name': [u'Omar'], u'last_name': [u'Ansari'], u'zip': [u'29030'], u'state': [u'SC'], u'address': [u'8250 Old State Rd'], u'csrfmiddlewaretoken': [u'1QtDJrIAStpgRl3XLOiwUeEY7pjdElAL'], u'5_ship_method': [u'2']}>
+[Mon Jun 13 03:09:38.975283 2016] [:error] [pid 11090:tid 140089023190784] {u'5': 1}
+[Mon Jun 13 03:09:38.975327 2016] [:error] [pid 11090:tid 140089023190784] {u'5': 1}
+[Mon Jun 13 03:09:39.005369 2016] [:error] [pid 11090:tid 140089023190784] /usr/local/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:1453: RuntimeWarning: DateTimeField Order.date received a naive datetime (2016-06-13 03:09:07.870010) while time zone support is active.
+[Mon Jun 13 03:09:39.005445 2016] [:error] [pid 11090:tid 140089023190784]   RuntimeWarning)
+[Mon Jun 13 03:09:39.005462 2016] [:error] [pid 11090:tid 140089023190784] 
+[Sun Jun 12 23:09:39.312339 2016] [core:info] [pid 11091:tid 140089115510528] [client 74.110.162.236:64517] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:42.466002 2016] [core:info] [pid 11091:tid 140089015400192] [client 74.110.162.236:64517] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:09:45.035389 2016] [core:info] [pid 11091:tid 140088998614784] [client 74.110.162.236:64517] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:10:26.669841 2016] [ssl:info] [pid 11092:tid 140088965043968] [client 74.110.162.236:64546] AH01964: Connection to child 77 established (server campusthrift.com:443)
+[Mon Jun 13 03:10:30.087488 2016] [:error] [pid 11090:tid 140089023190784] Internal Server Error: /buyer_confirm/i6o2dm45ob4/
+[Mon Jun 13 03:10:30.087539 2016] [:error] [pid 11090:tid 140089023190784] Traceback (most recent call last):
+[Mon Jun 13 03:10:30.087550 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 13 03:10:30.087559 2016] [:error] [pid 11090:tid 140089023190784]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 13 03:10:30.087568 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 13 03:10:30.087577 2016] [:error] [pid 11090:tid 140089023190784]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 13 03:10:30.087586 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 13 03:10:30.087596 2016] [:error] [pid 11090:tid 140089023190784]     return view_func(request, *args, **kwargs)
+[Mon Jun 13 03:10:30.087604 2016] [:error] [pid 11090:tid 140089023190784]   File "/var/www/campusthrift.com/campusthrift/views.py", line 526, in buyer_confirm
+[Mon Jun 13 03:10:30.087612 2016] [:error] [pid 11090:tid 140089023190784]     description = "Transfer for " + order_item.seller.email,
+[Mon Jun 13 03:10:30.087622 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Mon Jun 13 03:10:30.087632 2016] [:error] [pid 11090:tid 140089023190784]     response, api_key = requestor.request('post', url, params, headers)
+[Mon Jun 13 03:10:30.087640 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Mon Jun 13 03:10:30.087670 2016] [:error] [pid 11090:tid 140089023190784]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Mon Jun 13 03:10:30.087681 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Mon Jun 13 03:10:30.087690 2016] [:error] [pid 11090:tid 140089023190784]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Mon Jun 13 03:10:30.087697 2016] [:error] [pid 11090:tid 140089023190784]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Mon Jun 13 03:10:30.087704 2016] [:error] [pid 11090:tid 140089023190784]     rbody, rcode, resp, rheaders)
+[Mon Jun 13 03:10:30.087713 2016] [:error] [pid 11090:tid 140089023190784] InvalidRequestError: Request req_8d1WBbe5W6VE0r: Insufficient funds in Stripe account.   You can use the the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).
+[Mon Jun 13 03:14:26.348807 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Shutdown requested 'campusthrift.com'.
+[Mon Jun 13 03:14:26.349400 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Stopping process 'campusthrift.com'.
+[Mon Jun 13 03:14:26.349452 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Destroying interpreters.
+[Mon Jun 13 03:14:26.349686 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Destroy interpreter 'campusthrift.com|'.
+[Mon Jun 13 03:14:26.406913 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Cleanup interpreter ''.
+[Mon Jun 13 03:14:26.411537 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Terminating Python.
+[Mon Jun 13 03:14:26.464705 2016] [:info] [pid 11090:tid 140089257437056] mod_wsgi (pid=11090): Python has shutdown.
+[Sun Jun 12 23:14:27.342979 2016] [ssl:info] [pid 11219:tid 140463520159616] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:14:27.343359 2016] [ssl:info] [pid 11219:tid 140463520159616] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:14:27.353672 2016] [ssl:info] [pid 11220:tid 140463520159616] AH02200: Loading certificate & private key of SSL-aware server 'campusthrift.com:443'
+[Sun Jun 12 23:14:27.354650 2016] [ssl:info] [pid 11220:tid 140463520159616] AH01914: Configuring server campusthrift.com:443 for SSL protocol
+[Sun Jun 12 23:14:27.392199 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Attach interpreter ''.
+[Sun Jun 12 23:14:27.392380 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:14:27.392605 2016] [:info] [pid 11223:tid 140463520159616] mod_wsgi (pid=11223): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:14:45.839257 2016] [ssl:info] [pid 11224:tid 140463411803904] [client 74.110.162.236:64642] AH01964: Connection to child 0 established (server campusthrift.com:443)
+[Sun Jun 12 23:14:45.842582 2016] [ssl:info] [pid 11225:tid 140463411803904] [client 74.110.162.236:64640] AH01964: Connection to child 64 established (server campusthrift.com:443)
+[Sun Jun 12 23:14:45.846248 2016] [ssl:info] [pid 11225:tid 140463403411200] [client 74.110.162.236:64641] AH01964: Connection to child 65 established (server campusthrift.com:443)
+[Sun Jun 12 23:14:45.847410 2016] [ssl:info] [pid 11224:tid 140463403411200] [client 74.110.162.236:64637] AH01964: Connection to child 1 established (server campusthrift.com:443)
+[Sun Jun 12 23:14:45.854387 2016] [ssl:info] [pid 11225:tid 140463395018496] [client 74.110.162.236:64639] AH01964: Connection to child 66 established (server campusthrift.com:443)
+[Sun Jun 12 23:14:45.855761 2016] [ssl:info] [pid 11224:tid 140463189214976] [client 74.110.162.236:64638] AH01964: Connection to child 18 established (server campusthrift.com:443)
+[Sun Jun 12 23:14:45.944012 2016] [:info] [pid 11223:tid 140463319484160] mod_wsgi (pid=11223): Create interpreter 'campusthrift.com|'.
+[Sun Jun 12 23:14:45.946324 2016] [:info] [pid 11223:tid 140463319484160] mod_wsgi (pid=11223): Adding '/var/www/campusthrift.com' to path.
+[Sun Jun 12 23:14:45.946754 2016] [:info] [pid 11223:tid 140463319484160] mod_wsgi (pid=11223): Adding '/usr/local/lib/python2.7/site-packages' to path.
+[Sun Jun 12 23:14:45.947491 2016] [:info] [pid 11223:tid 140463319484160] [remote 74.110.162.236:13878] mod_wsgi (pid=11223, process='campusthrift.com', application='campusthrift.com|'): Loading WSGI script '/var/www/campusthrift.com/campusthrift/wsgi.py'.
+[Mon Jun 13 03:14:50.103933 2016] [:error] [pid 11223:tid 140463319484160] Internal Server Error: /buyer_confirm/i6o2dm45ob4/
+[Mon Jun 13 03:14:50.104001 2016] [:error] [pid 11223:tid 140463319484160] Traceback (most recent call last):
+[Mon Jun 13 03:14:50.104011 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+[Mon Jun 13 03:14:50.104020 2016] [:error] [pid 11223:tid 140463319484160]     response = self.process_exception_by_middleware(e, request)
+[Mon Jun 13 03:14:50.104027 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+[Mon Jun 13 03:14:50.104035 2016] [:error] [pid 11223:tid 140463319484160]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Mon Jun 13 03:14:50.104042 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+[Mon Jun 13 03:14:50.104050 2016] [:error] [pid 11223:tid 140463319484160]     return view_func(request, *args, **kwargs)
+[Mon Jun 13 03:14:50.104057 2016] [:error] [pid 11223:tid 140463319484160]   File "/var/www/campusthrift.com/campusthrift/views.py", line 527, in buyer_confirm
+[Mon Jun 13 03:14:50.104064 2016] [:error] [pid 11223:tid 140463319484160]     source_transaction=order_item.stripe_charge_id
+[Mon Jun 13 03:14:50.104071 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/stripe/resource.py", line 414, in create
+[Mon Jun 13 03:14:50.104078 2016] [:error] [pid 11223:tid 140463319484160]     response, api_key = requestor.request('post', url, params, headers)
+[Mon Jun 13 03:14:50.104085 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 138, in request
+[Mon Jun 13 03:14:50.104092 2016] [:error] [pid 11223:tid 140463319484160]     resp = self.interpret_response(rbody, rcode, rheaders)
+[Mon Jun 13 03:14:50.104099 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 270, in interpret_response
+[Mon Jun 13 03:14:50.104106 2016] [:error] [pid 11223:tid 140463319484160]     self.handle_api_error(rbody, rcode, resp, rheaders)
+[Mon Jun 13 03:14:50.104113 2016] [:error] [pid 11223:tid 140463319484160]   File "/usr/local/lib/python2.7/dist-packages/stripe/api_requestor.py", line 157, in handle_api_error
+[Mon Jun 13 03:14:50.104120 2016] [:error] [pid 11223:tid 140463319484160]     rbody, rcode, resp, rheaders)
+[Mon Jun 13 03:14:50.104128 2016] [:error] [pid 11223:tid 140463319484160] InvalidRequestError: Request req_8d1aqTBfUpvViD: Transfers using this transaction as a source must not exceed the source amount, which is 100 usd. (There is already a transfer using this source, amounting to 100 usd.)
+[Sun Jun 12 23:15:06.312848 2016] [ssl:info] [pid 11224:tid 140463411803904] (70014)End of file found: [client 74.110.162.236:64642] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:15:06.313142 2016] [ssl:info] [pid 11225:tid 140463403411200] (70014)End of file found: [client 74.110.162.236:64641] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:15:06.313287 2016] [ssl:info] [pid 11225:tid 140463395018496] (70014)End of file found: [client 74.110.162.236:64639] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:15:06.313423 2016] [ssl:info] [pid 11224:tid 140463189214976] (70014)End of file found: [client 74.110.162.236:64638] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:15:06.313612 2016] [ssl:info] [pid 11224:tid 140463403411200] (70014)End of file found: [client 74.110.162.236:64637] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:15:32.913439 2016] [ssl:info] [pid 11225:tid 140463386625792] [client 74.110.162.236:64652] AH01964: Connection to child 67 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:32.921065 2016] [ssl:info] [pid 11224:tid 140463155644160] [client 74.110.162.236:64655] AH01964: Connection to child 22 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:32.921978 2016] [ssl:info] [pid 11225:tid 140463378233088] [client 74.110.162.236:64654] AH01964: Connection to child 68 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:32.922751 2016] [ssl:info] [pid 11224:tid 140463231178496] [client 74.110.162.236:64656] AH01964: Connection to child 13 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:32.923280 2016] [ssl:info] [pid 11225:tid 140463369840384] [client 74.110.162.236:64658] AH01964: Connection to child 69 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:32.927622 2016] [ssl:info] [pid 11224:tid 140463180822272] [client 74.110.162.236:64657] AH01964: Connection to child 19 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:33.511473 2016] [core:info] [pid 11225:tid 140463281534720] [client 74.110.162.236:64658] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:15:36.272439 2016] [core:info] [pid 11225:tid 140463264749312] [client 74.110.162.236:64658] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:15:38.132442 2016] [core:info] [pid 11225:tid 140463247963904] [client 74.110.162.236:64658] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:15:40.656619 2016] [core:info] [pid 11225:tid 140463231178496] [client 74.110.162.236:64658] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css
+[Sun Jun 12 23:15:47.023887 2016] [ssl:info] [pid 11224:tid 140463180822272] (70014)End of file found: [client 74.110.162.236:64657] AH01991: SSL input filter read failed.
+[Sun Jun 12 23:15:47.041597 2016] [ssl:info] [pid 11224:tid 140463281534720] [client 74.110.162.236:64659] AH01964: Connection to child 7 established (server campusthrift.com:443)
+[Sun Jun 12 23:15:51.885120 2016] [core:info] [pid 11224:tid 140463239571200] [client 74.110.162.236:64659] AH00128: File does not exist: /var/www/campusthrift.com/static/images/img-sprite.png, referer: https://campusthrift.com/static/css/style.css

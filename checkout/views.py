@@ -169,7 +169,6 @@ def confirm(request):
                currency = "usd",
                customer = request.user.user.stripe_customer_id,
                description = "charge for " + request.user.email,
-               destination = order_item.seller.user.stripe_account_id,
            )
 
 
