@@ -53,7 +53,7 @@ def contact(request):
         message_text = ""
         message_text = "Name: " + message_text + request.POST['name'] + "\n" + "Email: " + message_text + request.POST['email'] + "\n" + "Message: " + message_text + request.POST['msg'] + "\n"
 
-        message = sendgrid.Mail(to="omarahmedansari@gmail.com", subject="New Contact Message CampusThrift", text=message_text, from_email='noreply@campusthrift.com')
+        message = sendgrid.Mail(to="campusthrift@gmail.com", subject="New Contact Message CampusThrift", text=message_text, from_email='noreply@campusthrift.com')
         sg.send(message)
         return redirect('home')
 
