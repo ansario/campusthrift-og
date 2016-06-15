@@ -32,14 +32,33 @@ stripe.api_key = STRIPE_API_KEY
 
 from django.contrib.auth import authenticate, login
 
+
+
 def home(request):
 
-    items= list( Item.objects.all() )
+    items= list( Item.objects.filter(sold=False) )
     random.shuffle( items )
     item_list = items[:8]
 
 
     return render(request, 'campusthrift/home.html', {'items': item_list})
+
+
+def contact(request):
+
+    if request.method == "GET":
+        return render(request, 'campusthrift/contact.html')
+    else:
+
+        message_text = ""
+        message_text = "Name: " + message_text + request.POST['name'] + "\n" + "Email: " + message_text + request.POST['email'] + "\n" + "Message: " + message_text + request.POST['msg'] + "\n"
+
+        message = sendgrid.Mail(to="omarahmedansari@gmail.com", subject="New Contact Message CampusThrift", text=message_text, from_email='noreply@campusthrift.com')
+        sg.send(message)
+        return redirect('home')
+
+
+
 
 def about(request):
     return render(request, 'campusthrift/about.html')

@@ -28,6 +28,7 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^logout$', views.logout_user, name='user_logout'),
+    url(r'^contact$', views.contact, name='contact'),
     url(r'^shop/', include('shop.urls')),
     url(r'^checkout/', include('checkout.urls')),
     url(r'^register$', views.register, name='register'),
