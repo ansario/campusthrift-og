@@ -5,6 +5,8 @@ from datetime import datetime
 from datetime import timedelta
 from checkout.models import OrderItem, Order
 import sendgrid
+import stripe
+stripe.api_key = STRIPE_API_KEY
 import os
 from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY
 sg = sendgrid.SendGridClient(SG_KEY)
@@ -37,6 +39,18 @@ def process_sales():
         for item in order_items:
             if item.seller_confirmed and not item.buyer_confirmed:
                 item.buyer_confirmed = True
+
+                seller_stripe_account = stripe.Account.retrieve(item.seller.user.stripe_account_id)
+
+
+                stripe.Transfer.create(
+                    amount = int((float(item.order_item_total_price) * 100 * .88) - ((float(item.order_item_total_price) * 100 * .029) + 30)),
+                    currency = "usd",
+                    destination = seller_stripe_account,
+                    description = "Transfer for " + item.seller.email,
+                    source_transaction=item.stripe_charge_id
+                )
+
                 item.save()
 
         order.complete = True
