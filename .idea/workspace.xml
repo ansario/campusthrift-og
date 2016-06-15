@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67e58d84-6545-4801-a966-f8291374c834" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/urls.py" afterPath="$PROJECT_DIR$/campusthrift/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/views.py" afterPath="$PROJECT_DIR$/campusthrift/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" afterPath="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" />
     </list>
     <ignored path="campusthrift.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/campusthrift/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22413793">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state vertical-scroll-proportion="-19.444445">
+              <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -103,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-36.125">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.41580757">
+              <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -179,7 +177,6 @@
         <option value="$PROJECT_DIR$/checkout/templates/checkout/confirm.html" />
         <option value="$PROJECT_DIR$/checkout/templates/checkout/checkout.html" />
         <option value="$PROJECT_DIR$/shop/templates/shop/new.html" />
-        <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" />
         <option value="$PROJECT_DIR$/shop/templates/shop/shop.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/user_shop.html" />
@@ -191,6 +188,7 @@
         <option value="$PROJECT_DIR$/campusthrift/urls.py" />
         <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/contact.html" />
         <option value="$PROJECT_DIR$/campusthrift/views.py" />
+        <option value="$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html" />
       </list>
     </option>
   </component>
@@ -1015,14 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.125">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/checkout/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1041,6 +1031,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/campusthrift/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.444445">
+          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.0">
@@ -1049,10 +1047,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campusthrift/views.py">
+    <entry file="file://$PROJECT_DIR$/campusthrift/templates/campusthrift/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22413793">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.41580757">
+          <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
           <folding />
         </state>
       </provider>
