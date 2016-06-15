@@ -1,0 +1,65 @@
+{% extends "campusthrift/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="content1">
+        <div class="main-1">
+            <div class="containe1r">
+                <div class="login-page">
+                    <div class="account_grid">
+
+                        <div class="col-xs-12">
+                            <div class="well">
+                                {% if errors %}
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        {% for error in errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+
+                                {% endif %}
+                                <form id="loginForm" method="POST" enctype="multipart/form-data">
+
+
+                                    {% csrf_token %}
+
+                                    <div class="form-group required">
+                                        <label for="first_name" class='control-label'> Name</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                               required="true">
+                                    </div>
+
+                                    <div class="form-group required">
+                                        <label for="email" class='control-label'>Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               required="true">
+                                    </div>
+
+                                    <div class="form-group required">
+                                        <label for="msg" class='control-label'>Message</label>
+                                        <textarea class="form-control" rows="5" id="msg" name="msg"></textarea>
+                                    </div>
+
+                                    <button type="submit" style="border: 0; background: transparent">
+                                        <img src="../../../static/images/submit.png" alt="submit"/>
+                                    </button>
+
+
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
