@@ -539,7 +539,7 @@ def buyer_confirm(request, id):
 
 
     stripe.Transfer.create(
-        amount = int((float(order_item.order_item_total_price) * 100 * .88) - ((float(order_item.order_item_total_price) * 100 * .029) + 30)),
+        amount = int((float(order_item.order_item_total_price) * 100 * .88) - ((float(order_item.order_item_total_price) * 100 * .03))),
         currency = "usd",
         destination = seller_stripe_account,
         description = "Transfer for " + order_item.seller.email,

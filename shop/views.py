@@ -84,6 +84,8 @@ def new(request):
         if form.is_valid():
             item = form.save(commit=False)
             item.user = request.user
+            ##Adding stripe fee to item total.
+            item.price = item.price + .30
             item.save()
             item.category = request.POST['selectcategories']
             item.sub_category = request.POST['selectsubcategories']
@@ -111,14 +113,18 @@ def new(request):
 
             if request.user.user.listed_first_item:
 
-                result = stripe.Charge.create(
-                       amount = int(50),
-                       currency = "usd",
-                       customer = request.user.user.stripe_customer_id,
-                       description = "Listing fee for " + saved_item.title
-                )
-                saved_item.stripe_listing_fee_id = result.id
+                #No longer charging listing fee.
+                saved_item.stripe_listing_fee_id = "NOFEE"
                 saved_item.save()
+
+                # result = stripe.Charge.create(
+                #        amount = int(50),
+                #        currency = "usd",
+                #        customer = request.user.user.stripe_customer_id,
+                #        description = "Listing fee for " + saved_item.title
+                # )
+                # saved_item.stripe_listing_fee_id = result.id
+                # saved_item.save()
             else:
                 request.user.user.listed_first_item = True
                 request.user.user.save()
