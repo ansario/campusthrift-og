@@ -21,7 +21,7 @@ import sendgrid
 import re
 import base64
 from django.contrib.auth import logout
-sg = sendgrid.SendGridClient(SG_KEY)
+#sg = sendgrid.SendGridClient(SG_KEY)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 

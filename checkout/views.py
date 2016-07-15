@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 import sendgrid
 import os
 from campusthrift.settings import PROJECT_ROOT, HOSTED_URL, SG_KEY, STRIPE_API_KEY
-sg = sendgrid.SendGridClient(SG_KEY)
+#sg = sendgrid.SendGridClient(SG_KEY)
 stripe.api_key = STRIPE_API_KEY
 from decimal import Decimal
 
