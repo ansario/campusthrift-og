@@ -70,8 +70,6 @@ ul{
     margin-right: 10%;
     padding: 20px;
     background-color: white;
-
-
 }
 
 
@@ -89,23 +87,6 @@ p {
     color: #000;
 }
 
-.nav  {
-    color: #ffffff;
-}
-
-.navbar-collapse {
-    background-color: #00bfa5;
-}
-
-.navbar-brand>img {
-  height: 100%;
-  padding: 7px 15px;
-  width: auto;
-}
-
-.header-bottom {
-    background-color: #00BFA5;
-}
 
 
 @media (max-width: 767px) {
@@ -433,7 +414,7 @@ color:#fff;
 select.dropdown1:focus {
     outline: none;
 }
-.navbar-default {
+/*.navbar-default {
     background-color: #fff;
     border-color: #fff;
 }
@@ -461,7 +442,7 @@ select.dropdown1:focus {
     float: left;
     width: 35%;
     /*margin-top: 1em;*/
-}
+}*/
 .multi-column-dropdown li a.list {
     font-weight: 600;
 }
@@ -506,12 +487,7 @@ h1.navbar-brand a {
 .navbar-nav > li > a {
     padding-top: 21px;
 }
-.navbar-brand {
-    float: left;
-    font-size: 36px;
-    line-height: 22px;
-    padding:0;
-}
+
 .dropdown-menu {
         min-width: 200px;
     }
@@ -2391,15 +2367,15 @@ h1.navbar-brand {
     min-width: 390px;
     margin-left: -94px;
 }
-.navbar-header {
+/*.navbar-header {
    width: 26%;
-}
+}*/
 .sb-search-input {
     width: 81%
 }
-.navbar {
+/*.navbar {
     width: 88%;
-}
+}*/
 .search-box {
     width: 10%;
 }
@@ -2583,19 +2559,19 @@ h4.panel-title a {
 
     }
 
-.navbar {
+/*.navbar {
     width: 80%;
-}
-.navbar-header {
+}*/
+/*.navbar-header {
     width: 100%;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+}*/
+/*.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: #fff;
-}
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+}*/
+/*.navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #fff!important;
-}
-.nav > li {
+}*/
+/*.nav > li {
     position: relative;
     display: block;
  }
@@ -2628,7 +2604,7 @@ h4.panel-title a {
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-}
+}*/
 .top-right ul li a {
     font-size: 0.95em;
 }
@@ -2962,16 +2938,17 @@ a.button {
 
 }
 
-nav.navbar.navbar-default {
+/*nav.navbar.navbar-default {
     border-style: none;
-}
-.navbar-default {
+}*/
+/*.navbar-default {
   background-color: #00bfa5;
   border-color: #008976;
-}
-.navbar-default .navbar-brand {
+}*/
+
+/*.navbar-default .navbar-brand {
   color: #ffffff;
-}
+}*/
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #000000;
@@ -3010,28 +2987,30 @@ nav.navbar.navbar-default {
 }
 
 
-.navbar-default .navbar-collapse,
+/*.navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border-color: #ffffff;
-}
-.navbar-default .navbar-link {
+}*/
+/*.navbar-default .navbar-link {
   color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
+}*/
+/*.navbar-default .navbar-link:hover {
   color: #000000;
-}
+}*/
 
 p {
     color: #000;
 }
 
-nav.navbar.navbar-default.navbar-fixed-top {
+/*nav.navbar.navbar-default.navbar-fixed-top {
     width: 100vw;
-}
+}*/
 
-h1, h2, h3, h4, h5, h6, p, a, td, label {
+h1, h2, h3, h4, h5, h6, p, td, label {
     font-size: 130%;
 }
+
+/*======================================ABOUT======================================*/
 .about-box{
     margin: 0px 20px 0 20px;
     padding-top: 20px;
@@ -3044,10 +3023,10 @@ h1, h2, h3, h4, h5, h6, p, a, td, label {
     font-size: 100px;
 }
 
-.container{
+.main-container{
     background-color: white;
     padding: 0px;
-    padding-top: 50px;
+/*    //padding-top: 50px;*/
 }
 
 #about-top-picture{
@@ -3060,8 +3039,8 @@ h1, h2, h3, h4, h5, h6, p, a, td, label {
     border-radius: 0px;
 }
 
-
 .jumbotron h1{
+    font-size: 50px;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -3077,10 +3056,11 @@ h1, h2, h3, h4, h5, h6, p, a, td, label {
     border-radius: 0px;
 }
 
+/*======================================FOOTER======================================*/
 .footer{
-background-color: #00bfa5;
-color:white;
-padding: 0 10px 30px 10px;
+    background-color: #00bfa5;
+    color:white;
+    padding: 0 10px 30px 10px;
 }
 
 .footer .row{
@@ -3102,4 +3082,112 @@ padding: 0 10px 30px 10px;
 .footer-social-icon{
     color: white;
     margin-right: 5px;
+}
+
+/*======================================NAVBAR======================================*/
+.navbar-brand:link{
+    float: left;
+    height: 65px;
+    background-color: white;
+    margin: 0;
+    z-index: 1000;
+    position: absolute;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.navbar-default .navbar-brand:hover{
+    background-color: white;
+}
+
+.navbar-brand img {
+  height: 100%;
+  padding: 7px 15px;
+  width: auto;
+}
+
+.navbar .container {
+    background-color: #00bfa5;
+}
+
+.navbar-default {
+    background-color: #00bfa5;
+    border-color: transparent;
+}
+
+
+.shadow{
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+}
+
+.nav a{
+    font-size: 1.1em;
+}
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+/*    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }*/
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 25px;
+        margin-bottom: 0px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+
+   .navbar-form {
+        width:100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-top: 1px solid ;
+        border-bottom: 1px solid;
+        margin:0;
+    }
+
+    .navbar-form .input-group{
+        width:100%;
+        padding: 0;
+        margin:0;
+    }
+
+    .navbar-form .input-group .input-group-btn{
+        width: 40px;
+    }
+
+    .navbar-collapse{
+        border-style: none;
+    }
+
+}
+
+.navbar-form {
+    margin-top:14px;
+    margin-bottom:12px;
+    border-style: none;
 }

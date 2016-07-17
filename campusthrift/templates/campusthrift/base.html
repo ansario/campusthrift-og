@@ -37,7 +37,7 @@
         window.scrollTo(0, 1);
     } </script>
 
-    <script src="{% static "js/jquery-1.12.3.min.js" %}"></script>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/jquery.flexslider.js" %}"></script>
     <script type="text/javascript" src="{% static "js/imagezoom.js" %}"></script>
@@ -53,34 +53,20 @@
 
 
 <body>
-
-<nav class="navbar navbar-default navbar-fixed-top">
-{#    <div class="container">#}
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img
-                    src="{% static "images/campusthrift logo.png" %}" alt="Logo">
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand shadow" href="/"><img
+                src="{% static "images/campusthrift logo.png" %}" alt="Logo">
             </a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="col-sm-3 col-md-3 search pull-right">
-                <form class="navbar-form" action='/shop' role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-                </form>
-            </div>
+
+        <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/shop">Shop</a></li>
                 {% if request.user.is_authenticated %}
@@ -95,16 +81,26 @@
                     <li><a href="/login">Sell New Item</a></li>
                     <li><a href="/about">About Us</a></li>
                 {% endif %}
+                <li>
+                    <form class="navbar-form" action='/shop' role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
-{#    </div>#}
-    <!-- /.container-fluid -->
-</nav>
+      </div>
+    </div>
+
+
 
 
 <!-- <div class="content-area"> -->
-<div class="container">
+<div class="container main-container">
     {% block content %}
     {% endblock %}
 
