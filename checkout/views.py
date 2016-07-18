@@ -181,9 +181,10 @@ def confirm(request):
         del request.session['cart']
         return redirect('thanks')
 
-@login_required(login_url='/login')
+#@login_required(login_url='/login')
 def thanks(request):
     return render(request, 'checkout/thanks.html')
+    #return render( 'checkout/thanks.html')
 
 @login_required(login_url='/login')
 def payment(request):
