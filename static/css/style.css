@@ -77,7 +77,9 @@ body{
     padding:0 0;
     margin:0 0;
     /*font-family: 'OpenSans-Regular';*/
-    background-image: url("../images/background.png");
+/*
+    background-image: url("../images/background.png");*/
+    background-color:#b9ebcd;
     /*background-repeat: repeat;*/
     /*background-image: linear-gradient(to bottom, rgba(255,255,255,0.86) 0%,rgba(255,255,255,0.86) 100%), url("../images/background.png");*/
 
@@ -3174,6 +3176,7 @@ body {
 
 #about-top-picture{
     background-image: url('../images/about_top.jpg');
+
     background-size: cover;
     height: 400px;
     margin-bottom:0;
@@ -3193,6 +3196,7 @@ body {
 
 #about-middle-picture{
     background-image: url('../images/about_middle.jpg');
+
     background-size: cover;
     height: 250px;
     margin-bottom: 0;
@@ -3202,6 +3206,7 @@ body {
 
 #about-bottom-picture{
     background-image: url('../images/about_bottom.jpg');
+
     background-size: cover;
     height: 250px;
     margin-bottom: 0;
