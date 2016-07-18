@@ -1623,17 +1623,15 @@ i.sele{
     margin: 4em 0 0 0;
     float: right;
 }
-.rsidebar {
+/*.rsidebar {
     display: block;
     float: left;
-    /*margin: 4em 2em 0% 0;*/
     padding: 1em;
     border: solid;
     border-radius: 2em;
     width: 22%;
-    /*background-image: url("../images/background.png");*/
     background-color: #00BFA5;
-}
+}*/
 
 
 
@@ -3008,9 +3006,9 @@ p {
     width: 100vw;
 }*/
 
-h1, h2, h3, h4, h5, h6, p, td, label {
+/*h1, h2, h3, h4, h5, h6, p, td, label {
     font-size: 130%;
-}
+}*/
 
 body { 
     padding-top: 50px; 
@@ -3239,4 +3237,19 @@ body {
     .register-form-box{
         text-align: center;
     }
+}
+
+.green{
+    background-color: green;
+}
+
+#shop-header{
+    text-align: center;
+}
+
+#shop-sidebar{
+    padding:10px 10px 20px 0;
+    border-style: solid;
+    border-width: 0 3px 0 0;
+    border-color: #00bfa5;
 }

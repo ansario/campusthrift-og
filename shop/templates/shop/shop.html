@@ -32,98 +32,72 @@
         .m-t-20 {
             margin-top: 20px !important;
         }
+        .shop-sidebar{
 
+        }
+        .shop-row{
+            margin: 40px 10px;
+        }
     </style>
 
-
-    <div class="content11">
-        <div class="product-model">
-            <div class="container11">
-                <h2>Our Shop</h2>
-            <div class="rsidebar span_1_of_left">
-                    <section class="sky-form">
-                        <div class="product_right">
-                            <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories
-                            </h4>
-
-                            {% for category in categories %}
-                                <div class="tab{{ category.pk }}">
-                                    <ul class="place">
-                                        <li class="sort">{{ category }}</li>
-                                        <li class="by"><span class="glyphicon glyphicon-chevron-down"
-                                                             aria-hidden="true"></span>
-                                        </li>
-                                        <div class="clearfix"></div>
-                                    </ul>
-                                    <div class="single-bottom">
-                                        {% for subcategory in category.subcategories.all %}
-                                            <a href="/shop/category/{{ category }}/{{ subcategory }}">
-                                                <p>{{ subcategory }}</p></a>
-                                        {% endfor %}
-                                    </div>
-                                    <script>
-
-                                        $(".tab{{ category.pk }} .single-bottom").hide();
-                                        $(".tab{{ category.pk }} ul").click(function () {
-                                            $(".tab{{ category.pk }} .single-bottom").slideToggle(300);
-                                        });
-
-
-                                    </script>
-                                </div>
+    <div class="row shop-row">
+        <h2 id="shop-header">Our Shop</h2>
+        <div class="col-sm-3" id="sidebar-filter">
+            <div id="shop-sidebar">
+                <h4 class="">Categories</h4>
+                {% for category in categories %}
+                    <div class="tab{{ category.pk }}">
+                        <ul class="place">
+                            <li class="sort">{{ category }}</li>
+                            <li class="by"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                        <div class="single-bottom">
+                            {% for subcategory in category.subcategories.all %}
+                                <a href="/shop/category/{{ category }}/{{ subcategory }}">
+                                    <p>{{ subcategory }}</p></a>
                             {% endfor %}
-
-
-
-                    </section>
-
-
-
-                </div>
-                <div class="col-md-9 product-model-sec">
-
-                    {% if items %}
-
-                    {% for item in items %}
-
-
-                        <div class="product-grid">
-                            <div class="more-product"><span> </span></div>
-                            <div class="product-img b-link-stripe b-animate-go  thickbox">
-                                <img src="{{ item.images.all.0.image.url }}" height="200px" width="200px" alt=""/>
-
-                            </div>
-
-                            <div class="product-info simpleCart_shelfItem">
-                                <div class="product-info-cust prt_name">
-                                    <h4>{{ item.title|truncatechars:20 }}</h4>
-                                    <span class="item_price">${{ item.price }}</span>
-                                    <a class="btn btn-success item_add items" href="/shop/view/{{ item.pk }}"> View </a>
-                                    <div class="clearfix"></div>
-                                </div>
+                        </div>
+                        <script>
+                            $(".tab{{ category.pk }} .single-bottom").hide();
+                            $(".tab{{ category.pk }} ul").click(function () {
+                                $(".tab{{ category.pk }} .single-bottom").slideToggle(300);
+                            });
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-9">
+            {% if items %}
+                {% for item in items %}
+                    <div class="product-grid">
+                        <div class="more-product"><span> </span></div>
+                        <div class="product-img b-link-stripe b-animate-go  thickbox">
+                            <img src="{{ item.images.all.0.image.url }}" height="200px" width="200px" alt=""/>
+                        </div>
+                        <div class="product-info simpleCart_shelfItem">
+                            <div class="product-info-cust prt_name">
+                                <h4>{{ item.title|truncatechars:20 }}</h4>
+                                <span class="item_price">${{ item.price }}</span>
+                                <a class="btn btn-success item_add items" href="/shop/view/{{ item.pk }}"> View </a>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
+                    </div>
 
-                    {% endfor %}
-                {% else %}
-                        <div class="error">
-                                        <div class="error-code m-b-10 m-t-20"><img src="{% static "images/cactuslooking.png" %}"></div>
-                                        <h3 class="font-bold">We couldn't find any items in this category..</h3>
+                {% endfor %}
+            {% else %}
+                <div class="error">
+                    <div class="error-code m-b-10 m-t-20"><img src="{% static "images/cactuslooking.png" %}"></div>
+                        <h3 class="font-bold">We couldn't find any items in this category..</h3>
 
-                                        <div class="error-desc">
-                                            Sorry, but it looks like there aren't any items matching this category right now. Try a
-                                            different category or check back later. Happy Thrifting!
-
-                                            <div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                        {% endif %}
-
+                    <div class="error-desc">
+                        Sorry, but it looks like there aren't any items matching this category right now. Try a
+                        different category or check back later. Happy Thrifting!
+                    </div>
                 </div>
-
-            </div>
+            {% endif %}
         </div>
     </div>
 
