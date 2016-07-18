@@ -3114,12 +3114,10 @@ body {
         border-style: none;
     }
 
-
-
 }
 
 .navbar-form {
-    margin-top:14px;
+    margin-top:13px;
     margin-bottom:12px;
     border-style: none;
 }
@@ -3137,7 +3135,7 @@ body {
     margin: 10px 10px 0px 10px;
 }
 
-.footer h3{
+.footer h4{
     padding: 15px 0 5px 0;
 }
 .footer ul li{
@@ -3152,6 +3150,7 @@ body {
 .footer-social-icon{
     color: white;
     margin-right: 5px;
+    margin-top: 3px;
 }
 
 /*======================================ABOUT======================================*/
