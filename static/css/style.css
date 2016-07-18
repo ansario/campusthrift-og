@@ -3010,78 +3010,8 @@ h1, h2, h3, h4, h5, h6, p, td, label {
     font-size: 130%;
 }
 
-/*======================================ABOUT======================================*/
-.about-box{
-    margin: 0px 20px 0 20px;
-    padding-top: 20px;
-    color: #00bfa5;
-}
-
-.about-box .fa{
-    margin: 30px 0px;
-    color: #00bfa5;
-    font-size: 100px;
-}
-
-.main-container{
-    background-color: white;
-    padding: 0px;
-/*    //padding-top: 50px;*/
-}
-
-#about-top-picture{
-    background-image: url('../images/campus_thrift_header.png');
-    background-size: cover;
-    height: 450px;
-    margin-bottom:0;
-    color: white;
-    position: relative;
-    border-radius: 0px;
-}
-
-.jumbotron h1{
-    font-size: 50px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#about-middle-picture{
-    background-image: url('../images/campus_thrift_header.png');
-    background-size: cover;
-    height: 250px;
-    margin-bottom: 0;
-    border-radius: 0px;
-}
-
-/*======================================FOOTER======================================*/
-.footer{
-    background-color: #00bfa5;
-    color:white;
-    padding: 0 10px 30px 10px;
-}
-
-.footer .row{
-    margin: 10px 10px 0px 10px;
-}
-
-.footer h3{
-    padding: 15px 0 5px 0;
-}
-.footer ul li{
-    list-style: none;
-}
-
-.footer ul li a{
-    color: white;
-    font-size: 1.1em
-}
-
-.footer-social-icon{
-    color: white;
-    margin-right: 5px;
+body { 
+    padding-top: 50px; 
 }
 
 /*======================================NAVBAR======================================*/
@@ -3184,10 +3114,115 @@ h1, h2, h3, h4, h5, h6, p, td, label {
         border-style: none;
     }
 
+
+
 }
 
 .navbar-form {
     margin-top:14px;
     margin-bottom:12px;
     border-style: none;
+}
+
+
+
+/*======================================FOOTER======================================*/
+.footer{
+    background-color: #00bfa5;
+    color:white;
+    padding: 0 10px 30px 10px;
+}
+
+.footer .row{
+    margin: 10px 10px 0px 10px;
+}
+
+.footer h3{
+    padding: 15px 0 5px 0;
+}
+.footer ul li{
+    list-style: none;
+}
+
+.footer ul li a{
+    color: white;
+    font-size: 1.1em
+}
+
+.footer-social-icon{
+    color: white;
+    margin-right: 5px;
+}
+
+/*======================================ABOUT======================================*/
+.about-box{
+    margin: 0px 20px 0 20px;
+    padding-top: 20px;
+    color: #00bfa5;
+}
+
+.about-box .fa{
+    margin: 30px 0px;
+    color: #00bfa5;
+    font-size: 100px;
+}
+
+.main-container{
+    background-color: white;
+    padding: 0px;
+/*    //padding-top: 50px;*/
+}
+
+#about-top-picture{
+    background-image: url('../images/campus_thrift_header.png');
+    background-size: cover;
+    height: 450px;
+    margin-bottom:0;
+    color: white;
+    position: relative;
+    border-radius: 0px;
+}
+
+.jumbotron h1{
+    font-size: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#about-middle-picture{
+    background-image: url('../images/campus_thrift_header.png');
+    background-size: cover;
+    height: 250px;
+    margin-bottom: 0;
+    border-radius: 0px;
+}
+
+/*======================================LOGIN======================================*/
+.login-form-box{
+    margin-bottom: 40px;
+}
+.register-form-box{
+    margin-bottom: 20px;
+}
+
+.register-form-box h3{
+    font-size: 1.5em;
+    margin-bottom:10px;
+}
+
+.login-row{
+    margin: 50px 10px;
+}
+
+.register-btn{
+    margin-top:10px;
+}
+
+@media (max-width: 768px) {
+    .register-form-box{
+        text-align: center;
+    }
 }

@@ -3,54 +3,35 @@
 {% load staticfiles %}
 {% block content %}
 
-
-    <div class="content">
-        <div class="main-1">
-            <div class="container">
-                <div class="login-page">
-                    <div class="account_grid">
-                        {% if error %}
-                            <div class="alert alert-danger alert-dismissible" role="alert">
-                                {{ error }}
-                            </div>
-
-                        {% endif %}
-                        <div class="col-xs-6 login-left">
-                            <div class="well">
-                                <form id="loginForm" method="POST" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    {{ form | crispy }}
-                                    <button type="submit" style="border: 0; background: transparent" >
-                                        <img src="../../../static/images/submit.png" alt="submit" />
-                                    </button>
-
-
-                                    <br>
-                                    If you forgot your password, please go <a href="/password_reset">here</a>.
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <p class="lead">Register now for <span class="text-success">FREE</span></p>
-                            <ul class="list-unstyled" style="line-height: 2">
-                                <li><span class="fa fa-check text-success"></span> See all your orders!</li>
-                                <li><span class="fa fa-check text-success"></span> Fast checkout!</li>
-                                <li><span class="fa fa-check text-success"></span> First listing is free!</li>
-                                <li><span class="fa fa-check text-success"></span> Save money and support fellow
-                                    students!
-                                </li>
-                            </ul>
-                            <p><a href="./register" class="btn btn-success ">Yes please, register now!</a></p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+<div class="row login-row">
+    <div class="col-sm-6">
+        <div class="well login-form-box">
+            <form id="loginForm" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" style="border: 0; background: transparent" >
+                    <img src="../../../static/images/submit.png" alt="submit" />
+                </button>
+                <br>
+                If you forgot your password, please go <a href="/password_reset">here</a>.
+            </form>
         </div>
     </div>
-
-
-
+    <div class="col-sm-6">
+        <div class="register-form-box">
+            <h3>Register now for <span class="text-success">FREE</span></h3>
+            <ul class="list-unstyled" style="line-height: 2">
+                <li><span class="fa fa-check text-success"></span> See all your orders!</li>
+                <li><span class="fa fa-check text-success"></span> Fast checkout!</li>
+                <li><span class="fa fa-check text-success"></span> First listing is free!</li>
+                <li><span class="fa fa-check text-success"></span> Save money and support fellow
+                    students!
+                </li>
+            </ul>
+            <p><a href="./register" class="btn btn-success register-btn ">Yes please, register now!</a></p>
+        </div>
+    </div>
+</div>
 
 
 {% endblock content %}
