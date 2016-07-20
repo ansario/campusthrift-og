@@ -2906,8 +2906,8 @@ body {
 /*======================================NAVBAR======================================*/
 .navbar-brand:link{
     float: left;
-    height: 65px;
-    background-color: white;
+    height: 60px;
+    background-color: transparent;
     margin: 0;
     z-index: 1000;
     position: absolute;
@@ -2916,7 +2916,7 @@ body {
 }
 
 .navbar-default .navbar-brand:hover{
-    background-color: white;
+    background-color: transparent;
 }
 
 .navbar-brand img {
@@ -2934,23 +2934,28 @@ body {
     border-color: transparent;
 }
 
-
-.shadow{
-    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+.navbar{
+    min-height: 59px;
 }
 
 .nav a{
     font-size: 1.1em;
 }
 
+.navbar-collapse{
+    border-top: none;
+    box-shadow:none;
+}
 @media (max-width: 991px) {
     .navbar-header {
         float: none;
+        border-style: none;
     }
     .navbar-left,.navbar-right {
         float: none !important;
     }
     .navbar-toggle {
+        margin-top:12px;
         display: block;
     }
 /*    .navbar-collapse {
@@ -2966,7 +2971,7 @@ body {
     }
     .navbar-nav {
         float: none!important;
-        margin-top: 25px;
+        margin-top: 5px;
         margin-bottom: 0px;
     }
     .navbar-nav>li {
