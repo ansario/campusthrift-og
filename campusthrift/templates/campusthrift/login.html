@@ -9,11 +9,11 @@
             <form id="loginForm" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <button type="submit" style="border: 0; background: transparent" >
+                <button type="submit" class="login-btn" style="border: 0; background: transparent" >
                     <img src="../../../static/images/submit.png" alt="submit" />
                 </button>
                 <br>
-                If you forgot your password, please go <a href="/password_reset">here</a>.
+                <a href="/password_reset">forgot password</a>
             </form>
         </div>
     </div>

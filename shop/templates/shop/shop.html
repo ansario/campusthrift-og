@@ -44,18 +44,18 @@
         <h2 id="shop-header">Our Shop</h2>
         <div class="col-sm-3" id="sidebar-filter">
             <div id="shop-sidebar">
-                <h4 class="">Categories</h4>
+                <h4>Categories</h4>
                 {% for category in categories %}
                     <div class="tab{{ category.pk }}">
-                        <ul class="place">
-                            <li class="sort">{{ category }}</li>
-                            <li class="by"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></li>
+                        <ul class="category">
+                            <li class="category-name" >{{ category }}</li>
+                            <li class="category-chevron"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></li>
                             <div class="clearfix"></div>
                         </ul>
                         <div class="single-bottom">
                             {% for subcategory in category.subcategories.all %}
                                 <a href="/shop/category/{{ category }}/{{ subcategory }}">
-                                    <p>{{ subcategory }}</p></a>
+                                    <p class="subcategory">{{ subcategory }}</p></a>
                             {% endfor %}
                         </div>
                         <script>

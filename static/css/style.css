@@ -416,35 +416,7 @@ color:#fff;
 select.dropdown1:focus {
     outline: none;
 }
-/*.navbar-default {
-    background-color: #fff;
-    border-color: #fff;
-}
-.navbar-default .navbar-nav > li > a {
-    color: #999;
-    text-transform: uppercase;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #000;
-    background-color: transparent;
-}
-.navbar {
-    position: relative;
-    min-height: 50px;
-    margin-bottom: 0px;
-    border: 1px solid transparent;
-    float: left;
-    width: 80%;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #fff;
-}
-.navbar-header {
-    float: left;
-    width: 35%;
-    /*margin-top: 1em;*/
-}*/
+
 .multi-column-dropdown li a.list {
     font-weight: 600;
 }
@@ -1105,77 +1077,7 @@ p span.overline{
 .social-icons a i.icon5 {
     background-position: -110px 0px
 }
-/*--login--*/
-.login-page {
-  padding: 6em 0;
-}
-.login-left {
-    padding: 0;
-}
-.login-left h3, .login-right h3 {
-    color:#000;
-    font-size: 1.2em;
-    padding-bottom: 0.5em;
-    font-weight:600;
-}
-.login-left p, .login-right p {
-    color: #999;
-    display: block;
-    font-size: 1em;
-    margin: 0 0 2em 0;
-    line-height: 1.8em;
-}
-.acount-btn {
-    border: 2px solid #000;
-    color: #000;
-    font-size: 1em;
-    padding: 0.7em 1.2em;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    display: inline-block;
-    text-transform: uppercase;
-}
-.acount-btn:hover, .login-right input[type="submit"]:hover{
-    background:#000;
-    text-decoration:none;
-    color:#fff;
-}
-.login-right form {
-    padding: 1em 0;
-}
-.login-right form div {
-    padding: 0 0 2em 0;
-}
-.login-right span {
-    color: #999;
-    font-size:0.8125em;
-    padding-bottom: 0.2em;
-    display: block;
-    text-transform: uppercase;
-}
-.login-right input[type="text"] {
-    border: 1px solid #555;
-    outline-color:#08538C;
-    width: 96%;
-    font-size:0.8125em;
-    padding: 0.5em;
-}
-.login-right input[type="submit"] {
-    border: 2px solid #000;
-    color: #000;
-    font-size: 1em;
-    padding: 0.7em 1.2em;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    display: inline-block;
-    text-transform: uppercase;
-    outline:none;
-    background-color: #fff;
-}
+
 /*--register--*/
 .register{
     padding:6em 0;
@@ -1623,16 +1525,6 @@ i.sele{
     margin: 4em 0 0 0;
     float: right;
 }
-/*.rsidebar {
-    display: block;
-    float: left;
-    padding: 1em;
-    border: solid;
-    border-radius: 2em;
-    width: 22%;
-    background-color: #00BFA5;
-}*/
-
 
 
 /*-----*/
@@ -1927,10 +1819,7 @@ ul.place li.sort{
 ul.place li.by{
     float:right;
 }
-.single-bottom p{
-    font-size:0.9em;
-    padding:2px 10px;
-}
+
 .possible-about p{
     color:#727272;
     font-size:1em;
@@ -3122,8 +3011,6 @@ body {
     border-style: none;
 }
 
-
-
 /*======================================FOOTER======================================*/
 .footer{
     background-color: #00bfa5;
@@ -3214,6 +3101,7 @@ body {
 /*======================================LOGIN======================================*/
 .login-form-box{
     margin-bottom: 40px;
+    margin: 0 30px 40px 30px;
 }
 .register-form-box{
     margin-bottom: 20px;
@@ -3221,15 +3109,19 @@ body {
 
 .register-form-box h3{
     font-size: 1.5em;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .login-row{
     margin: 50px 10px;
 }
 
+.login-btn{
+    margin-bottom: 10px;
+}
+
 .register-btn{
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -3238,17 +3130,56 @@ body {
     }
 }
 
-.green{
-    background-color: green;
-}
 
+/*======================================Shop/Search======================================*/
 #shop-header{
     text-align: center;
 }
 
 #shop-sidebar{
-    padding:10px 10px 20px 0;
+    padding: 10px 10px 20px 0;
     border-style: solid;
     border-width: 0 3px 0 0;
     border-color: #00bfa5;
 }
+
+#shop-sidebar h4{
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    #shop-sidebar{
+        padding: 10px 10px 20px 0;
+        border-style: none;
+    }
+}
+
+.category {
+    margin: 5px 0;
+    background: #f9f9f9;
+    width: 100%;
+    padding: 0px 5px;
+    cursor: pointer;
+    padding: 6px;
+    list-style: none;
+}
+
+.category-chevron{
+    margin-top: 5px;
+    color: #f02b63;
+    float: right;
+}
+
+.category-name{
+    font-size: 1.1em;
+    float:left;
+}
+
+.subcategory{
+    font-size: 1.1em;
+    padding: 3px 10px;
+}
+
+
+
