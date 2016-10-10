@@ -25,6 +25,7 @@ sg = sendgrid.SendGridClient(SG_KEY)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 stripe.api_key = STRIPE_API_KEY
 
 
@@ -493,6 +494,8 @@ def github_push(request):
     if request.method == "POST":
 
         print request.body
+        return HttpResponse('')
+    
     return redirect('home')
 
 @login_required(login_url='/login')
