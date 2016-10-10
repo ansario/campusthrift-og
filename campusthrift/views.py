@@ -27,7 +27,7 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 stripe.api_key = STRIPE_API_KEY
-
+from subprocess import PIPE, Popen
 
 
 
@@ -492,10 +492,15 @@ def register(request):
 def github_push(request):
 
     if request.method == "POST":
+        commands = '''
+        cd /var/www/campusthrift.com
+        git pull
+        sudo service apache2 restart
+        '''
+        process = subprocess.Popen('/bin/bash', stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+        out, err = process.communicate(commands.encode('utf-8'))
+        print(out.decode('utf-8'))
 
-        os.chdir('/var/www/campusthrift.com')
-        os.system('git pull')
-        os.system('sudo service apache2 restart')
         return HttpResponse('')
 
     return redirect('home')
