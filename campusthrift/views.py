@@ -24,7 +24,7 @@ from django.contrib.auth import logout
 sg = sendgrid.SendGridClient(SG_KEY)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-
+from django.views.decorators.csrf import csrf_exempt
 stripe.api_key = STRIPE_API_KEY
 
 
@@ -487,7 +487,7 @@ def register(request):
             'campusthrift/register.html',
             {'registered': registered} )
 
-
+@csrf_exempt
 def github_push(request):
 
     if request.method == "POST":
