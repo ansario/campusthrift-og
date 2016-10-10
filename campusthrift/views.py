@@ -493,6 +493,7 @@ def github_push(request):
     if request.method == "POST":
 
         print request.body
+    return redirect('home')
 
 @login_required(login_url='/login')
 def seller_confirm(request, id):
