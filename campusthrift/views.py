@@ -27,7 +27,7 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 stripe.api_key = STRIPE_API_KEY
-from subprocess import PIPE, Popen
+import subprocess
 
 
 
