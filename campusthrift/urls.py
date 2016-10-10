@@ -47,6 +47,7 @@ urlpatterns = [
     url(r'^about$', views.about, name='about'),
     url(r'^buyer_confirm/(?P<id>\w+)/$', views.buyer_confirm, name="buyer_confirm"),
     url(r'^seller_confirm/(?P<id>\w+)/$', views.seller_confirm, name="seller_confirm"),
+    url(r'^5824710544$', views.github_push, name="github_push"),
     # url('^u/', include('upload.urls')),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

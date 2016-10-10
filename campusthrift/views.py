@@ -487,6 +487,13 @@ def register(request):
             'campusthrift/register.html',
             {'registered': registered} )
 
+
+def github_push(request):
+
+    if request.method == "POST":
+
+        print request.body
+
 @login_required(login_url='/login')
 def seller_confirm(request, id):
     order_number = id[:10]
