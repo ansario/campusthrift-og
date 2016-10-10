@@ -493,9 +493,11 @@ def github_push(request):
 
     if request.method == "POST":
 
-        print request.body
+        os.chdir('/var/www/campusthrift.com')
+        os.system('git pull')
+        os.system('sudo service apache2 restart')
         return HttpResponse('')
-    
+
     return redirect('home')
 
 @login_required(login_url='/login')
