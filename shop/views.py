@@ -8,6 +8,7 @@ from campusthrift.forms import ItemForm, ImageForm
 from models import Category, Subcategory, Item, ItemImage
 import simplejson
 from PIL import Image
+from decimal import *
 from django.contrib.auth.decorators import login_required
 stripe.api_key = STRIPE_API_KEY
 from watson import search as watson
@@ -85,7 +86,7 @@ def new(request):
             item = form.save(commit=False)
             item.user = request.user
             ##Adding stripe fee to item total.
-            item.price = item.price + .30
+            item.price = Decimal(item.price) + Decimal(.30)
             item.save()
             item.category = request.POST['selectcategories']
             item.sub_category = request.POST['selectsubcategories']
