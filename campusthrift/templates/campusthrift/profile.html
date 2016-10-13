@@ -5,6 +5,7 @@
 {% load staticfiles %}
 {% block content %}
     <style>
+        <title>Profile</title>
         h4, h3 {
             padding-top: 10px;
             padding-bottom: 10px;
@@ -26,7 +27,6 @@
     <div class="row">
         <div class="col-xs-12">
             <div>
-                <title>Profile</title>
                 <h1 class="pull-left">Hi {{ user.first_name }}!</h1>
                 <img class="pull-right img-responsive	 profile-pic"
                      style="max-height: 200px; max-width: 200px;"
