@@ -68,6 +68,7 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/shop">Shop</a></li>
+                <li><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
                 {% if request.user.is_authenticated %}
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/shop/new">Sell New Item</a></li>
@@ -76,7 +77,7 @@
                 {% else %}
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
-                    <li><a href="/shop/cart">Cart <span class="badge">{{ request.session.cart|length }}</span></a></li>
+                    
                     <li><a href="/login">Sell New Item</a></li>
                     <li><a href="/about">About Us</a></li>
                 {% endif %}
