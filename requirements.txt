@@ -73,7 +73,7 @@ jupyter-client==4.2.2
 jupyter-core==4.1.0
 keepalive==0.5
 leveldb==0.193
-lxml==3.5.0
+lxml==4.6.2
 mailchimp==2.0.9
 mailsnake==1.6.3
 Markdown==2.6.2
