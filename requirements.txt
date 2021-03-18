@@ -99,7 +99,7 @@ paypalrestsdk==1.11.5
 pbr==1.8.0
 pexpect==3.3
 pickleshare==0.5
-Pillow==2.9.0
+Pillow==8.1.1
 protobuf==2.6.1
 psycopg2==2.6.1
 ptyprocess==0.5.1
