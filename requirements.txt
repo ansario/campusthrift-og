@@ -35,7 +35,7 @@ django-oauth2-provider==0.2.6.1
 django-recaptcha==1.0.5
 django-registration==2.0.4
 django-simple-email-confirmation==0.12
-djangorestframework==3.3.2
+djangorestframework==3.11.2
 docopt==0.4.0
 docutils==0.12
 enum34==1.1.6
