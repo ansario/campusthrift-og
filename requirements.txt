@@ -103,7 +103,7 @@ Pillow==2.9.0
 protobuf==2.6.1
 psycopg2==2.6.1
 ptyprocess==0.5.1
-py==1.4.30
+py==1.10.0
 pyasn1==0.1.8
 pycparser==2.14
 pydot==1.0.2
