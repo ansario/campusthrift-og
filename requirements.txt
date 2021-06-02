@@ -77,7 +77,7 @@ lxml==3.5.0
 mailchimp==2.0.9
 mailsnake==1.6.3
 Markdown==2.6.2
-markdown2==2.3.0
+markdown2==2.4.0
 MarkupSafe==0.23
 matplotlib==1.5.1
 mistune==0.7.2
