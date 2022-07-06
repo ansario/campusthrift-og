@@ -57,7 +57,7 @@ gnureadline==6.3.3
 guess-language==0.2
 gunicorn==19.4.5
 h5py==2.5.0
-html5lib==0.9999999
+html5lib==0.999999999
 httplib2==0.9.1
 idna==2.1
 ipaddress==1.0.16
