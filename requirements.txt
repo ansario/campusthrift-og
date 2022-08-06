@@ -156,7 +156,7 @@ tornado==4.3
 traitlets==4.0.0
 tweepy==3.3.0
 twilio==4.5.0
-untangle==1.1.0
+untangle==1.2.1
 urllib3==1.12
 vboxapi==1.0
 virtualenv==13.1.2
